@@ -1,0 +1,20 @@
+Python Developer, 3 Years Experience, 1
+Java Developer, 3 Years Experience, 2
+Web Developer, 3 years Experience, 3
+Scrum Master, 2 years experience running a scrum team, 4
+QA, 5 Years Experience, 5
+Web Developer, 5 Years Experience, 6
+Web Designer, 2 years Experience, 7 
+Managment, 3 years Experience, 8
+Database Admin, 2 Years Experience, 9
+Hardware Engineer, 6 Years Experience, 10
+Security Analysts, 3 Years Experience, 11
+Network Engineer, 2 Years Experience, 12
+Project Manager, 3 Years Experience, 13
+Junior Developer, College Degree, 14
+Senior Developer, 10 Years Experience, 15
+Full Stack Developer, 10000000 experience, 16
+Intern, Coffee Running, 17
+Candy Maker, Golden Ticket, 18
+Jester, Funny Guy, 19
+Speed Eater, Large Mouth and stomach, 20

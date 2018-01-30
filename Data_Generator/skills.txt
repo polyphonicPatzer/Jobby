@@ -1,0 +1,27 @@
+Java, dev, 2 Years Experience, 1 
+Python, dev, 1 Year Experience, 2
+Web Development, Front End Dev, 3 Years exp, 3 
+Full Stack, dev, dev, 4
+half-stack, dev, dev, 5
+Hardware Engineer, dev, dev, 6
+Sofware Engineer, dev, dev, 7
+Swift, dev, dev, 8
+C++, dev, dev, 9
+C, dev, dev, 10
+HTML, dev, dev, 11
+SQL, dev, dev, 12
+Database Admin, dev, dev, 13
+Managment, dev, dev, 14
+Hard Worker, dev, dev, 15
+Works well in teams, dev, dev, 16
+Excelent Communicator, dev, dev, 17
+Organized to a fault, dev, dev, 18
+Painting, dev, dev, 19
+Graphic Design, dev, dev, 20
+CSS, dev, dev, 21
+Electrician, dev, dev, 22
+Security Analyst, dev, dev, 23
+Network Engineer, dev, dev, 24
+Team Manager, dev, dev, 25
+Ultimate Frisbee, dev, dev, 26
+Finance, dev, dev, 27
