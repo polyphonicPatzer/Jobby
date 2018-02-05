@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="GetAJob_main" target="1.8" />
       <module name="GetAJob_test" target="1.8" />
+      <module name="jobby-hibernate_main" target="1.8" />
+      <module name="jobby-hibernate_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

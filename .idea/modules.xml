@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GetAJob.iml" filepath="$PROJECT_DIR$/.idea/modules/GetAJob.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GetAJob_main.iml" filepath="$PROJECT_DIR$/.idea/modules/GetAJob_main.iml" group="GetAJob" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GetAJob_test.iml" filepath="$PROJECT_DIR$/.idea/modules/GetAJob_test.iml" group="GetAJob" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jobby-hibernate.iml" filepath="$PROJECT_DIR$/.idea/modules/jobby-hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jobby-hibernate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jobby-hibernate_main.iml" group="jobby-hibernate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jobby-hibernate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jobby-hibernate_test.iml" group="jobby-hibernate" />
     </modules>
   </component>
 </project>
