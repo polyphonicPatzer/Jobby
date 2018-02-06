@@ -5,19 +5,23 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Candidate {
     @Id
+    @Column(name="candidateId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
 
-    @Column
+    @Column(name="candidateName")
     private String Name;
 
-    @Column
+    @Column(name="candidateEmail")
     private String Email;
 
-    @Column
+    @Column(name="candidateResume")
     private String Resume;
 
-    @Column
+    @Column(name="candidatePass")
     private String Pass;
+
+    public Candidate() {}
 
     public int getId() {
         return Id;

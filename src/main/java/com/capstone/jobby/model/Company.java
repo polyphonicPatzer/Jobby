@@ -1,7 +1,5 @@
 package com.capstone.jobby.model;
 
-
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -10,16 +8,19 @@ import javax.validation.constraints.NotNull;
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="companyID")
     private int ID;
 
-    @Column
+    @Column(name="companyName")
     private String Name;
 
-    @Column
+    @Column(name="companyActivationStatus")
     private Boolean Activation_Status;
 
-    @Column
+    @Column(name="companyPass")
     private String Pass;
+
+    public Company() {}
 
     public int getID() {
         return ID;
