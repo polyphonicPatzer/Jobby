@@ -7,6 +7,6 @@ import java.util.List;
 public interface CandidateSkillDao {
     List<CandidateSkill> findAll();
     CandidateSkill findById(Long id);
-    void save(CandidateSkill candidate);
-    void delete(CandidateSkill candidate);
+    void save(CandidateSkill candidateSkill);
+    void delete(CandidateSkill candidateSkill);
 }

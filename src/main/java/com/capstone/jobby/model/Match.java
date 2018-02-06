@@ -2,6 +2,7 @@ package com.capstone.jobby.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 public class Match implements Serializable {
@@ -31,5 +32,20 @@ public class Match implements Serializable {
 
     public void setJob(Job job) {
         this.job = job;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Match match = (Match) o;
+        return Objects.equals(candidate, match.candidate) &&
+                Objects.equals(job, match.job);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(candidate, job);
     }
 }

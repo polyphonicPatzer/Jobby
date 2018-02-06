@@ -2,6 +2,7 @@ package com.capstone.jobby.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 public class Reference implements Serializable {
@@ -50,5 +51,22 @@ public class Reference implements Serializable {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Reference reference = (Reference) o;
+        return Objects.equals(candidate, reference.candidate) &&
+                Objects.equals(Phone, reference.Phone) &&
+                Objects.equals(Name, reference.Name) &&
+                Objects.equals(Email, reference.Email);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(candidate, Phone, Name, Email);
     }
 }
