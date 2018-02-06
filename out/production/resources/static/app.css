@@ -10,7 +10,7 @@ h2 {
 }
 
 nav {
-    background-color: #896bb3;
+    background-color: #073763;
     box-shadow: none;
 }
 
@@ -73,7 +73,7 @@ nav ul li.active, nav ul li:hover {
 
 .search-bar .input-field input ~ .material-icons, .search-bar .input-field input:focus ~ .material-icons {
     top: 0.5rem;
-    color: #896bb3;
+    color: #073763;
 }
 
 ::-webkit-input-placeholder {
@@ -161,7 +161,7 @@ nav ul li.active, nav ul li:hover {
 }
 
 .gif-detail .meta h4 {
-    color: #896bb3;
+    color: #073763;
     font-size: 1.5rem;
     margin-bottom: 0.6rem;
     margin-top: 0.2rem;
@@ -184,14 +184,14 @@ nav ul li.active, nav ul li:hover {
 }
 
 .share .btn {
-    background-color: #896bb3;
+    background-color: #073763;
     box-shadow: none;
     text-transform: none;
     color: #fefefe;
 }
 
 .share span {
-    color: #896bb3;
+    color: #073763;
     line-height: 36px;
 }
 
@@ -484,7 +484,7 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .button[type=submit] {
-    background: #896bb3;
+    background: #073763;
     color: #fefefe;
 }
 
@@ -525,7 +525,7 @@ input[type=file] {
 }
 
 label.button {
-    background: #896bb3;
+    background: #073763;
     color: #fefefe;
     padding: 1rem 1.4rem;
     float: right;
@@ -592,6 +592,10 @@ label.button {
     border-width: 2px;
 }
 
+.imgCenter {
+    display: block;
+    margin: 0 auto;
+}
 
 @media only screen and (max-width: 993px) {
     nav .brand-logo {
