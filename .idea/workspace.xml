@@ -2,106 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6954ecf2-754a-49f5-a9ec-2784932b9731" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/outputFileStates.bin" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/Application.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/config/AppConfig.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/config/DataConfig.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/config/TemplateConfig.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateDao.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CategoryDao.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CategoryDaoImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CompanyDao.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/GifDao.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/GifDaoImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/MatchDao.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Candidate.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Category.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Company.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Gif.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Match.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/CategoryService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/CategoryServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/GifService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/GifServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/Color.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/FlashMessage$Status.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/FlashMessage.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CategoryController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/GifController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/libs/jobby-hibernate-1.0-SNAPSHOT.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/libs/jobby-hibernate-1.0-SNAPSHOT.jar.original" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/app.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/hibernate.cfg.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/app.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/app.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/favicon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/icons/favorite.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/icons/unfavorite.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/images/me.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/css/cs-select.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/css/cs-skin-border.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/codropsicons/codropsicons.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/codropsicons/codropsicons.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/codropsicons/codropsicons.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/codropsicons/codropsicons.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/codropsicons/license.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/icomoon/icomoon.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/icomoon/icomoon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/icomoon/icomoon.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/fonts/icomoon/icomoon.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/js/classie.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/codrops/js/selectFx.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/jquery/jquery-1.11.3.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/css/materialize.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/css/materialize.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/material-design-icons/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/material-design-icons/Material-Design-Icons.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/material-design-icons/Material-Design-Icons.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/material-design-icons/Material-Design-Icons.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/material-design-icons/Material-Design-Icons.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/material-design-icons/Material-Design-Icons.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Bold.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Bold.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Bold.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Light.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Light.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Light.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Medium.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Medium.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Medium.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Thin.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Thin.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/font/roboto/Roboto-Thin.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/js/materialize.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/static/vendor/materialize/js/materialize.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/category/details.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/category/form.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/category/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/error.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/gif/details.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/gif/favorites.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/gif/form.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/gif/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/resources/main/templates/layout.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app.properties" afterPath="$PROJECT_DIR$/src/main/resources/app.properties" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Candidate.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Candidate.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Company.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Company.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Match.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Match.class" />
+      <change beforePath="$PROJECT_DIR$/build/libs/jobby-hibernate-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/build/libs/jobby-hibernate-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/build/libs/jobby-hibernate-1.0-SNAPSHOT.jar.original" afterPath="$PROJECT_DIR$/build/libs/jobby-hibernate-1.0-SNAPSHOT.jar.original" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/app.properties" afterPath="$PROJECT_DIR$/out/production/resources/app.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Job.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Job.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Reference.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Reference.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -139,12 +54,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="jobby-hibernate" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="jobby-hibernate" type="f1a62948:ProjectNode" />
                 <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
@@ -156,47 +65,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CategoryDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDaoImpl.java">
+      <file leaf-file-name="JobDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="42" />
+            <state relative-caret-position="150">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#515#545#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompanyDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDaoImpl.java">
+      <file leaf-file-name="JobDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="65" column="5" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
+              <caret line="65" column="5" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#520#550#0" expanded="true" />
+                <element signature="e#508#538#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CandidateDaoImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java">
+      <file leaf-file-name="ReferenceDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ReferenceDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="90">
+              <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReferenceDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ReferenceDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="65" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#526#556#0" expanded="true" />
@@ -205,33 +113,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GifDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/GifDaoImpl.java">
+      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Candidate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Candidate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="195">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CandidateDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDao.java">
+      <file leaf-file-name="SkillDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -239,36 +135,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java">
+      <file leaf-file-name="SkillDaoImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#515#545#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDao.java">
+      <file leaf-file-name="CompanyDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDao.java">
+      <file leaf-file-name="CategoryDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,6 +188,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>injection</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -609,17 +519,30 @@
         <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Job.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Reference.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ReferenceDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ReferenceDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDaoImpl.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="23" />
-    <option name="y" value="29" />
+    <option name="x" value="32" />
+    <option name="y" value="44" />
     <option name="width" value="1236" />
     <option name="height" value="728" />
   </component>
@@ -718,6 +641,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -741,7 +665,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.GetAJob [bootRun]">
+  <component name="RunManager" selected="Application.Application">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -885,9 +809,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.GetAJob [bootRun]" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
         <item index="1" class="java.lang.String" itemvalue="Gradle.Jobby [build]" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.GetAJob [bootRun]" />
       </list>
     </recent_temporary>
   </component>
@@ -908,11 +832,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="29" width="1236" height="728" extended-state="0" />
+    <frame x="32" y="44" width="1236" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -936,7 +861,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -983,47 +907,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/jquery/jquery-1.11.3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/jquery/jquery-1.11.3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="68" lean-forward="false" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jobby/getajob/controller/HomepageController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jobby/getajob/AppConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/materialize/css/materialize.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1089,40 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/config/DataConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/app.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="61" lean-forward="false" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/GifDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1133,75 +982,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Candidate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/GifDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="181">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="-88">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="163" lean-forward="false" selection-start-line="14" selection-start-column="120" selection-end-line="14" selection-end-column="163" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/config/DataConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Candidate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="52" lean-forward="false" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Gif.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="e#273#274#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Reference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="150">
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/GifDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="930">
+          <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#515#545#0" expanded="true" />
+            <element signature="e#541#571#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ReferenceDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1210,19 +1207,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CompanyDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CategoryDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="65" column="5" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
+          <caret line="65" column="5" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#520#550#0" expanded="true" />
+            <element signature="e#508#538#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state relative-caret-position="195">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ReferenceDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#526#556#0" expanded="true" />
@@ -1230,5 +1269,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#515#545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="gradleExecuteTaskHistory">
+    <option value="" />
   </component>
 </project>

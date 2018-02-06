@@ -1,9 +1,10 @@
 package com.capstone.jobby.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Reference {
+public class Reference implements Serializable {
     @ManyToOne
     @Id
     @JoinColumn(name="candidateId")

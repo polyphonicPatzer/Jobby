@@ -2,7 +2,7 @@ package com.capstone.jobby.model;
 
 import javax.persistence.*;
 
-
+@Entity
 public class Job {
     @Id
     @Column(name="jobId")
