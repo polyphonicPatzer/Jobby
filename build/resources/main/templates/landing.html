@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="layout :: head('')"></head>
 <body>
 <div th:replace="layout :: nav"></div>
@@ -7,11 +7,11 @@
 <img class="imgCenter" th:src="@{/images/logo.png}" alt="Jobby Logo" />
 
 <div th:fragment="searchbar" class="search-bar">
-    <div class="row">
+    <div class="row s12">
         <div class="col s12">
             <form th:action="@{/search}" method="get">
-                <div class="input-field" style="width: 70%; margin: 0 auto;">
-                    <input name="q" type="search" placeholder="Search all gifs..." required="required" autocomplete="off"/>
+                <div class="input-field" style="width: 30%; margin: 0 auto;">
+                    <input name="q" type="search" placeholder="Job Search" required="required" autocomplete="off"/>
                     <i class="material-icons">search</i>
                 </div>
             </form>
@@ -20,18 +20,6 @@
 </div>
 
 <div th:replace="layout :: flash"></div>
-<div class="gifs container">
-    <div class="row">
-        <div th:each="gif : ${gifs}" class="col s12 l4">
-            <a th:href="@{|/gifs/${gif.id}|}" class="actions">
-                <img th:src="@{|/gifs/${gif.id}.gif|}" alt="gif" />
-                <form th:action="@{|/gifs/${gif.id}/favorite|}" method="post">
-                    <button type="submit" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></button>
-                </form>
-            </a>
-        </div>
-    </div>
-</div>
 <div th:replace="layout :: scripts"></div>
 </body>
 </html>

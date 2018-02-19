@@ -24,7 +24,7 @@
             <a th:href="@{/}" class="brand-logo">Jobby</a>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/Account_Login') ? 'active' : ''}"><a th:href="@{/Account_Login}">Login</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_login') ? 'active' : ''}"><a th:href="@{/account_login}">Login</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/explore') ? 'active' : ''}"><a th:href="@{/explore}">Sign Up</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">

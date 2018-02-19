@@ -26,9 +26,21 @@ public class AccountLoginController {
     @Autowired
     private CompanyService companyService;
 
-    @RequestMapping("/Account_Login")
-    public String landing(Model model) {
-        return "accountlogin";
+    // Create Account
+    @RequestMapping("/account_registration")
+    public String aRegister(Model model){
+        return "account/accountRegistration";
     }
 
+    // Create Employee Account
+    @RequestMapping("/employee_registration")
+    public String eRegister(Model model){
+        return "account/employeeRegistration";
+    }
+
+    // Account Login
+    @RequestMapping("/account_login")
+    public String aLogin(Model model){
+        return "account/accountLogin";
+    }
 }
