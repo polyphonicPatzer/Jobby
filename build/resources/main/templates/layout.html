@@ -24,16 +24,20 @@
             <a th:href="@{/}" class="brand-logo">Jobby</a>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
+<!--                <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/explore') ? 'active' : ''}"><a th:href="@{/explore}">Explore</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/categories') ? 'active' : ''}"><a th:href="@{/categories}">Categories</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/favorites') ? 'active' : ''}"><a th:href="@{/favorites}">Favorites</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/favorites') ? 'active' : ''}"><a th:href="@{/favorites}">Favorites</a></li>-->
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_registration') ? 'active' : ''}"><a th:href="@{/account_login}">Log In</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_registration') ? 'active' : ''}"><a th:href="@{/account_registration}">Sign Up</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
+<!--                <li th:classappend="${#httpServletRequest.servletPath.equals('/upload') ? 'active' : ''}"><a th:href="@{/upload}">Upload</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/explore') ? 'active' : ''}"><a th:href="@{/explore}">Explore</a></li>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/categories') ? 'active' : ''}"><a th:href="@{/categories}">Categories</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/favorites') ? 'active' : ''}"><a th:href="@{/favorites}">Favorites</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/favorites') ? 'active' : ''}"><a th:href="@{/favorites}">Favorites</a></li>-->
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_login') ? 'active' : ''}"><a th:href="@{/account_login}">Log In</a></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_registration') ? 'active' : ''}"><a th:href="@{/account_registration}">Sign Up</a></li>
             </ul>
         </div>
     </nav>

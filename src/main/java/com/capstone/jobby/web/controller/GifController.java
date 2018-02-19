@@ -33,6 +33,25 @@ public class GifController {
         return "landing";
     }
 
+    // Create Account
+    @RequestMapping("/account_registration")
+    public String aRegister(Model model){
+        return "gif/accountRegistration";
+    }
+
+    // Create Employee Account
+    @RequestMapping("/employee_registration")
+    public String eRegister(Model model){
+        return "gif/employeeRegistration";
+    }
+
+    // Account Login
+    @RequestMapping("/account_login")
+    public String aLogin(Model model){
+        return "gif/accountLogin";
+    }
+
+
     // Home page - index of all GIFs
     @RequestMapping("/explore")
     public String listGifs(Model model) {
