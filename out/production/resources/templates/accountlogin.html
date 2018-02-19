@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout :: head('Account Login')"></head>
+<body>
+<div th:replace="layout :: nav"></div>
+
+<img class="imgCenter" th:src="@{/images/logo.png}" alt="Jobby Logo" />
+<div th:fragment="login">
+    <div class="row">
+        <div class="col s12">
+            <form th:action="@{/search}" method="get">
+                <div class="input-field" style="width: 30%; margin: 0 auto;">
+                    <input name="q" type="text" placeholder="Username" required="required" autocomplete="off"/>
+                </div>
+                <div class="input-field" style="width: 30%; margin: 0 auto;">
+                    <input name="q" type="password" placeholder="Password" required="required" autocomplete="off"/>
+                    <button type = "button" style="text-align: center;">Login</button> <p>Forgot Your Password?</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="layout :: login"></div>
+
+</body>
+</html>
