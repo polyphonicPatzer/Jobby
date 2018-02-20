@@ -453,7 +453,7 @@ form .row .col {
 
 input[type=text] {
     display: block;
-    border: 1px solid #dad7de;
+    border: 3px solid #000000;
     border-radius: 6px;
     background: #f7f5fa;
     padding: 1rem;
@@ -461,13 +461,31 @@ input[type=text] {
     line-height: 1.5;
     height: initial;
     box-sizing: border-box;
-    margin-bottom: 0;
+    margin-bottom: 3;
     color: #7a7580;
 }
 
 input[type=text]:focus:not([readonly]) {
-    border-bottom-color: #dad7de;
-    box-shadow: none;
+    border-bottom: 3px solid  #073763;
+}
+
+input[type=password] {
+    display: block;
+    border: 3px solid #000000;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background: #f7f5fa;
+    padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    height: initial;
+    box-sizing: border-box;
+    margin-bottom: 3;
+    color: #7a7580;
+}
+
+input[type=password]:focus:not([readonly]) {
+    border-bottom: 3px solid #073763;
 }
 
 .button {
@@ -475,7 +493,7 @@ input[type=text]:focus:not([readonly]) {
     display: inline-block;
     background: #f2f0f5;
     border-radius: 4px;
-    border: none;
+    border: 3px solid #000000;
     color: #a29fa6;
     line-height: 1.5;
     font-size: 0.9rem;
@@ -615,8 +633,8 @@ label.button {
     background: #D3D3D3;
     padding: 20px;
     width: 200px;
-    height: 220px;
-    width: 70%;
+    height: 250px;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
    	border:4px solid black;

@@ -26,6 +26,13 @@ public class AccountLoginController {
     @Autowired
     private CompanyService companyService;
 
+
+    // Home page
+    @RequestMapping("/")
+    public String landing(Model model) {
+        return "landing";
+    }
+
     // Create Account
     @RequestMapping("/account_registration")
     public String aRegister(Model model){
@@ -36,6 +43,12 @@ public class AccountLoginController {
     @RequestMapping("/employee_registration")
     public String eRegister(Model model){
         return "account/employeeRegistration";
+    }
+
+    // Create Employee Account
+    @RequestMapping("/company_registration")
+    public String cRegister(Model model){
+        return "account/companyRegistration";
     }
 
     // Account Login
