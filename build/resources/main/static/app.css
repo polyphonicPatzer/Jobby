@@ -472,6 +472,7 @@ input[type=text]:focus:not([readonly]) {
 input[type=password] {
     display: block;
     border: 3px solid #000000;
+    border: 3px solid #000000;
     border-radius: 6px;
     background: #f7f5fa;
     padding: 1rem;
@@ -504,6 +505,8 @@ input[type=password]:focus:not([readonly]) {
     background: #073763;
     color: #fefefe;
 }
+
+
 
 .user-meta {
     text-align:center;

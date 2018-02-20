@@ -506,6 +506,8 @@ input[type=password]:focus:not([readonly]) {
     color: #fefefe;
 }
 
+
+
 .user-meta {
     text-align:center;
     color: #a9a7ac;

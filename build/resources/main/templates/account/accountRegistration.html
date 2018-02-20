@@ -19,7 +19,15 @@
 </div>
 <div th:replace="layout :: scripts"></div>
 
-<div class="rCorners">Choose a Subscription</div>
+<div class="rCorners"><p>Choose a Subscription</p>
+
+    <a th:href="@{/employee_registration}">
+        <img class="imgCenter" th:src="@{/images/candidate.png}" alt="Candidate Image" style="height: 200px;width: 200px;" />
+        Employee Account</a>
+    <a th:href="@{/company_registration}">
+        <img class="imgCenter" th:src="@{/images/company.png}" alt="Company Image" style="height: 200px;width: 200px;" />
+        Company Account</a>
+</div>
 
 </body>
 </html>
