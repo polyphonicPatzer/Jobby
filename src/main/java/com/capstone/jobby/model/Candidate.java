@@ -7,11 +7,13 @@ public class Candidate {
     @Id
     @Column(name="candidateId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private int id;
 
+    @NotNull
     @Column(name="candidateName")
     private String Name;
 
+    @NotNull
     @Column(name="candidateEmail")
     private String Email;
 
@@ -24,11 +26,11 @@ public class Candidate {
     public Candidate() {}
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {

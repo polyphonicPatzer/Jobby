@@ -9,34 +9,51 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="companyID")
-    private int ID;
+    private int id;
 
+    @NotNull
     @Column(name="companyName")
-    private String Name;
+    private String name;
+
+    @NotNull
+    @Column(name="city")
+    private String city;
+
+    @NotNull
+    @Column(name="state")
+    private String state;
 
     @Column(name="companyActivationStatus")
     private Boolean Activation_Status;
 
     @Column(name="companyPass")
-    private String Pass;
+    private String pass;
 
     public Company() {}
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
+
+    public String getCity() { return city; }
+
+    public void setCity(String city) { this.city = city; }
+
+    public String getState() { return state; }
+
+    public void setState(String state) { this.state = state; }
 
     public Boolean getActivation_Status() {
         return Activation_Status;
@@ -47,10 +64,10 @@ public class Company {
     }
 
     public String getPass() {
-        return Pass;
+        return pass;
     }
 
     public void setPass(String Pass) {
-        this.Pass = Pass;
+        this.pass = Pass;
     }
 }

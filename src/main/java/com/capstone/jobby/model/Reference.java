@@ -1,6 +1,7 @@
 package com.capstone.jobby.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,12 +14,15 @@ public class Reference implements Serializable {
 
     @Column(name="referencePhone")
     @Id
+    @NotNull
     private Long Phone;
 
     @Column(name="referenceName")
+    @NotNull
     private String Name;
 
     @Column(name="referencEmail")
+    @NotNull
     private String Email;
 
     public Candidate getCandidate() {
