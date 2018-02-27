@@ -2,6 +2,7 @@ package com.capstone.jobby.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,20 +13,30 @@ public class Company {
     private int id;
 
     @NotNull
+    @Size(min = 3, max = 40)
     @Column(name="companyName")
     private String name;
 
     @NotNull
+    @Size(min = 5, max = 30)
+    @Column(name="companyEmail")
+    private String email;
+
+    @NotNull
+    @Size(min = 3, max = 30)
     @Column(name="city")
     private String city;
 
     @NotNull
+    @Size(min = 3, max = 20)
     @Column(name="state")
     private String state;
 
     @Column(name="companyActivationStatus")
     private Boolean Activation_Status;
 
+    @NotNull
+    @Size(min = 6, max = 15)
     @Column(name="companyPass")
     private String pass;
 
@@ -46,6 +57,10 @@ public class Company {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
 
     public String getCity() { return city; }
 

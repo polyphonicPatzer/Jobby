@@ -1,6 +1,7 @@
 package com.capstone.jobby.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Candidate {
@@ -10,10 +11,12 @@ public class Candidate {
     private int id;
 
     @NotNull
+    @Size(min = 5, max = 30)
     @Column(name="candidateName")
     private String name;
 
     @NotNull
+    @Size(min = 5, max = 30)
     @Column(name="candidateEmail")
     private String email;
 
@@ -21,6 +24,8 @@ public class Candidate {
     @JoinColumn(name="resumeId")
     private Resume resume;
 
+    @NotNull
+    @Size(min = 6, max = 15)
     @Column(name="candidatePass")
     private String pass;
 
