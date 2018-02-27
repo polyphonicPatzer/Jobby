@@ -25,6 +25,10 @@ nav ul li a {
 nav ul li a, nav .brand-logo span {
     color: #d6c5ec;
 }
+.menu  {
+    color: #ffffff;
+    float: left;
+}
 
 nav ul li.active, nav ul li:hover {
     background-color: inherit;
