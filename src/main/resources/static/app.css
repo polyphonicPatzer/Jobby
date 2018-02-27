@@ -622,12 +622,13 @@ label.button {
     background: #D3D3D3;
     padding: 20px;
     width: 200px;
-    height: 300px;
+    height: 600px;
     width: 70%;
     margin: 0 auto;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
+    min-width: 590;
 }
 
 .rCorners2 {
