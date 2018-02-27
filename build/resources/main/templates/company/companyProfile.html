@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="companyLayout :: head('register')"></head>
+<body>
+<div th:replace="companyLayout :: nav"></div>
+<div th:replace="companyLayout :: searchbar"></div>
+<div th:replace="companyLayout :: flash"></div>
+<div class="gifs container">
+    <div class="row">
+        <div th:each="gif : ${gifs}" class="col s12 l4">
+            <a th:href="@{|/gifs/${gif.id}|}" class="actions">
+                <img th:src="@{|/gifs/${gif.id}.gif|}" alt="gif" />
+                <form th:action="@{|/gifs/${gif.id}/favorite|}" method="post">
+                    <button type="submit" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></button>
+                </form>
+            </a>
+        </div>
+    </div>
+</div>
+<div th:replace="companyLayout :: scripts"></div>
+
+
+
+
+</body>
+</html>
