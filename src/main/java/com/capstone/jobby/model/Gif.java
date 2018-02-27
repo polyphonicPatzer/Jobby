@@ -12,6 +12,7 @@ public class Gif {
 
     @Lob
     private byte[] bytes;
+
     private String description;
 
     @ManyToOne

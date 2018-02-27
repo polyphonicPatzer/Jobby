@@ -11,17 +11,18 @@ public class Candidate {
 
     @NotNull
     @Column(name="candidateName")
-    private String Name;
+    private String name;
 
     @NotNull
     @Column(name="candidateEmail")
-    private String Email;
+    private String email;
 
-    @Column(name="candidateResume")
-    private String Resume;
+    @OneToOne
+    @JoinColumn(name="resumeId")
+    private Resume resume;
 
     @Column(name="candidatePass")
-    private String Pass;
+    private String pass;
 
     public Candidate() {}
 
@@ -34,34 +35,34 @@ public class Candidate {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public String getResume() {
-        return Resume;
+    public Resume getResume() {
+        return resume;
     }
 
-    public void setResume(String resume) {
-        Resume = resume;
+    public void setResume(Resume resume) {
+        this.resume = resume;
     }
 
     public String getPass() {
-        return Pass;
+        return pass;
     }
 
     public void setPass(String pass) {
-        Pass = pass;
+        this.pass = pass;
     }
 }
