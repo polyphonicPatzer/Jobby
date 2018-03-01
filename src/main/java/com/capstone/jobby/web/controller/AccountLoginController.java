@@ -45,11 +45,24 @@ public class AccountLoginController {
         return "account/employeeRegistration";
     }
 
-    // Create Employee Account
-    @RequestMapping("/company_registration")
-    public String cRegister(Model model){
-        return "account/companyRegistration";
+    // Create Account
+    @RequestMapping("/select_account_type")
+    public String selectType(Model model){
+        return "account/selectType";
     }
+
+    // Login Candidate Account
+    @RequestMapping("/candidate_login")
+    public String loginCandidate(Model model){
+        return "account/candidateLogin";
+    }
+
+    // Login Company Account
+    @RequestMapping("/company_login")
+    public String loginCompany(Model model){
+        return "account/companyLogin";
+    }
+
 
     // Account Login
     @RequestMapping("/account_login")

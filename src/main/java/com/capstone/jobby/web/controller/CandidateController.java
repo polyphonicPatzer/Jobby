@@ -19,7 +19,7 @@ public class CandidateController {
     private CandidateService candidateService;
 
     // Form for creating a new candidate
-    @RequestMapping("/candidateRegistration")
+    @RequestMapping("/candidate_registration")
     public String formNewCandidate(Model model) {
         // Add model attributes needed for new Candidate upload form
         if(!model.containsAttribute("candidate")) {
@@ -44,7 +44,7 @@ public class CandidateController {
             redirectAttributes.addFlashAttribute("candidate", candidate);
 
             // Redirect back to the form
-            return "redirect:/candidateRegistration";
+            return "redirect:/candidate_registration";
         }
 
         candidateService.save(candidate);

@@ -24,7 +24,7 @@ public class CompanyController {
     private CompanyService companyService;
 
     // Form for creating a new Company
-    @RequestMapping("/companyRegistration")
+    @RequestMapping("/company_registration")
     public String formNewCompany(Model model) {
         // Add model attributes needed for new Company upload form
         if(!model.containsAttribute("company")) {
@@ -49,7 +49,7 @@ public class CompanyController {
             redirectAttributes.addFlashAttribute("company", company);
 
             // Redirect back to the form
-            return "redirect:/companyRegistration";
+            return "redirect:/company_registration";
         }
 
         companyService.save(company);
