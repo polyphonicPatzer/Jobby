@@ -21,15 +21,18 @@
 <div th:fragment="nav" class="navbar-fixed">
     <nav>
         <div class="container">
-            <a th:href="@{/}" class="brand-logo">CANDIDATE</a>
+            <ul>
+                <li><a th:href="@{/error}" class="menu">Job Matches</a></li>
+                <li><a th:href="@{/candidate_profile}" class="menu">My Profile</a></li>
+            </ul>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_login') ? 'active' : ''}"><a th:href="@{/account_login}">Login</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_registration') ? 'active' : ''}"><a th:href="@{/account_registration}">Sign Up</a></li>
+                <li><p style=" margin: 0;">myemail@gmail.com</p></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Logout</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_login') ? 'active' : ''}"><a th:href="@{/account_login}">Login</a></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/account_registration') ? 'active' : ''}"><a th:href="@{/account_registration}">Sign Up</a></li>
+                <li><p style=" margin: 0;">myemail@gmail.com</p></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Logout</a></li>
             </ul>
         </div>
     </nav>

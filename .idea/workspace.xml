@@ -2,24 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c48129d3-7b43-43cf-8365-9e5a0cebd2ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/account/companyRegistrationForm.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/candidate/candidateProfile.html" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/outputFileStates.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/AccountLoginController.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" />
-      <change beforePath="$PROJECT_DIR$/data/jobby.mv.db" afterPath="$PROJECT_DIR$/data/jobby.mv.db" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountLoginController.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/account/candidateRegistrationForm.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/account/candidateRegistrationForm.html" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/candidate/registrationForm.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/candidateLayout.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/candidateLayout.html" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/company/registrationForm.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/companyLayout.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/companyLayout.html" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/candidate/registrationForm.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/account/candidateRegistrationForm.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/company/registrationForm.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/account/companyRegistrationForm.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -74,94 +71,72 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="candidateRegistrationForm.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html">
+    <leaf>
+      <file leaf-file-name="candidateProfile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/candidate/candidateProfile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="companyRegistrationForm.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/companyRegistrationForm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9795">
-              <caret line="653" column="13" lean-forward="false" selection-start-line="653" selection-start-column="13" selection-end-line="653" selection-end-column="13" />
+            <state relative-caret-position="90">
+              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java">
+      <file leaf-file-name="candidateLayout.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="146" column="47" lean-forward="true" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1177#1178#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-                <element signature="e#1327#1328#0" expanded="true" />
-                <element signature="e#1379#1380#0" expanded="true" />
-                <element signature="e#4762#4763#0" expanded="true" />
-                <element signature="e#4805#4806#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selectType.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/selectType.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="235">
+              <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accountRegistration.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/accountRegistration.html">
+      <file leaf-file-name="CandidateController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="165">
+              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.html">
+      <file leaf-file-name="CategoryController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CategoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="26" column="98" lean-forward="false" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+            <state relative-caret-position="910">
+              <caret line="110" column="9" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/app.properties">
+      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="150">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="companyLayout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/companyLayout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="companyProfile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/company/companyProfile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -180,7 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>margin</find>
       <find>corners2</find>
       <find>text</find>
       <find>border-bo</find>
@@ -210,6 +184,7 @@
       <find>Create an account to get started posting jobs and finding matched candidates.</find>
       <find>addcandidate</find>
       <find>account_login</find>
+      <find>company_profile</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -534,8 +509,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/category/form.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/company.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/account/companyRegistration.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/companyLayout.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/company/companyProfile.html" />
         <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/account/employeeRegistration.html" />
@@ -553,10 +526,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/registrationForm.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/company/registrationForm.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/layout.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountLoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/candidateProfile.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/companyLayout.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html" />
       </list>
     </option>
   </component>
@@ -581,7 +558,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -696,6 +672,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="candidate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="category" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -729,9 +714,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -915,37 +901,57 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="33" y="23" width="1180" height="728" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37914693" sideWeight="0.50921273" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29020557" sideWeight="0.49078727" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28683835" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.49713877" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10014306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37914693" sideWeight="0.50921273" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33807266" sideWeight="0.49078727" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28822497" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09929701" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270142" sideWeight="0.49413735" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33807266" sideWeight="0.49078727" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28822497" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.49713877" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09929701" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -956,13 +962,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ReferenceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/SkillDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1054,20 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/companyLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Resume.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -1140,14 +1125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="110" column="9" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistration.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1182,22 +1159,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/companyRegistration.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/select_type.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/company/companyProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/accountLogin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="222">
           <caret line="16" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="7" />
           <folding />
         </state>
@@ -1205,7 +1174,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/companyLogin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="158">
           <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding />
         </state>
@@ -1213,7 +1182,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/candidateLogin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
+        <state relative-caret-position="421">
           <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding />
         </state>
@@ -1221,19 +1190,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9795">
+        <state relative-caret-position="261">
           <caret line="653" column="13" lean-forward="false" selection-start-line="653" selection-start-column="13" selection-end-line="653" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1241,16 +1200,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="26" column="98" lean-forward="false" selection-start-line="26" selection-start-column="98" selection-end-line="26" selection-end-column="98" />
+        <state relative-caret-position="416">
+          <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1259,29 +1215,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/selectType.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="330">
           <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding />
         </state>
@@ -1289,7 +1228,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/accountRegistration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
+        <state relative-caret-position="255">
           <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
@@ -1300,14 +1239,80 @@
         <state relative-caret-position="170">
           <caret line="146" column="47" lean-forward="true" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1327#1328#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
-            <element signature="e#4762#4763#0" expanded="true" />
-            <element signature="e#4805#4806#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="e#1209#1210#0" expanded="false" />
+            <element signature="e#1327#1328#0" expanded="false" />
+            <element signature="e#1379#1380#0" expanded="false" />
+            <element signature="e#4762#4763#0" expanded="false" />
+            <element signature="e#4805#4806#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/candidateRegistrationForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/company/companyProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/candidate/candidateProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="110" column="9" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/companyLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
