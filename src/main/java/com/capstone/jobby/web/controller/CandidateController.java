@@ -18,42 +18,5 @@ public class CandidateController {
     @Autowired
     private CandidateService candidateService;
 
-    // Form for creating a new candidate
-    @RequestMapping("/candidate_registration")
-    public String formNewCandidate(Model model) {
-        // Add model attributes needed for new Candidate upload form
-        if(!model.containsAttribute("candidate")) {
-            model.addAttribute("candidate",new Candidate());
-        }
-        model.addAttribute("action","/addCandidate");
-        model.addAttribute("heading","Sign Up");
-        model.addAttribute("submit","Sign Up");
-
-        return "candidate/registrationForm";
-    }
-
-    // Add a new Candidate
-    @RequestMapping(value = "/addCandidate", method = RequestMethod.POST)
-    public String addCandidate(@Valid Candidate candidate, BindingResult result, RedirectAttributes redirectAttributes) {
-        // Upload new Candidate if data is valid
-        if(result.hasErrors()) {
-            // Include validation errors upon redirect
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.candidate", result);
-
-            // Add  category if invalid was received
-            redirectAttributes.addFlashAttribute("candidate", candidate);
-
-            // Redirect back to the form
-            return "redirect:/candidate_registration";
-        }
-
-        candidateService.save(candidate);
-
-        // Add flash message for success
-        redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
-
-        // Redirect browser to new Candidate's home view. Replace this with homepage when created.
-        return String.format("redirect:/candidate/%s","..");
-    }
 
 }
