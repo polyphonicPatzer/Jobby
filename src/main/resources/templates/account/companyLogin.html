@@ -5,38 +5,30 @@
 <div th:replace="layout :: nav"></div>
 <div th:replace="layout :: login"></div>
 <div th:replace="layout :: flash"></div>
-<div class="gifs container">
-    <div class="row">
-        <div th:each="gif : ${gifs}" class="col s12 l4">
-            <a th:href="@{|/gifs/${gif.id}|}" class="actions">
-                <img th:src="@{|/gifs/${gif.id}.gif|}" alt="gif" />
-                <form th:action="@{|/gifs/${gif.id}/favorite|}" method="post">
-                    <button type="submit" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></button>
-                </form>
-            </a>
-        </div>
-    </div>
-</div>
-<div th:replace="layout :: scripts"></div>
 
 <h1 style="margin-left: 25%">Company Login</h1>
 <div class="grayContainer">
     <div th:fragment="login">
         <div class="row">
             <div class="col s12">
-                <form th:action="@{/search}" method="get">
+                <form th:action="@{${action}}" th:object="${company}" method="post">
+                    <!--
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    -->
                     <div class="input-field" style="width: 70%; margin: 0 auto;">
-                        <input name="q" type="text" placeholder="Username/Email" required="required" autocomplete="off"/>
+                        <input type="text" th:field="*{username}" placeholder="Username/Email"/>
                     </div>
                     <div class="input-field" style="width: 70%; margin: 0 auto;">
-                        <input name="q" type="password" placeholder="Password" required="required" autocomplete="off"/>
+                        <input type="password" th:field="*{password}" placeholder="Password"/>
                     </div>
-                    <button class="button" type="submit" style="text-align: center;">Login</button>Forgot password?
+                    <button class="button" type="${submit}" style="text-align: center;">Login</button>Forgot password?
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<div th:replace="layout :: scripts"></div>
 
 </body>
 </html>

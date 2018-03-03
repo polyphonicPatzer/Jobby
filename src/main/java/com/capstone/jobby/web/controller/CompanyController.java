@@ -1,8 +1,6 @@
 package com.capstone.jobby.web.controller;
 
-import com.capstone.jobby.model.Category;
 import com.capstone.jobby.model.Company;
-import com.capstone.jobby.service.CategoryService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.web.Color;
 import com.capstone.jobby.web.FlashMessage;
@@ -22,8 +20,6 @@ import java.util.List;
 public class CompanyController {
     @Autowired
     private CompanyService companyService;
-
-
 
     @RequestMapping("/company_profile")
     public String companyProfile(Model model){

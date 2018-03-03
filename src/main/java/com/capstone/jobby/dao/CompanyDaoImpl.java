@@ -41,9 +41,20 @@ public class CompanyDaoImpl implements CompanyDao {
 
     @Override
     public Company findById(Long id) {
+        System.out.println("\n\n\n\nINSIDE FIND BY ID!! \n\n\n\n");
         Session session = sessionFactory.openSession();
         Company company = session.get(Company.class,id);
         session.close();
+        return company;
+    }
+
+    @Override
+    public Company findByUsername(String email) {
+        System.out.println("\n\n\n\nINSIDE FIND USERNAME!! \n\n\n\n");
+        Session session = sessionFactory.openSession();
+        Company company = session.byNaturalId(Company.class)
+                .using("email", email)
+                .load();
         return company;
     }
 

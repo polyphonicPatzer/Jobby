@@ -2,11 +2,9 @@ package com.capstone.jobby.web.controller;
 
 import com.capstone.jobby.model.Candidate;
 import com.capstone.jobby.model.Company;
-import com.capstone.jobby.model.Gif;
+import com.capstone.jobby.model.Role;
 import com.capstone.jobby.service.CandidateService;
-import com.capstone.jobby.service.CategoryService;
 import com.capstone.jobby.service.CompanyService;
-import com.capstone.jobby.service.GifService;
 import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -71,13 +69,23 @@ public class AccountController {
             return "redirect:/candidate_registration";
         }
 
+        //Assign Candidate role
+        Role role = new Role();
+        role.setId(Integer.toUnsignedLong(2));
+        role.setName("ROLE_CANDIDATE");
+        candidate.setRole(role);
+
+        //Enable Candidate account
+        candidate.setEnabled(true);
+
+        //Save Candidate to database
         candidateService.save(candidate);
 
         // Add flash message for success
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Candidate's home view. Replace this with homepage when created.
-        return String.format("redirect:/candidate/%s","..");
+        return String.format("redirect:/candidate_login");
     }
 
     // Form for creating a new Company
@@ -106,16 +114,26 @@ public class AccountController {
             redirectAttributes.addFlashAttribute("company", company);
 
             // Redirect back to the form
-            return "redirect:company_registration";
+            return "redirect:/company_registration";
         }
 
+        //Assign Company role
+        Role role = new Role();
+        role.setId(Integer.toUnsignedLong(1));
+        role.setName("ROLE_COMPANY");
+        company.setRole(role);
+
+        //Enable Company account
+        company.setEnabled(true);
+
+        //Save company to database
         companyService.save(company);
 
         // Add flash message for success
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Company's home view. Replace this with homepage when created.
-        return String.format("redirect:/company/%s","..");
+        return String.format("redirect:/company_login");
     }
 
     // Select account type for logging in
@@ -128,9 +146,12 @@ public class AccountController {
     // Login Candidate Account
     @RequestMapping(path = "/candidate_login", method = RequestMethod.GET)
     public String candidateLoginForm(Model model, HttpServletRequest request) {
+        model.addAttribute("candidate", new Candidate());
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
+            model.addAttribute("action", "/candidate_login");
+            model.addAttribute("submit","Login");
 
             request.getSession().removeAttribute("flash");
         } catch (Exception e) {
@@ -142,9 +163,12 @@ public class AccountController {
     // Login Company Account
     @RequestMapping(path = "/company_login", method = RequestMethod.GET)
     public String loginCompanyForm(Model model, HttpServletRequest request) {
+        model.addAttribute("company", new Company());
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
+            model.addAttribute("action", "/company_login");
+            model.addAttribute("submit","Login");
 
             request.getSession().removeAttribute("flash");
         }  catch (Exception e) {

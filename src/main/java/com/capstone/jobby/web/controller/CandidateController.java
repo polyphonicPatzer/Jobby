@@ -18,5 +18,9 @@ public class CandidateController {
     @Autowired
     private CandidateService candidateService;
 
+    @RequestMapping("/candidate_profile")
+    public String candidateProfile(Model model){
+        return "candidate/candidateProfile";
+    }
 
 }
