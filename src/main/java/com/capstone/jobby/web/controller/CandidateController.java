@@ -23,8 +23,4 @@ public class CandidateController {
         return "candidate/candidateProfile";
     }
 
-    @RequestMapping("/candidate_profile")
-    public String companyProfile(Model model){
-        return "candidate/candidateProfile";
-    }
 }
