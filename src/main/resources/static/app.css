@@ -513,6 +513,7 @@ input[type=password]:focus:not([readonly]) {
 .redButton[type=submit] {
     background: #CA0813;
     color: #ffffff;
+    line-height: 1.5;
 }
 
 .user-meta {

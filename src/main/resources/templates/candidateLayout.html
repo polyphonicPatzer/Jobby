@@ -20,7 +20,10 @@
 
 <div th:fragment="nav" class="navbar-fixed">
     <nav>
-        <div class="container">
+        <div class="container" style="width: 90%;">
+            <div style="float: left;">
+                <img class="imgCenter" style="height:64px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Profile Picture" />
+            </div>
             <ul>
                 <li><a th:href="@{/error}" class="menu">Job Matches</a></li>
                 <li><a th:href="@{/candidate_profile}" class="menu">My Profile</a></li>
