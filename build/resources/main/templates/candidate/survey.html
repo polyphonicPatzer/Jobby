@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="candidateLayout :: head('profile')"></head>
+<body>
+<div th:replace="candidateLayout :: nav"></div>
+<div th:replace="candidateLayout :: searchbar"></div>
+<div th:replace="candidateLayout :: flash"></div>
+<div class="gifs container">
+    <div class="row">
+        <div th:each="gif : ${gifs}" class="col s12 l4">
+            <a th:href="@{|/gifs/${gif.id}|}" class="actions">
+                <img th:src="@{|/gifs/${gif.id}.gif|}" alt="gif" />
+                <form th:action="@{|/gifs/${gif.id}/favorite|}" method="post">
+                    <button type="submit" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></button>
+                </form>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="grayContainerRounded" style="width:85%; border-radius: 0px; height: fit-content; overflow: hidden;">
+    <p style="font-size: 17px;font-weight: normal; text-align: left;"> Welcome! Please answer the following questions, and you will be one step closer to finding a job match</p>
+    <div class="grayContainer" style="width: 100%; height: fit-content; ">
+        <p style="font-size:14px; text-align: left;">Please rate yourself. On a scale of 1-5 (5 being Strongly Agree)</p>
+
+        <div>
+            <p style="font-size:14px; text-align: left;">1. Understanding of basic functions of computer hardware components such as the CPU?</p>
+            <form method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
+                <div><input type="radio" name="1" value="1" /> 1 (Poor)</div>
+                <div><input type="radio" name="1" value="2" /> 2</div>
+                <div><input type="radio" name="1" value="3" /> 3 (Intermediate)</div>
+                <div><input type="radio" name="1" value="4" /> 4</div>
+                <div><input type="radio" name="1" value="5" /> 5 (Expert)</div>
+            </form>
+        </div>
+        <div>
+            <p style="font-size:14px; text-align: left;">2. Understanding of java?</p>
+            <form method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
+                <div><input type="radio" name="1" value="1" /> 1 (Poor)</div>
+                <div><input type="radio" name="1" value="2" /> 2</div>
+                <div><input type="radio" name="1" value="3" /> 3 (Intermediate)</div>
+                <div><input type="radio" name="1" value="4" /> 4</div>
+                <div><input type="radio" name="1" value="5" /> 5 (Expert)</div>
+            </form>
+        </div>
+    </div>
+
+    <button type="submit" style=" margin-right: 0%; margin-top: 10px; float:right;" class="button">Finish</button>
+
+</div>
+
+
+<div th:replace="companyLayout :: scripts"></div>
+</body>
+</html>

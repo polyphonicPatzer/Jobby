@@ -23,4 +23,9 @@ public class CandidateController {
         return "candidate/candidateProfile";
     }
 
+    @RequestMapping("/survey")
+    public String candidateSurvey(Model model){
+        return "candidate/survey";
+    }
+
 }
