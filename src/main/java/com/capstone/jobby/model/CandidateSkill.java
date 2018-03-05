@@ -16,6 +16,9 @@ public class CandidateSkill implements Serializable {
     @Id
     private Skill skill;
 
+    @Column
+    private int skillRating;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

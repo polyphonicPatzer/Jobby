@@ -1,6 +1,7 @@
 package com.capstone.jobby.dao;
 
 import com.capstone.jobby.model.CandidateSkill;
+import com.capstone.jobby.model.CandidateSurveyResults;
 
 import java.util.List;
 
