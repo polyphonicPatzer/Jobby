@@ -1,5 +1,6 @@
 package com.capstone.jobby.config;
 
+import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,13 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private CompanyService companyService;
+    @Autowired
+    private CandidateService candidateService;
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(companyService);
+        auth.userDetailsService(candidateService);
                 //.passwordEncoder(passwordEncoder());
     }
 
@@ -39,7 +43,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/static/**");
+        web.ignoring().antMatchers( "/images/**",
+                "/vendor/**",
+                "/app.css",
+                "/app.js",
+                "/favicon.png");
     }
 
     @Override
@@ -49,46 +57,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/",
                             "/account_registration",
                             "/candidate_registration",
+                            "/addCandidate",
                             "/company_registration",
+                            "/addCompany",
                             "/select_account_type",
                             "/candidate_login",
-                            "/company_login",
-                            "/jobs",
-                            "company_profile").permitAll()
-                    //.anyRequest().hasRole("COMPANY")
+                            "/company_login").permitAll()
+                    .antMatchers("/company_profile").hasRole("COMPANY")
+                    .anyRequest().authenticated()
                     .and()
                 .formLogin()
+                    //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
                     .loginPage("/company_login")
                     .permitAll()
                     .successHandler(companyLoginSuccessHandler())
                     .failureHandler(companyLoginFailureHandler())
                     .and()
-//                .formLogin()
-//                    .loginPage("/candidate_login")
-//                    .successHandler(candidateLoginSuccessHandler())
-//                    .failureHandler(candidateLoginFailureHandler())
-//                    .permitAll()
-//                    .and()
                 .logout()
-                    .permitAll()
-                    .logoutSuccessUrl("/")
-                    .and()
-                .csrf();
+                    .logoutSuccessUrl("/");
 
-//                .authorizeRequests()
-//                .anyRequest().hasRole("USER")
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .permitAll()
-//                .successHandler(loginSuccessHandler())
-//                .failureHandler(loginFailureHandler())
-//                .and()
-//                .logout()
-//                .permitAll()
-//                .logoutSuccessUrl("/login")
-//                .and()
-//                .csrf();
     }
 
     public AuthenticationSuccessHandler companyLoginSuccessHandler() {
@@ -102,16 +89,71 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         };
     }
 
-    public AuthenticationSuccessHandler candidateLoginSuccessHandler() {
-        return (request, response, authentication) -> response.sendRedirect("/candidate_profile");
-    }
 
-    public AuthenticationFailureHandler candidateLoginFailureHandler() {
-        return (request, response, exception) -> {
-            request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
-            response.sendRedirect("/candidate_login");
-        };
-    }
+
+
+
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeRequests()
+//                    .antMatchers("/",
+//                            "/account_registration",
+//                            "/candidate_registration",
+//                            "/company_registration",
+//                            "/select_account_type",
+//                            "/candidate_login",
+//                            "/company_login",
+//                            "/jobs",
+//                            "company_profile").permitAll()
+//                    //.anyRequest().hasRole("COMPANY")
+//                    .and()
+//                .formLogin()
+//                    .loginPage("/company_login")
+//                    .permitAll()
+//                    .successHandler(companyLoginSuccessHandler())
+//                    .failureHandler(companyLoginFailureHandler())
+//                    .and()
+////                .formLogin()
+////                    .loginPage("/candidate_login")
+////                    .successHandler(candidateLoginSuccessHandler())
+////                    .failureHandler(candidateLoginFailureHandler())
+////                    .permitAll()
+////                    .and()
+//                .logout()
+//                    .permitAll()
+//                    .logoutSuccessUrl("/")
+//                    .and()
+//                .csrf();
+//
+////                .authorizeRequests()
+////                .anyRequest().hasRole("USER")
+////                .and()
+////                .formLogin()
+////                .loginPage("/login")
+////                .permitAll()
+////                .successHandler(loginSuccessHandler())
+////                .failureHandler(loginFailureHandler())
+////                .and()
+////                .logout()
+////                .permitAll()
+////                .logoutSuccessUrl("/login")
+////                .and()
+////                .csrf();
+//    }
+//
+
+//
+//    public AuthenticationSuccessHandler candidateLoginSuccessHandler() {
+//        return (request, response, authentication) -> response.sendRedirect("/candidate_profile");
+//    }
+//
+//    public AuthenticationFailureHandler candidateLoginFailureHandler() {
+//        return (request, response, exception) -> {
+//            request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
+//            response.sendRedirect("/candidate_login");
+//        };
+//    }
 
 //    @Bean
 //    public EvaluationContextExtension securityExtension() {
