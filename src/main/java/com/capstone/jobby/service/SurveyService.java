@@ -1,13 +1,12 @@
-package com.capstone.jobby.dao;
+package com.capstone.jobby.service;
 
 import com.capstone.jobby.model.CandidateSkill;
 import com.capstone.jobby.model.CandidateSurveyResults;
-
 import java.util.List;
 
-public interface CandidateSkillDao {
+public interface SurveyService {
     List<CandidateSkill> findAll();
     CandidateSkill findById(Long id);
-    void save(CandidateSkill candidateSkill);
-    void delete(CandidateSkill candidateSkill);
+    void save(CandidateSkill candidate);
+    void delete(CandidateSkill candidate);
 }
