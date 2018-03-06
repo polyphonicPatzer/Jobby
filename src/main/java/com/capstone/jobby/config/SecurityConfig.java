@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 //import org.springframework.data.repository.query.spi.EvaluationContextExtension;
 //import org.springframework.data.repository.query.spi.EvaluationContextExtensionSupport;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.access.expression.SecurityExpressionRoot;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,21 +25,15 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private CompanyService companyService;
-    @Autowired
-    private CandidateService candidateService;
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(companyService);
-        auth.userDetailsService(candidateService);
-                //.passwordEncoder(passwordEncoder());
-    }
-
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder(10);
+//    @Autowired
+//    private CandidateService candidateService;
+//
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(companyService);
+//        auth.userDetailsService(candidateService);
+//                //.passwordEncoder(passwordEncoder());
 //    }
 
     @Override
@@ -48,46 +43,136 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/app.css",
                 "/app.js",
                 "/favicon.png");
+        web.debug(true);
     }
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                    .antMatchers("/",
-                            "/account_registration",
-                            "/candidate_registration",
-                            "/addCandidate",
-                            "/company_registration",
-                            "/addCompany",
-                            "/select_account_type",
-                            "/candidate_login",
-                            "/company_login").permitAll()
-                    .antMatchers("/company_profile").hasRole("COMPANY")
-                    .anyRequest().authenticated()
+    @Configuration
+    @Order(1)
+    public static class HomePageSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/")
+                    .authorizeRequests().anyRequest().permitAll();
+
+        }
+    }
+
+    @Configuration
+    @Order(2)
+    public static class AccountSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/account/*")
+                    .authorizeRequests().anyRequest().permitAll();
+
+        }
+    }
+
+
+    @Configuration
+    @Order(3)
+    public static class CompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+
+        @Autowired
+        private CompanyService companyService;
+
+        @Autowired
+        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+            auth.userDetailsService(companyService);
+            //.passwordEncoder(passwordEncoder());
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/company/*").authorizeRequests().anyRequest().hasRole("COMPANY")
                     .and()
-                .formLogin()
+                    .formLogin()
                     //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
-                    .loginPage("/company_login")
-                    .permitAll()
+                    .loginPage("/company/companyLogin").permitAll()
+                    //THIS PERMIT ALL MAY NOT BE NECESSARY
+                    //.permitAll()
                     .successHandler(companyLoginSuccessHandler())
                     .failureHandler(companyLoginFailureHandler())
                     .and()
-                .logout()
+                    .logout()
                     .logoutSuccessUrl("/");
 
+        }
+
+        public AuthenticationSuccessHandler companyLoginSuccessHandler() {
+            System.out.println("\n\n\nINSIDE COMPANY LOGIN SUCCESS HANDLER\n\n\n");
+            return (request, response, authentication) -> response.sendRedirect("/company/companyProfile");
+        }
+
+        public AuthenticationFailureHandler companyLoginFailureHandler() {
+            System.out.println("\n\n\nINSIDE COMPANY LOGIN FAILURE HANDLER\n\n\n");
+            return (request, response, exception) -> {
+                request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
+                response.sendRedirect("/company/companyLogin");
+            };
+        }
     }
 
-    public AuthenticationSuccessHandler companyLoginSuccessHandler() {
-        return (request, response, authentication) -> response.sendRedirect("/company_profile");
+    @Configuration
+    @Order(4)
+    public static class CandidateSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+
+        @Autowired
+        private CandidateService candidateService;
+
+        @Autowired
+        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+            auth.userDetailsService(candidateService);
+            //.passwordEncoder(passwordEncoder());
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/candidate/*").authorizeRequests().anyRequest().hasRole("CANDIDATE")
+                    .and()
+                    .formLogin()
+                    //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
+                    .loginPage("/candidate/candidateLogin").permitAll()
+                    //THIS PERMIT ALL MAY NOT BE NECESSARY
+                    //.permitAll()
+                    .successHandler(candidateLoginSuccessHandler())
+                    .failureHandler(candidateLoginFailureHandler())
+                    .and()
+                    .logout()
+                    .logoutSuccessUrl("/");
+//                    .and()
+//                    .csrf();
+
+        }
+
+        public AuthenticationSuccessHandler candidateLoginSuccessHandler() {
+            return (request, response, authentication) -> response.sendRedirect("/candidate/candidateProfile");
+        }
+
+        public AuthenticationFailureHandler candidateLoginFailureHandler() {
+            return (request, response, exception) -> {
+                request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
+                response.sendRedirect("/candidate/candidateLogin");
+            };
+        }
     }
 
-    public AuthenticationFailureHandler companyLoginFailureHandler() {
-        return (request, response, exception) -> {
-            request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
-            response.sendRedirect("/company_login");
-        };
-    }
+
+
+
+
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder(10);
+//    }
+
+
+
+
 
 
 
@@ -144,16 +229,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //
 
 //
-//    public AuthenticationSuccessHandler candidateLoginSuccessHandler() {
-//        return (request, response, authentication) -> response.sendRedirect("/candidate_profile");
-//    }
-//
-//    public AuthenticationFailureHandler candidateLoginFailureHandler() {
-//        return (request, response, exception) -> {
-//            request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
-//            response.sendRedirect("/candidate_login");
-//        };
-//    }
+
 
 //    @Bean
 //    public EvaluationContextExtension securityExtension() {

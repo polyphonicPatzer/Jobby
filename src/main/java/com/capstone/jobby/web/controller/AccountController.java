@@ -35,19 +35,19 @@ public class AccountController {
     }
 
     // Create Account
-    @RequestMapping(value = "/account_registration")
+    @RequestMapping(value = "/account/accountRegistration")
     public String aRegister(Model model){
         return "account/accountRegistration";
     }
 
     // Form for creating a new candidate
-    @RequestMapping(value = "/candidate_registration")
+    @RequestMapping(value = "/account/candidateRegistration")
     public String formNewCandidate(Model model) {
         // Add model attributes needed for new Candidate upload form
         if(!model.containsAttribute("candidate")) {
             model.addAttribute("candidate",new Candidate());
         }
-        model.addAttribute("action","/addCandidate");
+        model.addAttribute("action","/account/addCandidate");
         model.addAttribute("heading","Sign Up");
         model.addAttribute("submit","Sign Up");
 
@@ -55,7 +55,7 @@ public class AccountController {
     }
 
     // Add a new Candidate
-    @RequestMapping(value = "/addCandidate", method = RequestMethod.POST)
+    @RequestMapping(value = "/account/addCandidate", method = RequestMethod.POST)
     public String addCandidate(@Valid Candidate candidate, BindingResult result, RedirectAttributes redirectAttributes) {
         // Upload new Candidate if data is valid
         if(result.hasErrors()) {
@@ -66,7 +66,7 @@ public class AccountController {
             redirectAttributes.addFlashAttribute("candidate", candidate);
 
             // Redirect back to the form
-            return "redirect:/candidate_registration";
+            return "redirect:/account/candidateRegistration";
         }
 
         //Assign Candidate role
@@ -85,17 +85,17 @@ public class AccountController {
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Candidate's home view. Replace this with homepage when created.
-        return String.format("redirect:/candidate_login");
+        return String.format("redirect:/candidate/candidateLogin");
     }
 
     // Form for creating a new Company
-    @RequestMapping(value = "/company_registration")
+    @RequestMapping(value = "/account/companyRegistration")
     public String formNewCompany(Model model) {
         // Add model attributes needed for new Company upload form
         if(!model.containsAttribute("company")) {
             model.addAttribute("company",new Company());
         }
-        model.addAttribute("action","/addCompany");
+        model.addAttribute("action","/account/addCompany");
         model.addAttribute("heading","Sign Up");
         model.addAttribute("submit","Sign Up");
 
@@ -103,7 +103,7 @@ public class AccountController {
     }
 
     // Add a new Company
-    @RequestMapping(value = "/addCompany", method = RequestMethod.POST)
+    @RequestMapping(value = "/account/addCompany", method = RequestMethod.POST)
     public String addCompany(@Valid Company company, BindingResult result, RedirectAttributes redirectAttributes) {
         // Upload new Company if data is valid
         if(result.hasErrors()) {
@@ -114,7 +114,7 @@ public class AccountController {
             redirectAttributes.addFlashAttribute("company", company);
 
             // Redirect back to the form
-            return "redirect:/company_registration";
+            return "redirect:/account/companyRegistration";
         }
 
         //Assign Company role
@@ -133,24 +133,24 @@ public class AccountController {
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Company's home view. Replace this with homepage when created.
-        return String.format("redirect:/company_login");
+        return String.format("redirect:/company/companyLogin"); //MAKE THIS THE GET URI AND HAVE THAT RETURN THE POST URI
     }
 
     // Select account type for logging in
-    @RequestMapping(value = "/select_account_type")
+    @RequestMapping(value = "/account/selectType")
     public String selectType(Model model){
         return "account/selectType";
     }
 
 
     // Login Candidate Account
-    @RequestMapping(path = "/candidate_login", method = RequestMethod.GET)
+    @RequestMapping(value = "/candidate/candidateLogin", method = RequestMethod.GET)
     public String candidateLoginForm(Model model, HttpServletRequest request) {
         model.addAttribute("candidate", new Candidate());
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
-            model.addAttribute("action", "/candidate_login");
+            model.addAttribute("action", "/candidate/candidateLogin"); //MAKE THIS CALL THE POSTER
             model.addAttribute("submit","Login");
 
             request.getSession().removeAttribute("flash");
@@ -161,13 +161,13 @@ public class AccountController {
     }
 
     // Login Company Account
-    @RequestMapping(path = "/company_login", method = RequestMethod.GET)
+    @RequestMapping(value = "/company/companyLogin", method = RequestMethod.GET)
     public String loginCompanyForm(Model model, HttpServletRequest request) {
         model.addAttribute("company", new Company());
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
-            model.addAttribute("action", "/company_login");
+            model.addAttribute("action", "/company/companyLogin"); //MAKE THIS CALL THE POSTER
             model.addAttribute("submit","Login");
 
             request.getSession().removeAttribute("flash");
@@ -176,5 +176,4 @@ public class AccountController {
         }
         return "account/companyLogin";
     }
-
 }

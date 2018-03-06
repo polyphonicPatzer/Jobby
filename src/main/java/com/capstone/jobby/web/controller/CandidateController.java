@@ -16,17 +16,17 @@ public class CandidateController {
     @Autowired
     private CandidateSkillService candidateSkillService;
 
-    @RequestMapping("/candidate_profile")
+    @RequestMapping("/candidate/candidateProfile")
     public String candidateProfile(Model model){
         return "candidate/candidateProfile";
     }
 
-    @RequestMapping("/survey")
+    @RequestMapping("/candidate/survey")
     public String candidateSurvey(Model model){
         return "candidate/survey";
     }
 
-    @RequestMapping(value = "/submitSurvey", method = RequestMethod.POST)
+    @RequestMapping(value = "/candidate/submitSurvey", method = RequestMethod.POST)
     public void submitSurvey(@Valid CandidateSurveyResults results, RedirectAttributes redirectAttributes){
         return;
     }
