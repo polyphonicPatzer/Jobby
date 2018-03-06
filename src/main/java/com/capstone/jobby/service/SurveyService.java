@@ -1,11 +1,12 @@
 package com.capstone.jobby.service;
 
+import com.capstone.jobby.model.CandidateSkill;
 import com.capstone.jobby.model.CandidateSurveyResults;
 import java.util.List;
 
 public interface SurveyService {
-    List<CandidateSurveyResults> findAll();
-    CandidateSurveyResults findById(Long id);
-    void save(CandidateSurveyResults candidate);
-    void delete(CandidateSurveyResults candidate);
+    List<CandidateSkill> findAll();
+    CandidateSkill findById(Long id);
+    void save(CandidateSkill candidate);
+    void delete(CandidateSkill candidate);
 }
