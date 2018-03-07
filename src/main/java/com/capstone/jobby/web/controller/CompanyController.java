@@ -31,9 +31,15 @@ public class CompanyController {
         return "company/survey";
     }
 
-    @RequestMapping(value = "/company/logout", method = RequestMethod.GET)
-    public void companyLogout(Model model) {
-        return;
+    @RequestMapping(value = "/company/logout")
+    public String companyLogout(Model model) {
+        model.addAttribute("action","/company/logoutPost");
+        model.addAttribute("submit","Logout");
+        return "company/logout";
     }
 
+    @RequestMapping(value = "/company/logoutPost", method = RequestMethod.GET)
+    public void companyLogoutPost(Model model) {
+        return;
+    }
 }

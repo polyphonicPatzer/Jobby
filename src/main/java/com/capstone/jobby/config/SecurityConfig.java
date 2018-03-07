@@ -89,18 +89,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                     .logout()
                     .permitAll()
-                    .logoutUrl("/company/logout")
+                    .logoutUrl("/company/logoutPost")
                     .logoutSuccessUrl("/");
 
         }
 
         public AuthenticationSuccessHandler companyLoginSuccessHandler() {
-            System.out.println("\n\n\nINSIDE COMPANY LOGIN SUCCESS HANDLER\n\n\n");
             return (request, response, authentication) -> response.sendRedirect("/company/companyProfile");
         }
 
         public AuthenticationFailureHandler companyLoginFailureHandler() {
-            System.out.println("\n\n\nINSIDE COMPANY LOGIN FAILURE HANDLER\n\n\n");
             return (request, response, exception) -> {
                 request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
                 response.sendRedirect("/company/companyLogin");
@@ -136,7 +134,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                     .logout()
                     .permitAll()
-                    .logoutUrl("/candidate/logout")
+                    .logoutUrl("/candidate/logoutPost")
                     .logoutSuccessUrl("/");
 //                    .and()
 //                    .csrf();
