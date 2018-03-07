@@ -31,4 +31,20 @@ public class CandidateController {
         return;
     }
 
+    @RequestMapping(value = "/candidate/logout", method = RequestMethod.GET)
+    public void candidateLogout(Model model) {
+        return;
+    }
+
+//    @RequestMapping(value = "/candidate/logoutSubmit", method = RequestMethod.GET)
+//    public void candidateLogoutSubmit(Model model) {
+//        return;
+//    }
+
+//    @RequestMapping(value = "/candidate/logout", method = RequestMethod.GET)
+//    public String candidateLogout(Model model) {
+//        model.addAttribute("action","/candidate/logoutPost");
+//        model.addAttribute("submit","Logout");
+//        return "candidate/logout";
+//    }
 }

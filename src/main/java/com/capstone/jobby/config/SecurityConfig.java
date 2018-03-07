@@ -26,16 +26,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Autowired
-//    private CandidateService candidateService;
-//
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(companyService);
-//        auth.userDetailsService(candidateService);
-//                //.passwordEncoder(passwordEncoder());
-//    }
-
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers( "/images/**",
@@ -43,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/app.css",
                 "/app.js",
                 "/favicon.png");
-        web.debug(true);
+        //web.debug(true);
     }
 
     @Configuration
@@ -98,6 +88,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .failureHandler(companyLoginFailureHandler())
                     .and()
                     .logout()
+                    .permitAll()
+                    .logoutUrl("/company/logout")
                     .logoutSuccessUrl("/");
 
         }
@@ -143,6 +135,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .failureHandler(candidateLoginFailureHandler())
                     .and()
                     .logout()
+                    .permitAll()
+                    .logoutUrl("/candidate/logout")
                     .logoutSuccessUrl("/");
 //                    .and()
 //                    .csrf();
@@ -170,65 +164,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        return new BCryptPasswordEncoder(10);
 //    }
 
-
-
-
-
-
-
-
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                    .antMatchers("/",
-//                            "/account_registration",
-//                            "/candidate_registration",
-//                            "/company_registration",
-//                            "/select_account_type",
-//                            "/candidate_login",
-//                            "/company_login",
-//                            "/jobs",
-//                            "company_profile").permitAll()
-//                    //.anyRequest().hasRole("COMPANY")
-//                    .and()
-//                .formLogin()
-//                    .loginPage("/company_login")
-//                    .permitAll()
-//                    .successHandler(companyLoginSuccessHandler())
-//                    .failureHandler(companyLoginFailureHandler())
-//                    .and()
-////                .formLogin()
-////                    .loginPage("/candidate_login")
-////                    .successHandler(candidateLoginSuccessHandler())
-////                    .failureHandler(candidateLoginFailureHandler())
-////                    .permitAll()
-////                    .and()
-//                .logout()
-//                    .permitAll()
-//                    .logoutSuccessUrl("/")
-//                    .and()
-//                .csrf();
-//
-////                .authorizeRequests()
-////                .anyRequest().hasRole("USER")
-////                .and()
-////                .formLogin()
-////                .loginPage("/login")
-////                .permitAll()
-////                .successHandler(loginSuccessHandler())
-////                .failureHandler(loginFailureHandler())
-////                .and()
-////                .logout()
-////                .permitAll()
-////                .logoutSuccessUrl("/login")
-////                .and()
-////                .csrf();
-//    }
-//
-
-//
 
 
 //    @Bean
