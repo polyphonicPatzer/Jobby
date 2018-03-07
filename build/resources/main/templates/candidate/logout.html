@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="layout :: head('explore')"></head>
+<head th:replace="candidateLayout :: head('profile')"></head>
 <body>
-<div th:replace="layout :: nav"></div>
-<!--<div th:replace="layout :: login"></div>-->
-<div th:replace="layout :: flash"></div>
+<div th:replace="candidateLayout :: nav"></div>
+<div th:replace="candidateLayout :: searchbar"></div>
+<div th:replace="candidateLayout :: flash"></div>
 
 <h1 style="margin-left: 25%">Logout?</h1>
 <div class="grayContainerLogout">
-    <!--<div th:fragment="login">-->
         <div class="row">
             <div class="col s12">
                 <form th:action="@{${action}}" method="post">
@@ -17,7 +16,6 @@
                 </form>
             </div>
         </div>
-    <!--</div>-->
 </div>
 
 <div th:replace="layout :: scripts"></div>

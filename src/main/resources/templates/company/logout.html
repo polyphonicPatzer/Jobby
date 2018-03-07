@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="layout :: head('explore')"></head>
+<head th:replace="companyLayout :: head('profile')"></head>
 <body>
-<div th:replace="layout :: nav"></div>
-<div th:replace="layout :: flash"></div>
+<div th:replace="companyLayout :: nav"></div>
+<div th:replace="companyLayout :: searchbar"></div>
+<div th:replace="companyLayout :: flash"></div>
 
 <h1 style="margin-left: 25%">Logout?</h1>
 <div class="grayContainerLogout">
