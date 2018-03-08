@@ -1,6 +1,11 @@
 package com.capstone.jobby.model;
 
-public class CandidateSurveyResults {
+import java.util.Iterator;
+import java.util.*;
+
+public class CandidateSurveyResults implements Iterable{
+
+    private final List<CandidateSurveyResults> results = new ArrayList<CandidateSurveyResults>();
 
     private int q1;
     private int q2;
@@ -91,5 +96,15 @@ public class CandidateSurveyResults {
 
     public void setQ10(int q10) {
         this.q10 = q10;
+    }
+
+    public Integer[] getResults(){
+        Integer[] results = new Integer[]{q1,q2,q3,q4,q5,q6,q7,q8,q9,q10};
+        return results;
+    }
+
+    @Override
+    public Iterator<CandidateSurveyResults> iterator() {
+        return results.iterator();
     }
 }

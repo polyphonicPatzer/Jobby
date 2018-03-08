@@ -26,4 +26,9 @@ public class CompanyController {
         return "company/companyProfile";
     }
 
+    @RequestMapping("/company_survey")
+    public String companySurvey(Model model){
+        return "company/survey";
+    }
+
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.capstone.jobby.model.CandidateSkill;
 
 import javax.validation.Valid;
 
@@ -28,7 +29,10 @@ public class CandidateController {
 
     @RequestMapping(value = "/submitSurvey", method = RequestMethod.POST)
     public void submitSurvey(@Valid CandidateSurveyResults results, RedirectAttributes redirectAttributes){
-        return;
+        Integer[] res = results.getResults();
+        for (int i = 0; i<10; i++){
+            CandidateSkill temp = new CandidateSkill();
+            temp.setSkill(res[i]);
     }
 
 }

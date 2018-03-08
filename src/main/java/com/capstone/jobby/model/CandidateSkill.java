@@ -28,9 +28,28 @@ public class CandidateSkill implements Serializable {
                 Objects.equals(skill, that.skill);
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(candidate, skill);
+    public Candidate getCandidate() {
+        return candidate;
     }
+
+    public void setCandidate(Candidate candidate) {
+        this.candidate = candidate;
+    }
+
+    public Skill getSkill() {
+        return skill;
+    }
+
+    public void setSkill(Skill skill) {
+        this.skill = skill;
+    }
+
+    public int getSkillRating() {
+        return skillRating;
+    }
+
+    public void setSkillRating(int skillRating) {
+        this.skillRating = skillRating;
+    }
+
 }
