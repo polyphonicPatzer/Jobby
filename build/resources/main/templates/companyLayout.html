@@ -28,12 +28,12 @@
             </ul>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><p style=" margin: 0;">companyemail@gmail.com</p></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Logout</a></li>
+                <li sec:authentication = "name"></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/company/logout}">Logout</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li><p style=" margin: 0;">companyemail@gmail.com</p></li>
-                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/}">Logout</a></li>
+                <li sec:authentication = "name"></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/company/logout}">Logout</a></li>
             </ul>
         </div>
     </nav>

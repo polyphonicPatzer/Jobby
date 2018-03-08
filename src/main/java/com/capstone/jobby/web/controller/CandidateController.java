@@ -17,22 +17,34 @@ public class CandidateController {
     @Autowired
     private CandidateSkillService candidateSkillService;
 
-    @RequestMapping("/candidate_profile")
+    @RequestMapping("/candidate/candidateProfile")
     public String candidateProfile(Model model){
         return "candidate/candidateProfile";
     }
 
-    @RequestMapping("/survey")
+    @RequestMapping("/candidate/survey")
     public String candidateSurvey(Model model){
         return "candidate/survey";
     }
 
-    @RequestMapping(value = "/submitSurvey", method = RequestMethod.POST)
+    @RequestMapping(value = "/candidate/submitSurvey", method = RequestMethod.POST)
     public void submitSurvey(@Valid CandidateSurveyResults results, RedirectAttributes redirectAttributes){
         Integer[] res = results.getResults();
         for (int i = 0; i<10; i++){
             CandidateSkill temp = new CandidateSkill();
             temp.setSkill(res[i]);
+    }
+
+    @RequestMapping(value = "/candidate/logout")
+    public String candidateLogout(Model model) {
+        model.addAttribute("action","/candidate/logoutPost");
+        model.addAttribute("submit","Logout");
+        return "candidate/logout";
+    }
+
+    @RequestMapping(value = "/candidate/logoutPost", method = RequestMethod.GET)
+    public void candidateLogoutPost(Model model) {
+        return;
     }
 
 }

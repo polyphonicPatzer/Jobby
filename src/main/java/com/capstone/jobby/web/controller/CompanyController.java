@@ -21,14 +21,25 @@ public class CompanyController {
     @Autowired
     private CompanyService companyService;
 
-    @RequestMapping("/company_profile")
+    @RequestMapping("/company/companyProfile")
     public String companyProfile(Model model){
         return "company/companyProfile";
     }
 
-    @RequestMapping("/company_survey")
+    @RequestMapping("/company/survey")
     public String companySurvey(Model model){
         return "company/survey";
     }
 
+    @RequestMapping(value = "/company/logout")
+    public String companyLogout(Model model) {
+        model.addAttribute("action","/company/logoutPost");
+        model.addAttribute("submit","Logout");
+        return "company/logout";
+    }
+
+    @RequestMapping(value = "/company/logoutPost", method = RequestMethod.GET)
+    public void companyLogoutPost(Model model) {
+        return;
+    }
 }
