@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,7 @@ public class AccountController {
 
     // Add a new Candidate
     @RequestMapping(value = "/account/addCandidate", method = RequestMethod.POST)
-    public String addCandidate(@Valid Candidate candidate, BindingResult result, RedirectAttributes redirectAttributes) {
+    public String addCandidate(@Valid Candidate candidate, BindingResult result, RedirectAttributes redirectAttributes, HttpServletResponse response) {
         // Upload new Candidate if data is valid
         if(result.hasErrors()) {
             // Include validation errors upon redirect
@@ -80,6 +82,13 @@ public class AccountController {
 
         //Save Candidate to database
         candidateService.save(candidate);
+
+        //Fetch candidate w/ ID to set cookie
+        Candidate c = candidateService.findByUsername(candidate.getEmail());
+
+        Cookie cookie = new Cookie(c.getEmail(),Long.toString(c.getId()));
+        cookie.setPath("/");
+        response.addCookie(cookie);
 
         // Add flash message for success
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
