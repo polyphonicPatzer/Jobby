@@ -5,19 +5,23 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class CandidateSkill implements Serializable {
+public class DesiredCBSkill implements Serializable {
+
     @ManyToOne
     @JoinColumn(name="candidateId")
     @Id
-    Candidate candidate;
+    private Candidate candidate;
 
     @OneToOne
     @JoinColumn(name="skillId")
     @Id
-    Skill skill;
+    private Skill skill;
 
     @Column
     private int skillRating;
+
+    @Column
+    private int skillWeight;
 
     @Override
     public boolean equals(Object o) {
@@ -52,4 +56,11 @@ public class CandidateSkill implements Serializable {
         this.skillRating = skillRating;
     }
 
+    public int getSkillWeight() {
+        return skillWeight;
+    }
+
+    public void setSkillWeight(int skillWeight) {
+        this.skillWeight = skillWeight;
+    }
 }
