@@ -5,7 +5,9 @@ import com.capstone.jobby.model.Skill;
 import com.capstone.jobby.model.Candidate;
 import com.capstone.jobby.service.CandidateSkillService;
 import com.capstone.jobby.service.CandidateService;
+import com.capstone.jobby.service.SkillService;
 
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,47 +20,60 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.*;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class CandidateController {
     @Autowired
     private CandidateSkillService candidateSkillService;
-
     @Autowired
     private CandidateService candidateService;
+    @Autowired
+    private SkillService skillService;
 
     @RequestMapping("/candidate/candidateProfile")
     public String candidateProfile(Model model){
-        model.addAttribute("action","/candidate/submitSurvey");
         return "candidate/candidateProfile";
     }
 
     @RequestMapping("/candidate/survey")
     public String candidateSurvey(Model model){
+        if(!model.containsAttribute("candidateSurveyResults")) {
+            model.addAttribute("candidateSurveyResults",new CandidateSurveyResults());
+        }
+        model.addAttribute("action","/candidate/submitSurvey");
+        model.addAttribute("heading","Finish");
+        model.addAttribute("submit","Finish");
         return "candidate/survey";
     }
 
     @RequestMapping(value = "/candidate/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CandidateSurveyResults results, Model model, HttpServletRequest request) {
-        Integer[] res = results.getResults();
+    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, HttpServletRequest request) {
+
+        Integer[] res = candidateSurveyResults.getResults();
+
         String userEmail = null;
+        String userID = null;
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("user")) {
-                userEmail = cookie.getName();
+            if (cookie.getName().equals("EMAIL")) {
+                userEmail = cookie.getValue();
+            }
+            if (cookie.getName().equals("ID")) {
+                userID = cookie.getValue();
             }
         }
+        List<Skill> skills = skillService.findAll();
+
         for (int i = 0; i < 10; i++) {
             CandidateSkill temp = new CandidateSkill();
-            Skill skill = new Skill();
-            skill.setId(i);
-            skill.setName(String.format("Q(%d)", i));
-            temp.setSkill(skill);
+            Skill s = skills.get(i);
+            temp.setSkill(s);
             temp.setCandidate(candidateService.findByUsername(userEmail));
             temp.setSkillRating(res[i]);
             candidateSkillService.save(temp);
         }
-        return("redirect:candidate/candidateProfile");
+        return("/candidate/candidateProfile");
     }
 
     @RequestMapping(value = "/candidate/logout")

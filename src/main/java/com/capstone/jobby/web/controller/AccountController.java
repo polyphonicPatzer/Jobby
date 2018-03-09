@@ -86,9 +86,12 @@ public class AccountController {
         //Fetch candidate w/ ID to set cookie
         Candidate c = candidateService.findByUsername(candidate.getEmail());
 
-        Cookie cookie = new Cookie(c.getEmail(),Long.toString(c.getId()));
-        cookie.setPath("/");
-        response.addCookie(cookie);
+        Cookie email = new Cookie("EMAIL", c.getEmail());
+        Cookie id = new Cookie("ID", Long.toString(c.getId()));
+        email.setPath("/");
+        id.setPath("/");
+        response.addCookie(email);
+        response.addCookie(id);
 
         // Add flash message for success
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
@@ -166,6 +169,7 @@ public class AccountController {
         } catch (Exception e) {
             //Flash session attribute must not exist. Do nothing and proceed.
         }
+
         return "account/candidateLogin";
     }
 

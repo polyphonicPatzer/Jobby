@@ -15,6 +15,11 @@ public class Skill {
     @NotNull
     private String name;
 
+    @NotNull
+    private String type;
+
+    private String description;
+
     public int getId() {
         return id;
     }
@@ -46,11 +51,5 @@ public class Skill {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    @NotNull
-
-    private String type;
-
-    private String description;
 }
 
