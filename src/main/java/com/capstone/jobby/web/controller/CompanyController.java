@@ -1,22 +1,17 @@
 package com.capstone.jobby.web.controller;
 
-import com.capstone.jobby.model.CandidateSkill;
 import com.capstone.jobby.model.CompanySurveyResults;
+import com.capstone.jobby.model.DesiredCBSkill;
 import com.capstone.jobby.model.Skill;
 import com.capstone.jobby.service.CandidateService;
-//import com.capstone.jobby.service.CompanySkillService;
 import com.capstone.jobby.service.CompanyService;
+import com.capstone.jobby.service.DesiredCBSkillService;
 import com.capstone.jobby.service.SkillService;
-import com.capstone.jobby.web.Color;
-import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -25,10 +20,9 @@ import java.util.List;
 
 @Controller
 public class CompanyController {
+
     @Autowired
-    private CompanyService companyService;
-    //@Autowired
-    //private CandidateSkillService companySkillService;
+    private DesiredCBSkillService desiredCBSkillService;
     @Autowired
     private CandidateService candidateService;
     @Autowired
@@ -42,7 +36,7 @@ public class CompanyController {
     @RequestMapping("/company/survey")
     public String companySurvey(Model model){
         if(!model.containsAttribute("companySurveyResults")) {
-            model.addAttribute("companySurveyResults",new CompanySurveyResults());
+            model.addAttribute("companySurveyResults", new CompanySurveyResults());
         }
         model.addAttribute("action","/company/submitSurvey");
         model.addAttribute("heading","Finish");
@@ -70,14 +64,15 @@ public class CompanyController {
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {
-            CandidateSkill temp = new CandidateSkill();
+            DesiredCBSkill temp = new DesiredCBSkill();
             Skill s = skills.get(i);
             temp.setSkill(s);
-            //temp.setCandidate(candidateService.findByUsername(userEmail));
-            //temp.setSkillRating(res[i]);
-            //candidateSkillService.save(temp);
+            temp.setCandidate(candidateService.findByUsername(companyEmail));
+            temp.setSkillRating(answers[i]);
+            temp.setSkillWeight(weights[i]);
+            desiredCBSkillService.save(temp);
         }
-        return("/candidate/candidateProfile");
+        return("/candidate/companyProfile");
     }
 
     @RequestMapping(value = "/company/logout")
