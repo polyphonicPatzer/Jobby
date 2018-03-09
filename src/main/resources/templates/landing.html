@@ -5,20 +5,35 @@
 <div th:replace="layout :: nav"></div>
 
 <img class="imgCenter" th:src="@{/images/logo.png}" alt="Jobby Logo" />
-<!--
-<div th:fragment="searchbar" class="search-bar">
-    <div class="row s12">
-        <div class="col s12">
-            <form th:action="@{/jobs}" method="get">
-                <div class="input-field" style="width: 30%; margin: 0 auto;">
-                    <input name="q" type="search" placeholder="Job Search" autocomplete="off"/>
-                    <i class="material-icons">search</i>
-                </div>
-            </form>
+
+<div style="width: fit-content; align-items: center; margin: 0 auto;">
+    <p style="margin-bottom: 0;">Candidate Search</p>
+    <div style=" width: 500px;" th:fragment="searchbar" class="search-bar" >
+        <div class="row s12">
+            <div class="col s12">
+                <form th:action="@{/jobs}" method="get">
+                    <div class="input-field" style="">
+                        <input name="q" type="search" placeholder="Job Search" autocomplete="off"/>
+                        <i class="material-icons">search</i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <p style="margin-bottom: 0;">Job Search</p>
+    <div style=" width: 500px;" th:fragment="searchbar" class="search-bar">
+        <div class="row s12">
+            <div class="col s12">
+                <form th:action="@{/jobs}" method="get">
+                    <div class="input-field" style="">
+                        <input name="q" type="search" placeholder="Job Search" autocomplete="off"/>
+                        <i class="material-icons">search</i>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
--->
 
 <div th:replace="layout :: flash"></div>
 <div th:replace="layout :: scripts"></div>

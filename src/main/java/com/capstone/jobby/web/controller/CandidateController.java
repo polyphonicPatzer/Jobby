@@ -73,7 +73,7 @@ public class CandidateController {
             temp.setSkillRating(res[i]);
             candidateSkillService.save(temp);
         }
-        return("/candidate/candidateProfile");
+        return("/candidate/surveySubmitted");
     }
 
     @RequestMapping(value = "/candidate/logout")
@@ -82,6 +82,11 @@ public class CandidateController {
         model.addAttribute("submit","Logout");
         return "candidate/logout";
     }
+
+/*    @RequestMapping(value = "/candidate/surveySubmitted")
+    public String surveySubmitted(Model model) {
+        return "candidate/surveySubmitted";
+    }*/
 
     @RequestMapping(value = "/candidate/logoutPost", method = RequestMethod.GET)
     public void candidateLogoutPost(Model model) {
