@@ -36,18 +36,39 @@ public class AccountController {
         return "landing";
     }
 
-    // Create Account
+    // Administrator Login
+    @RequestMapping(value = "/account/adminLogin")
+    public String adminLogoin(Model model){
+        return "account/adminLogin";
+    }
+
+    // Administrator Dashboard
     @RequestMapping(value = "/account/dashboard")
     public String adminDashboard(Model model){
         return "account/adminDashboard";
     }
 
-
-    // Create Account
-    @RequestMapping(value = "/account/adminLogin")
-    public String adminLogoin(Model model){
-        return "account/adminLogin";
+    // Public facing candidate profile
+    @RequestMapping(value = "/account/candidateInformation")
+    public String candidateProfile(Model model){
+        return "account/candidateProfile";
     }
+
+
+    // Public facing candidate Survey Results
+    @RequestMapping(value = "/account/candidateSurveyResults")
+    public String candidateSurvey(Model model){
+        return "account/viewSurveyResults";
+    }
+
+
+    // Public facing candidate Resume
+    @RequestMapping(value = "/account/candidateResume")
+    public String candidateResume(Model model){
+        return "account/viewResume";
+    }
+
+
 
     // Create Account
     @RequestMapping(value = "/account/accountRegistration")

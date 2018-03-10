@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout :: head('')"></head>
+<body>
+<div th:replace="layout :: nav"></div>
+
+<div class="grayContainerRounded" style="width:85%; margin-top: 10px; height: fit-content; overflow: hidden;">
+    <p style="font-size: 20px;font-weight: bold; margin:0px; text-align: left;">Candidate Information</p>
+    <p style="font-size: 17px;font-weight: normal;">John Smith</p>
+    <p style="font-size: 17px;font-weight: normal;">TheDoctor@yahoo.com</p>
+    <img class="imgCenter" style="height:200px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Profile Picture" />
+
+    <button class="button" style="float:left;">Contact</button>
+    <div style="float:right;">
+        <a th:href="@{/account/candidateResume}" style='text-decoration: underline; font-size: 14px;' >View Resume</a>
+       <p style="margin:0px;"></p>
+        <a th:href="@{/account/candidateSurveyResults}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
+    </div>
+
+</div>
+
+<div th:replace="layout :: flash"></div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
