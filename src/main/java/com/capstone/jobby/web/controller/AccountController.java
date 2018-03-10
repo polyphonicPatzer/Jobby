@@ -37,6 +37,19 @@ public class AccountController {
     }
 
     // Create Account
+    @RequestMapping(value = "/account/dashboard")
+    public String adminDashboard(Model model){
+        return "account/adminDashboard";
+    }
+
+
+    // Create Account
+    @RequestMapping(value = "/account/adminLogin")
+    public String adminLogoin(Model model){
+        return "account/adminLogin";
+    }
+
+    // Create Account
     @RequestMapping(value = "/account/accountRegistration")
     public String aRegister(Model model){
         return "account/accountRegistration";
