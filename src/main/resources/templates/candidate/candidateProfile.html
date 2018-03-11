@@ -45,11 +45,33 @@
             find more appropriate job postings that better match your skill set. </p>
         <a th:href="@{/candidate/survey}"><button type="submit" class="redButton button">Take Survey</button></a>
     </div>
-    <div class="grayContainerRounded" style=" float: left; text-align: left; height: 180px; width: 100%;">
-        <p style="margin:0em;">Resume</p>
-        <p style="font-size: 17px;font-size: 16px; margin-top: 0em;">Make applying for jobs easier by uploading your updated resume.</p>
-        <button type="submit" class="redButton button">Upload Resume</button>
+
+    <div th:if="${resume != null}">
+        <div class="grayContainerRounded" style=" float: left; text-align: left; height: 360px; margin-bottom: 20px; width: 100%;">
+            <p style="margin:0em;">Current Resume</p>
+            <div class="gifs container">
+                <div class="row">
+                    <a th:href="@{|/candidate/resume/${resume.id}|}" class="actions">
+                        <img th:src="@{|/candidate/resume/${resume.id}.img|}" />
+                    </a>
+                </div>
+                <div class="row">
+                    <div th:if="${resume.description != null}">
+                        <p style="font-size: 17px;font-size: 16px; margin-top: 0em;" th:text="${resume.description}">Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div th:if="${resume == null}">
+        <div class="grayContainerRounded" style=" float: left; text-align: left; height: 180px; width: 100%;">
+            <p style="margin:0em;">Resume</p>
+            <p style="font-size: 17px;font-size: 16px; margin-top: 0em;">Make applying for jobs easier by uploading your updated resume.</p>
+            <a th:href="@{/candidate/uploadResume}"><button type="submit" class="redButton button">Upload Resume</button></a>
+        </div>
+    </div>
+
 </div>
 
 

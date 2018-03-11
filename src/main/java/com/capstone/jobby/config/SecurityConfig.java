@@ -26,6 +26,11 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    public static PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(10);
+    }
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers( "/images/**",
@@ -70,8 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Autowired
         public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-            auth.userDetailsService(companyService);
-            //.passwordEncoder(passwordEncoder());
+            auth.userDetailsService(companyService).passwordEncoder(passwordEncoder());
         }
 
         @Override
@@ -115,8 +119,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Autowired
         public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-            auth.userDetailsService(candidateService);
-            //.passwordEncoder(passwordEncoder());
+            auth.userDetailsService(candidateService).passwordEncoder(passwordEncoder());
         }
 
         @Override
@@ -157,15 +160,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder(10);
-//    }
+
 
 
 
 //    @Bean
-//    public EvaluationContextExtension securityExtension() {
+//    public static EvaluationContextExtension securityExtension() {
 //        return new EvaluationContextExtensionSupport() {
 //            @Override
 //            public String getExtensionId() {

@@ -14,6 +14,7 @@ public class Resume {
     private String description;
 
     @OneToOne
+    @JoinColumn(name="candidateId")
     private Candidate candidate;
 
     private String hash;

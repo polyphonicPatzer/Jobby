@@ -7,6 +7,7 @@ import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,6 +30,9 @@ public class AccountController {
 
     @Autowired
     private CompanyService companyService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     // Home page
     @RequestMapping(value = "/")
@@ -79,6 +83,9 @@ public class AccountController {
 
         //Enable Candidate account
         candidate.setEnabled(true);
+
+        //Encrypt the password
+        candidate.setPassword(passwordEncoder.encode(candidate.getPassword()));
 
         //Save Candidate to database
         candidateService.save(candidate);
@@ -137,6 +144,9 @@ public class AccountController {
 
         //Enable Company account
         company.setEnabled(true);
+
+        //Encrypt the password
+        company.setPassword(passwordEncoder.encode(company.getPassword()));
 
         //Save company to database
         companyService.save(company);

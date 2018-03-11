@@ -1,8 +1,6 @@
 package com.capstone.jobby.web.controller;
 
-import com.capstone.jobby.model.CandidateSurveyResults;
-import com.capstone.jobby.model.Skill;
-import com.capstone.jobby.model.Candidate;
+import com.capstone.jobby.model.*;
 import com.capstone.jobby.service.CandidateSkillService;
 import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.SkillService;
@@ -14,12 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.capstone.jobby.model.CandidateSkill;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.*;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -32,7 +30,10 @@ public class CandidateController {
     private SkillService skillService;
 
     @RequestMapping("/candidate/candidateProfile")
-    public String candidateProfile(Model model){
+    public String candidateProfile(Model model, Principal principal){
+        Candidate candidate = candidateService.findByUsername(principal.getName());
+        Resume resume = candidate.getResume();
+        model.addAttribute("resume", resume);
         return "candidate/candidateProfile";
     }
 
