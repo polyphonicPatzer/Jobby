@@ -30,8 +30,12 @@ public class CandidateController {
     private SkillService skillService;
 
     @RequestMapping("/candidate/candidateProfile")
-    public String candidateProfile(Model model, Principal principal){
+    public String candidateProfile(Model model, Principal principal ){
         Candidate candidate = candidateService.findByUsername(principal.getName());
+        Cookie email = new Cookie("EMAIL", candidate.getEmail());
+        Cookie id = new Cookie("ID", Long.toString(candidate.getId()));
+        email.setPath("/");
+        id.setPath("/");
         Resume resume = candidate.getResume();
         model.addAttribute("resume", resume);
         return "candidate/candidateProfile";

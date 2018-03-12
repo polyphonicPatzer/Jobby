@@ -1,8 +1,6 @@
 package com.capstone.jobby.web.controller;
 
-import com.capstone.jobby.model.CompanySurveyResults;
-import com.capstone.jobby.model.DesiredCBSkill;
-import com.capstone.jobby.model.Skill;
+import com.capstone.jobby.model.*;
 import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.service.DesiredCBSkillService;
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import java.security.Principal;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -24,12 +22,19 @@ public class CompanyController {
     @Autowired
     private DesiredCBSkillService desiredCBSkillService;
     @Autowired
-    private CandidateService candidateService;
+    private CompanyService companyService;
     @Autowired
     private SkillService skillService;
+    @Autowired
+    private CandidateService candidateService;
 
     @RequestMapping("/company/companyProfile")
-    public String companyProfile(Model model){
+    public String companyProfile(Model model, Principal principal) {
+        Company company = companyService.findByUsername(principal.getName());
+        Cookie email = new Cookie("EMAIL", company.getEmail());
+        Cookie id = new Cookie("ID", Long.toString(company.getId()));
+        email.setPath("/");
+        id.setPath("/");
         return "company/companyProfile";
     }
 
@@ -61,6 +66,9 @@ public class CompanyController {
                 companyID = cookie.getValue();
             }
         }
+        System.out.println(companyEmail);
+        System.out.println(companyID);
+
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {

@@ -6,6 +6,7 @@ import java.util.Objects;
 
 @Entity
 public class CandidateSkill implements Serializable {
+
     @ManyToOne
     @JoinColumn(name="candidateId")
     @Id
