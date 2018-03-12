@@ -4,7 +4,11 @@
 <body>
 <div th:replace="layout :: nav"></div>
 
+<a th:href="@{/account/adminLogin}" style='float:right;text-decoration: underline; font-size: 11.4px;    margin-right: 10px;' >administrator</a>
+
 <img class="imgCenter" th:src="@{/images/logo.png}" alt="Jobby Logo" />
+
+
 
 <div style="width: fit-content; align-items: center; margin: 0 auto;">
     <p style="margin-bottom: 0;">Candidate Search</p>
@@ -34,6 +38,7 @@
         </div>
     </div>
 </div>
+
 
 <div th:replace="layout :: flash"></div>
 <div th:replace="layout :: scripts"></div>

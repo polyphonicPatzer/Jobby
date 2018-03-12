@@ -7,6 +7,7 @@ import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,11 +31,48 @@ public class AccountController {
     @Autowired
     private CompanyService companyService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     // Home page
     @RequestMapping(value = "/")
     public String landing(Model model) {
         return "landing";
     }
+
+    // Administrator Login
+    @RequestMapping(value = "/account/adminLogin")
+    public String adminLogoin(Model model){
+        return "account/adminLogin";
+    }
+
+    // Administrator Dashboard
+    @RequestMapping(value = "/account/dashboard")
+    public String adminDashboard(Model model){
+        return "account/adminDashboard";
+    }
+
+    // Public facing candidate profile
+    @RequestMapping(value = "/account/candidateInformation")
+    public String candidateProfile(Model model){
+        return "account/candidateProfile";
+    }
+
+
+    // Public facing candidate Survey Results
+    @RequestMapping(value = "/account/candidateSurveyResults")
+    public String candidateSurvey(Model model){
+        return "account/viewSurveyResults";
+    }
+
+
+    // Public facing candidate Resume
+    @RequestMapping(value = "/account/candidateResume")
+    public String candidateResume(Model model){
+        return "account/viewResume";
+    }
+
+
 
     // Create Account
     @RequestMapping(value = "/account/accountRegistration")
@@ -79,6 +117,9 @@ public class AccountController {
 
         //Enable Candidate account
         candidate.setEnabled(true);
+
+        //Encrypt the password
+        candidate.setPassword(passwordEncoder.encode(candidate.getPassword()));
 
         //Save Candidate to database
         candidateService.save(candidate);
@@ -137,6 +178,9 @@ public class AccountController {
 
         //Enable Company account
         company.setEnabled(true);
+
+        //Encrypt the password
+        company.setPassword(passwordEncoder.encode(company.getPassword()));
 
         //Save company to database
         companyService.save(company);
