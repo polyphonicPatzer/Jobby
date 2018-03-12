@@ -26,6 +26,7 @@ public class ResumeController {
     @RequestMapping(value = "/candidate/resumePost", method = RequestMethod.POST)
     public String addResume(Resume resume, @RequestParam MultipartFile file, RedirectAttributes redirectAttributes, Principal principal) {
 
+
         //Get the currently authenticated candidate
         Candidate candidate = candidateService.findByUsername(principal.getName());
 

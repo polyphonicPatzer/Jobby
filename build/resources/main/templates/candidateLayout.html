@@ -27,15 +27,15 @@
             </div>
             <ul>
                 <li><a th:href="@{/error}" class="menu">Job Matches</a></li>
-                <li><a th:href="@{/candidate/candidateProfile}" class="menu">My Profile</a></li>
+                <li><a th:href="@{/candidate/candidateProfile}" class="menu">Home</a></li>
             </ul>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li sec:authentication = "name"></li>
+                <a th:href="@{/account/candidateInformation}" style="float: left;"><li sec:authentication = "name"></li></a>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/candidate/logout}">Logout</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li sec:authentication = "name"></li>
+                <a th:href="@{/account/candidateInformation}" style="float: left;"><li sec:authentication = "name"></li></a>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/candidate/logout}">Logout</a></li>
             </ul>
         </div>
