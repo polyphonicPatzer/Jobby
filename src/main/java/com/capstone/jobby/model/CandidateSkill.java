@@ -11,7 +11,7 @@ public class CandidateSkill implements Serializable {
     @Id
     Candidate candidate;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="skillId")
     @Id
     Skill skill;
@@ -26,6 +26,12 @@ public class CandidateSkill implements Serializable {
         CandidateSkill that = (CandidateSkill) o;
         return Objects.equals(candidate, that.candidate) &&
                 Objects.equals(skill, that.skill);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(candidate, skill);
     }
 
     public Candidate getCandidate() {
