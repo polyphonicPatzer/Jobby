@@ -72,11 +72,7 @@ public class CompanyController {
             temp.setSkillWeight(weights[i]);
             desiredCBSkillService.save(temp);
         }
-<<<<<<< HEAD
-        return("/candidate/companyProfile");
-=======
         return("/company/surveySubmitted");
->>>>>>> 3d8cf02b91de17f0bc0bd9d08461f2d08ab35eb2
     }
 
     @RequestMapping(value = "/company/logout")

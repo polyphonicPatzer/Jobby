@@ -3,9 +3,11 @@ package com.capstone.jobby.service;
 import com.capstone.jobby.dao.DesiredCBSkillDao;
 import com.capstone.jobby.model.DesiredCBSkill;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DesiredCBSkillServiceImpl implements DesiredCBSkillService {
 
     @Autowired

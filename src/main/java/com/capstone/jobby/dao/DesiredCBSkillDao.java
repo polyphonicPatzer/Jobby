@@ -1,7 +1,6 @@
 package com.capstone.jobby.dao;
 
 import com.capstone.jobby.model.DesiredCBSkill;
-
 import java.util.List;
 
 public interface DesiredCBSkillDao {
