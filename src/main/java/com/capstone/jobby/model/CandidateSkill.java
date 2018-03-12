@@ -9,12 +9,12 @@ public class CandidateSkill implements Serializable {
     @ManyToOne
     @JoinColumn(name="candidateId")
     @Id
-    private Candidate candidate;
+    Candidate candidate;
 
     @OneToOne
     @JoinColumn(name="skillId")
     @Id
-    private Skill skill;
+    Skill skill;
 
     @Column
     private int skillRating;
