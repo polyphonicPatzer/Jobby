@@ -21,7 +21,8 @@
 <div th:fragment="nav" class="navbar-fixed">
     <nav>
         <div class="container">
-            <ul>
+            <a th:href="@{/}" class="brand-logo" style="margin-left:10px">Jobby</a>
+            <ul style="margin-left:110px;">
                 <li><a th:href="@{/error}" class="menu">Employee Matches</a></li>
                 <li><a th:href="@{/company_profile}" class="menu">Profile</a></li>
                 <li><a th:href="@{/error}" class="menu">Job Postings</a></li>
