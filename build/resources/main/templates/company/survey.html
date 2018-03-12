@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="candidateLayout :: head('profile')"></head>
+<head th:replace="companyLayout :: head('profile')"></head>
 <body>
-<div th:replace="candidateLayout :: nav"></div>
-<div th:replace="candidateLayout :: searchbar"></div>
-<div th:replace="candidateLayout :: flash"></div>
+<div th:replace="companyLayout :: nav"></div>
+<div th:replace="companyLayout :: searchbar"></div>
+<div th:replace="companyLayout :: flash"></div>
 
 <div class="grayContainerRounded" style="width:85%; border-radius: 0px; height: fit-content; overflow: hidden;">
-    <p style="font-size: 17px;font-weight: normal; text-align: left;"> Welcome! Please answer the following questions, and you will be one step closer to finding a job match</p>
+    <p style="font-size: 17px;font-weight: normal; text-align: left;"> Welcome! Please answer the following questions, and you will be one step closer to finding a match</p>
     <div class="grayContainer" style="width: 100%; height: fit-content; margin-top: 15px; margin-bottom: 15px;">
-        <p style="font-size:14px; text-align: left;">Please rate yourself. On a scale of 1-5 (5 being Strongly Agree) of your understanding of these concepts</p>
+        <p style="font-size:14px; text-align: left;">Please rate according to how you would perfer your employees to answer.</p>
+        <p style="font-size:14px; text-align: left;">On a scale of 1-5 (5 being Strongest)</p>
         <p style="font-size:14px; text-align: left;">1. I can best be described as unconventional, creative and independent</p>
         <form th:action="@{${action}}" th:object = "${companySurveyResults}" method="post">
             <fieldset id = "q1" th:field="*{q1}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
@@ -141,7 +142,7 @@
                 <div><input type="radio" name="q10W" value="2" /> Average Priority</div>
                 <div><input type="radio" name="q10W" value="3" /> High Priority</div>
             </fieldset>
-            <button th:type="${submit}" style=" margin-right: 0%; margin-top: 10px; float:right;" class="button">Finish</button>
+            <button th:type="${submit}" style=" margin-right: 0%; margin-top: 10px;" class="button">Finish</button>
         </form>
     </div>
 </div>

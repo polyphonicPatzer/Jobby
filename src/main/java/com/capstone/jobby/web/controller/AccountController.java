@@ -19,6 +19,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,8 @@ public class AccountController {
 
     // Home page
     @RequestMapping(value = "/")
-    public String landing(Model model) {
+    public String landing(Model model, Principal principal) {
+        model.addAttribute("principal", principal);
         return "landing";
     }
 
