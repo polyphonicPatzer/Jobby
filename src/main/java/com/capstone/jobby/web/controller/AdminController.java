@@ -24,6 +24,10 @@ import java.util.List;
 @Controller()
 public class AdminController {
 
-
+    // Administrator Dashboard
+    @RequestMapping(value = "/auth/admin/adminDashboard")
+    public String adminDashboard(Model model){
+        return "account/adminDashboard";
+    }
 
 }

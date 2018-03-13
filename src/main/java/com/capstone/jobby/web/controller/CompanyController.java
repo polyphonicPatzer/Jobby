@@ -28,23 +28,23 @@ public class CompanyController {
     @Autowired
     private SkillService skillService;
 
-    @RequestMapping("/company/companyProfile")
+    @RequestMapping("/auth/company/companyProfile")
     public String companyProfile(Model model){
-        return "company/companyProfile";
+        return "private/company/companyProfile";
     }
 
-    @RequestMapping("/company/survey")
+    @RequestMapping("/auth/company/survey")
     public String companySurvey(Model model){
         if(!model.containsAttribute("companySurveyResults")) {
             model.addAttribute("companySurveyResults", new CompanySurveyResults());
         }
-        model.addAttribute("action","/company/submitSurvey");
+        model.addAttribute("action","/auth/company/submitSurvey");
         model.addAttribute("heading","Finish");
         model.addAttribute("submit","Finish");
-        return "company/survey";
+        return "private/company/survey";
     }
 
-    @RequestMapping(value = "/company/submitSurvey", method = RequestMethod.POST)
+    @RequestMapping(value = "/auth/company/submitSurvey", method = RequestMethod.POST)
     public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Model model, HttpServletRequest request) {
 
         Integer[] answers = companySurveyResults.getAnswers();
@@ -72,14 +72,14 @@ public class CompanyController {
             temp.setSkillWeight(weights[i]);
             desiredCBSkillService.save(temp);
         }
-        return("/company/surveySubmitted");
+        return("private/company/surveySubmitted");
     }
 
-    @RequestMapping(value = "/company/logout")
+    @RequestMapping(value = "/auth/company/logout")
     public String companyLogout(Model model) {
-        model.addAttribute("action","/company/logoutPost");
+        model.addAttribute("action","/auth/company/logoutPost");
         model.addAttribute("submit","Logout");
-        return "company/logout";
+        return "private/company/logout";
     }
 /*
 
@@ -89,7 +89,7 @@ public class CompanyController {
     }
 */
 
-    @RequestMapping(value = "/company/logoutPost", method = RequestMethod.GET)
+    @RequestMapping(value = "/auth/company/logoutPost", method = RequestMethod.GET)
     public void companyLogoutPost(Model model) {
         return;
     }

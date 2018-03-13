@@ -21,6 +21,6 @@ public class JobSearchController {
         List<Job> jobs = jobService.findAll();
 
         model.addAttribute("jobs", jobs);
-        return "jobs/index";
+        return "public/jobs/index";
     }
 }

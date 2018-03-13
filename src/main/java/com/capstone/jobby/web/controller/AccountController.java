@@ -39,47 +39,13 @@ public class AccountController {
     @RequestMapping(value = "/")
     public String landing(Model model, Principal principal) {
         model.addAttribute("principal", principal);
-        return "landing";
+        return "public/landing";
     }
-
-    // Administrator Login
-    @RequestMapping(value = "/account/adminLogin")
-    public String adminLogoin(Model model){
-        return "account/adminLogin";
-    }
-
-    // Administrator Dashboard
-    @RequestMapping(value = "/account/dashboard")
-    public String adminDashboard(Model model){
-        return "account/adminDashboard";
-    }
-
-    // Public facing candidate profile
-    @RequestMapping(value = "/account/candidateInformation")
-    public String candidateProfile(Model model){
-        return "account/candidateProfile";
-    }
-
-
-    // Public facing candidate Survey Results
-    @RequestMapping(value = "/account/candidateSurveyResults")
-    public String candidateSurvey(Model model){
-        return "account/viewSurveyResults";
-    }
-
-
-    // Public facing candidate Resume
-    @RequestMapping(value = "/account/candidateResume")
-    public String candidateResume(Model model){
-        return "account/viewResume";
-    }
-
-
 
     // Create Account
     @RequestMapping(value = "/account/accountRegistration")
     public String aRegister(Model model){
-        return "account/accountRegistration";
+        return "public/account/accountRegistration";
     }
 
     // Form for creating a new candidate
@@ -93,7 +59,7 @@ public class AccountController {
         model.addAttribute("heading","Sign Up");
         model.addAttribute("submit","Sign Up");
 
-        return "account/candidateRegistrationForm";
+        return "public/account/candidateRegistrationForm";
     }
 
     // Add a new Candidate
@@ -140,7 +106,7 @@ public class AccountController {
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Candidate's home view. Replace this with homepage when created.
-        return String.format("redirect:/candidate/candidateLogin");
+        return String.format("redirect:/auth/candidate/candidateLogin");
     }
 
     // Form for creating a new Company
@@ -154,7 +120,7 @@ public class AccountController {
         model.addAttribute("heading","Sign Up");
         model.addAttribute("submit","Sign Up");
 
-        return "account/companyRegistrationForm";
+        return "public/account/companyRegistrationForm";
     }
 
     // Add a new Company
@@ -191,24 +157,24 @@ public class AccountController {
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Company's home view. Replace this with homepage when created.
-        return String.format("redirect:/company/companyLogin"); //MAKE THIS THE GET URI AND HAVE THAT RETURN THE POST URI
+        return String.format("redirect:/auth/company/companyLogin"); //MAKE THIS THE GET URI AND HAVE THAT RETURN THE POST URI
     }
 
     // Select account type for logging in
     @RequestMapping(value = "/account/selectType")
     public String selectType(Model model){
-        return "account/selectType";
+        return "public/account/selectType";
     }
 
 
     // Login Candidate Account
-    @RequestMapping(value = "/candidate/candidateLogin", method = RequestMethod.GET)
+    @RequestMapping(value = "/auth/candidate/candidateLogin", method = RequestMethod.GET)
     public String candidateLoginForm(Model model, HttpServletRequest request) {
         model.addAttribute("candidate", new Candidate());
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
-            model.addAttribute("action", "/candidate/candidateLogin"); //MAKE THIS CALL THE POSTER
+            model.addAttribute("action", "/auth/candidate/candidateLogin"); //MAKE THIS CALL THE POSTER
             model.addAttribute("submit","Login");
 
             request.getSession().removeAttribute("flash");
@@ -216,23 +182,29 @@ public class AccountController {
             //Flash session attribute must not exist. Do nothing and proceed.
         }
 
-        return "account/candidateLogin";
+        return "public/account/candidateLogin";
     }
 
     // Login Company Account
-    @RequestMapping(value = "/company/companyLogin", method = RequestMethod.GET)
+    @RequestMapping(value = "/auth/company/companyLogin", method = RequestMethod.GET)
     public String loginCompanyForm(Model model, HttpServletRequest request) {
         model.addAttribute("company", new Company());
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
-            model.addAttribute("action", "/company/companyLogin"); //MAKE THIS CALL THE POSTER
+            model.addAttribute("action", "/auth/company/companyLogin"); //MAKE THIS CALL THE POSTER
             model.addAttribute("submit","Login");
 
             request.getSession().removeAttribute("flash");
         }  catch (Exception e) {
             //Flash session attribute must not exist. Do nothing and proceed.
         }
-        return "account/companyLogin";
+        return "public/account/companyLogin";
+    }
+
+    // Administrator Login
+    @RequestMapping(value = "/auth/admin/adminLogin")
+    public String adminLogoin(Model model){
+        return "/public/account/adminLogin";
     }
 }

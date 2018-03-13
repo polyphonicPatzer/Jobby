@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/candidateLayout :: head('')"></head>
+<body>
+<div th:replace="public/candidateLayout :: nav"></div>
+<div th:replace="public/candidateLayout :: searchbar"></div>
+<div th:replace="public/candidateLayout :: flash"></div>
+<div class="container upload">
+    <div class="row">
+        <div class="col s12">
+            <h2 th:text="${heading}">Upload</h2>
+            <div class="subtitle">Upload your resume to let employers know more about you.</div>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <form th:action="@{${action}}" method="post" th:object="${resume}" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="row">
+            <div class="col s12 l8">
+                <div class="file-wrapper">
+                    <input type="file" id="file" name="file"/>
+                    <span class="placeholder" data-placeholder="Choose a file...">Choose a file...</span>
+                    <label for="file" class="button">Browse</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l8">
+                <input type="text" th:field="*{description}" placeholder="Description"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <button th:text="${submit}" type="submit" class="button">Upload</button>
+                <a href="javascript:window.location = document.referrer;" class="button">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div th:replace="public/candidateLayout :: scripts"></div>
+</body>
+</html>

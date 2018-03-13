@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('jobSearch')"></head>
+<body>
+
+<div sec:authorize="isAnonymous()">
+    <div th:replace="layout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_CANDIDATE')">
+    <div th:replace="public/candidateLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_COMPANY')">
+    <div th:replace="public/companyLayout :: nav"></div>
+</div>
+<!--
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+     <div th:replace="public/adminLayout :: nav"></div>
+</div>
+-->
+<div th:replace="layout :: flash"></div>
+
+<div class="categories container">
+    <div class="row">
+        <div class="col s9">
+            <h2>Jobs</h2>
+        </div>
+        <div class="col s3">
+            <!-- <a class="right add" href="/categories/add">+</a> -->
+            <!--
+            <form th:action="@{/jobs}" method="get">
+                <div class="input-field" style="width: 30%; margin: 0 auto;">
+                    <input name="q" type="search" placeholder="Refine" required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+            -->
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+        <div th:each="job : ${jobs}" class="col s12 l4">
+            <div class="card" style="background-color:#fe490b">
+                <div class="card-content">
+                    <div class="card-title">
+                        <a class="name" th:href="@{|/jobs/${job.id}|}" th:text="${job.name}">Job Name</a>
+                        <!-- <a class="edit" th:href="@{|/categories/${cat.id}/edit|}"><i class="hide-on-med-and-down material-icons">more_horiz</i><i class="hide-on-large-only medium material-icons">more_horiz</i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>

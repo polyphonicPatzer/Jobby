@@ -81,11 +81,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/company/*").authorizeRequests().anyRequest().hasRole("COMPANY")
+                    .antMatcher("/auth/company/*").authorizeRequests().anyRequest().hasRole("COMPANY")
                     .and()
                     .formLogin()
                     //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
-                    .loginPage("/company/companyLogin").permitAll()
+                    .loginPage("/auth/company/companyLogin").permitAll()
                     //THIS PERMIT ALL MAY NOT BE NECESSARY
                     //.permitAll()
                     .successHandler(companyLoginSuccessHandler())
@@ -93,19 +93,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                     .logout()
                     .permitAll()
-                    .logoutUrl("/company/logoutPost")
+                    .logoutUrl("/auth/company/logoutPost")
                     .logoutSuccessUrl("/");
 
         }
 
         public AuthenticationSuccessHandler companyLoginSuccessHandler() {
-            return (request, response, authentication) -> response.sendRedirect("/company/companyProfile");
+            return (request, response, authentication) -> response.sendRedirect("/auth/company/companyProfile");
         }
 
         public AuthenticationFailureHandler companyLoginFailureHandler() {
             return (request, response, exception) -> {
                 request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
-                response.sendRedirect("/company/companyLogin");
+                response.sendRedirect("/auth/company/companyLogin");
             };
         }
     }
@@ -125,11 +125,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/candidate/*").authorizeRequests().anyRequest().hasRole("CANDIDATE")
+                    .antMatcher("/auth/candidate/*").authorizeRequests().anyRequest().hasRole("CANDIDATE")
                     .and()
                     .formLogin()
                     //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
-                    .loginPage("/candidate/candidateLogin").permitAll()
+                    .loginPage("/auth/candidate/candidateLogin").permitAll()
                     //THIS PERMIT ALL MAY NOT BE NECESSARY
                     //.permitAll()
                     .successHandler(candidateLoginSuccessHandler())
@@ -137,7 +137,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                     .logout()
                     .permitAll()
-                    .logoutUrl("/candidate/logoutPost")
+                    .logoutUrl("/auth/candidate/logoutPost")
                     .logoutSuccessUrl("/");
 //                    .and()
 //                    .csrf();
@@ -145,13 +145,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         }
 
         public AuthenticationSuccessHandler candidateLoginSuccessHandler() {
-            return (request, response, authentication) -> response.sendRedirect("/candidate/candidateProfile");
+            return (request, response, authentication) -> response.sendRedirect("/auth/candidate/candidateProfile");
         }
 
         public AuthenticationFailureHandler candidateLoginFailureHandler() {
             return (request, response, exception) -> {
                 request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
-                response.sendRedirect("/candidate/candidateLogin");
+                response.sendRedirect("/auth/candidate/candidateLogin");
             };
         }
     }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout :: head('explore')"></head>
+<body>
+<div th:replace="layout :: nav"></div>
+<div th:replace="layout :: login"></div>
+<div th:replace="layout :: flash"></div>
+
+<h1 style="margin-left: 25%">Login</h1>
+<div class="grayContainer">
+    <div th:fragment="login">
+        <div class="row">
+            <div class="col s12">
+                <form th:action="@{/search}" method="get">
+                    <div class="input-field" style="width: 70%; margin: 0 auto;">
+                        <input name="q" type="text" placeholder="Username/Email" required="required" autocomplete="off"/>
+                    </div>
+                    <div class="input-field" style="width: 70%; margin: 0 auto;">
+                        <input name="q" type="password" placeholder="Password" required="required" autocomplete="off"/>
+                    </div>
+                    <button class="button" type="submit" style="text-align: center;">Login</button>Forgot password?
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="layout :: scripts"></div>
+
+</body>
+</html>

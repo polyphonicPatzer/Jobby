@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:fragment="head(page_title)" lang="en">
+    <meta charset="UTF-8"/>
+    <meta description="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" th:href="@{/favicon.png}" />
+
+    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
+    <link rel="stylesheet" th:href="@{/vendor/codrops/css/cs-select.css}" />
+    <link rel="stylesheet" th:href="@{/vendor/codrops/css/cs-skin-border.css}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" th:href="@{/app.css}" />
+
+    <title th:text="'Jobby | ' + ${page_title}">Jobby</title>
+</head>
+
+<body>
+
+<div th:fragment="nav" class="navbar-fixed">
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a th:href="@{/error}" class="menu">Employee Matches</a></li>
+                <li><a th:href="@{/auth/company/companyProfile}" class="menu">Profile</a></li>
+                <li><a th:href="@{/error}" class="menu">Job Postings</a></li>
+            </ul>
+            <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li sec:authentication = "name"></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/auth/company/logout}">Logout</a></li>
+            </ul>
+            <ul id="mobile-nav" class="side-nav">
+                <li sec:authentication = "name"></li>
+                <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/auth/company/logout}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div th:fragment="flash" th:if="${flash != null}" class="container">
+    <i class="right material-icons" data-close="">close</i>
+    <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>
+</div>
+
+<div th:fragment="scripts">
+    <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
+    <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
+    <script th:src="@{/vendor/codrops/js/classie.js}"></script>
+    <script th:src="@{/vendor/codrops/js/selectFx.js}"></script>
+    <script th:src="@{/app.js}"></script>
+</div>
+
+</body>
+</html>
