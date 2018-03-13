@@ -130,7 +130,6 @@ public class ResumeController {
     public String candidateResume(Model model, @PathVariable Long resumeId){
         // Get resume whose id is resumeId
         Resume resume = resumeService.findById(resumeId);
-
         model.addAttribute("resume", resume);
         return "public/resume/viewResume";
     }

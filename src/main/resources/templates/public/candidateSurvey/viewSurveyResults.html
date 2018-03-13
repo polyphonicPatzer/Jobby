@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="layout :: head('')"></head>
+<html lang="en">
+<head th:replace="layout :: head('Candidate Profile')"></head>
 <body>
-<div th:replace="layout :: nav"></div>
+<div sec:authorize="isAnonymous()">
+    <div th:replace="layout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_CANDIDATE')">
+    <div th:replace="public/candidateLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_COMPANY')">
+    <div th:replace="public/companyLayout :: nav"></div>
+</div>
+<!--
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+     <div th:replace="public/adminLayout :: nav"></div>
+</div>
+-->
 
 This is where you view a candidate's survey results.
+<a href="javascript:window.location = document.referrer;" class="button">Back</a>
 
-<div th:replace="layout :: flash"></div>
 <div th:replace="layout :: scripts"></div>
 </body>
 </html>

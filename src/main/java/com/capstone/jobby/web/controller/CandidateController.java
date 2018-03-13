@@ -33,7 +33,6 @@ public class CandidateController {
     @RequestMapping("/auth/candidate/candidateProfile")
     public String candidateProfile(Model model, Principal principal){
         Candidate candidate = candidateService.findByUsername(principal.getName());
-
         Resume resume = candidate.getResume();
         model.addAttribute("resume", resume);
         return "private/candidate/candidateProfile";
@@ -50,29 +49,21 @@ public class CandidateController {
         return "private/candidate/survey";
     }
 
+
     @RequestMapping(value = "/auth/candidate/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, HttpServletRequest request) {
+    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, Principal principal) {
+        Integer[] res = candidateSurveyResults.getTechnical();
 
-        Integer[] res = candidateSurveyResults.getResults();
+        Candidate c = candidateService.findByUsername(principal.getName());
+        String candidateEmail = c.getEmail();
 
-        String userEmail = null;
-        String userID = null;
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("EMAIL")) {
-                userEmail = cookie.getValue();
-            }
-            if (cookie.getName().equals("ID")) {
-                userID = cookie.getValue();
-            }
-        }
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {
             CandidateSkill temp = new CandidateSkill();
             Skill s = skills.get(i);
-            temp.setSkill(s);
-            temp.setCandidate(candidateService.findByUsername(userEmail));
+            temp.setSkillID(s.getId());
+            temp.setCandidateID(candidateService.findByUsername(candidateEmail).getId());
             temp.setSkillRating(res[i]);
             candidateSkillService.save(temp);
         }
@@ -86,23 +77,36 @@ public class CandidateController {
         return "private/candidate/logout";
     }
 
-/*    @RequestMapping(value = "/candidate/surveySubmitted")
-    public String surveySubmitted(Model model) {
-        return "candidate/surveySubmitted";
-    }*/
+    @RequestMapping(value = "/auth/candidate/jobMatches")
+    public String candidateJobMatches(Model model, Principal principal) {
+        Candidate candidate = candidateService.findByUsername(principal.getName());
+
+        //TODO: Write a query using candidate.getID() and the algo to get the job matches
+        //List<Job> jobList = ?????
+
+        //TODO: Once matches are obtained, add the list of them to the model
+        //model.addAttribute("jobs", jobList);
+
+        return "private/candidate/jobMatches";
+    }
 
     @RequestMapping(value = "/auth/candidate/logoutPost", method = RequestMethod.GET)
     public void candidateLogoutPost(Model model) {
         return;
     }
 
-
+    /************************************
+     *                                  *
+     *         Public Facing Stuff      *
+     *                                  *
+     ************************************/
 
     // Public facing candidate profile
     @RequestMapping(value = "/candidate/{candidateId}")
     public String candidateProfile(Model model, @PathVariable Long candidateId){
         Candidate candidate = candidateService.findById(candidateId);
         model.addAttribute("candidate", candidate);
+        model.addAttribute("resume", candidate.getResume());
         return "public/candidate/candidateProfile";
     }
 

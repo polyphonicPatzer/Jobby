@@ -20,19 +20,20 @@
 
 <div th:fragment="nav" class="navbar-fixed">
     <nav>
-        <div class="container">
-            <ul>
-                <li><a th:href="@{/error}" class="menu">Employee Matches</a></li>
-                <li><a th:href="@{/auth/company/companyProfile}" class="menu">Profile</a></li>
-                <li><a th:href="@{/error}" class="menu">Job Postings</a></li>
+        <div class="container" style="width: 100%;">
+            <a th:href="@{/}" class="brand-logo" style="margin-left:10px">Jobby</a>
+            <ul style="margin-left:110px;">
+                <li><a th:href="@{/auth/company/companyProfile}" class="menu">Home</a></li>
+                <li><a th:href="@{/auth/company/jobPostings}" class="menu">Job Postings</a></li>
+                <li><a th:href="@{/auth/company/employeeMatches}" class="menu">Employee Matches</a></li>
             </ul>
             <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li sec:authentication = "name"></li>
+                <a th:href="@{|/company/${#authentication.principal.id}|}" style="float: left;"><li sec:authentication = "name"></li></a>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/auth/company/logout}">Logout</a></li>
             </ul>
             <ul id="mobile-nav" class="side-nav">
-                <li sec:authentication = "name"></li>
+                <a th:href="@{|/company/${#authentication.principal.id}|}" style="float: left;"><li sec:authentication = "name"></li></a>
                 <li th:classappend="${#httpServletRequest.servletPath.equals('/') ? 'active' : ''}"><a th:href="@{/auth/company/logout}">Logout</a></li>
             </ul>
         </div>

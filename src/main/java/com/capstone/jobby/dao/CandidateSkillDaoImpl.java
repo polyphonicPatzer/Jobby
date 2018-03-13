@@ -39,6 +39,13 @@ public class CandidateSkillDaoImpl implements CandidateSkillDao {
         return candidateSkills;
     }
 
+    //@Override
+    //public List<CandidateSkill> findAllByID(long id) {
+    //   Session session = sessionFactory.openSession();
+    //    List<CandidateSkill> candidateSkill = session.
+    //}
+
+
     @Override
     public CandidateSkill findById(Long id) {
         Session session = sessionFactory.openSession();

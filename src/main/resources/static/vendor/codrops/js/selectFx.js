@@ -145,11 +145,11 @@
 			}
 		} );
 
-		var opts_el = '<div class="cs-options"><ul>' + options + '</ul></div>';
+		//var opts_el = '<div class="cs-options"><ul>' + options + '</ul></div>';
 		this.selEl = document.createElement( 'div' );
 		this.selEl.className = this.el.className;
 		this.selEl.tabIndex = this.el.tabIndex;
-		this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
+		//this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
 		this.el.parentNode.appendChild( this.selEl );
 		this.selEl.appendChild( this.el );
 	}

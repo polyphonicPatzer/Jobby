@@ -49,7 +49,6 @@ public class CandidateDaoImpl implements CandidateDao {
 
     @Override
     public Candidate findByUsername(String email) {
-        System.out.println("\n\n\n\nINSIDE FIND USERNAME!! \n\n\n\n");
         Session session = sessionFactory.openSession();
         Candidate candidate = session.byNaturalId(Candidate.class)
                 .using("email", email)
