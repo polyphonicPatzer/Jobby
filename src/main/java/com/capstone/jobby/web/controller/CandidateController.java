@@ -55,7 +55,7 @@ public class CandidateController {
     @RequestMapping(value = "/candidate/submitSurvey", method = RequestMethod.POST)
     public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, Principal principal) {
 
-        Integer[] res = candidateSurveyResults.getResults();
+        Integer[] res = candidateSurveyResults.getTechnical();
 
         Candidate c = candidateService.findByUsername(principal.getName());
         String candidateEmail = c.getEmail();
