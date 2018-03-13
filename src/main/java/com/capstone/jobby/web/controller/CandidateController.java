@@ -30,8 +30,12 @@ public class CandidateController {
     private SkillService skillService;
 
     @RequestMapping("/candidate/candidateProfile")
-    public String candidateProfile(Model model, Principal principal){
+    public String candidateProfile(Model model, Principal principal ){
         Candidate candidate = candidateService.findByUsername(principal.getName());
+        Cookie email = new Cookie("EMAIL", candidate.getEmail());
+        Cookie id = new Cookie("ID", Long.toString(candidate.getId()));
+        email.setPath("/");
+        id.setPath("/");
         Resume resume = candidate.getResume();
         model.addAttribute("resume", resume);
         return "candidate/candidateProfile";
@@ -49,28 +53,20 @@ public class CandidateController {
     }
 
     @RequestMapping(value = "/candidate/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, HttpServletRequest request) {
+    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, Principal principal) {
 
-        Integer[] res = candidateSurveyResults.getResults();
+        Integer[] res = candidateSurveyResults.getTechnical();
 
-        String userEmail = null;
-        String userID = null;
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("EMAIL")) {
-                userEmail = cookie.getValue();
-            }
-            if (cookie.getName().equals("ID")) {
-                userID = cookie.getValue();
-            }
-        }
+        Candidate c = candidateService.findByUsername(principal.getName());
+        String candidateEmail = c.getEmail();
+
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {
             CandidateSkill temp = new CandidateSkill();
             Skill s = skills.get(i);
-            temp.setSkill(s);
-            temp.setCandidate(candidateService.findByUsername(userEmail));
+            temp.setSkillID(s.getId());
+            temp.setCandidateID(candidateService.findByUsername(candidateEmail).getId());
             temp.setSkillRating(res[i]);
             candidateSkillService.save(temp);
         }

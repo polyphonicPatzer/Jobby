@@ -17,6 +17,36 @@ public class CandidateSurveyResults implements Iterable{
     private int q8;
     private int q9;
     private int q10;
+    private int q11;
+    private int q12;
+    private int q13;
+    private int q14;
+    private int q15;
+    private int q16;
+    private int q17;
+    private int q18;
+    private int q19;
+    private int q20;
+
+
+    public Integer[] getTechnical(){
+        Integer[] results = new Integer[]{q1,q2,q3,q4,q5,q6,q7,q8,q9,q10};
+        return results;
+    }
+
+    public Integer[] getCultural(){
+        Integer[] results = new Integer[]{q11,q12,q13,q14,q15,q16,q17,q18,q19,q20};
+        return results;
+    }
+
+    @Override
+    public Iterator<CandidateSurveyResults> iterator() {
+        return results.iterator();
+    }
+
+    public List<CandidateSurveyResults> getResults() {
+        return results;
+    }
 
     public int getQ1() {
         return q1;
@@ -98,13 +128,83 @@ public class CandidateSurveyResults implements Iterable{
         this.q10 = q10;
     }
 
-    public Integer[] getResults(){
-        Integer[] results = new Integer[]{q1,q2,q3,q4,q5,q6,q7,q8,q9,q10};
-        return results;
+    public int getQ11() {
+        return q11;
     }
 
-    @Override
-    public Iterator<CandidateSurveyResults> iterator() {
-        return results.iterator();
+    public void setQ11(int q11) {
+        this.q11 = q11;
+    }
+
+    public int getQ12() {
+        return q12;
+    }
+
+    public void setQ12(int q12) {
+        this.q12 = q12;
+    }
+
+    public int getQ13() {
+        return q13;
+    }
+
+    public void setQ13(int q13) {
+        this.q13 = q13;
+    }
+
+    public int getQ14() {
+        return q14;
+    }
+
+    public void setQ14(int q14) {
+        this.q14 = q14;
+    }
+
+    public int getQ15() {
+        return q15;
+    }
+
+    public void setQ15(int q15) {
+        this.q15 = q15;
+    }
+
+    public int getQ16() {
+        return q16;
+    }
+
+    public void setQ16(int q16) {
+        this.q16 = q16;
+    }
+
+    public int getQ17() {
+        return q17;
+    }
+
+    public void setQ17(int q17) {
+        this.q17 = q17;
+    }
+
+    public int getQ18() {
+        return q18;
+    }
+
+    public void setQ18(int q18) {
+        this.q18 = q18;
+    }
+
+    public int getQ19() {
+        return q19;
+    }
+
+    public void setQ19(int q19) {
+        this.q19 = q19;
+    }
+
+    public int getQ20() {
+        return q20;
+    }
+
+    public void setQ20(int q20) {
+        this.q20 = q20;
     }
 }

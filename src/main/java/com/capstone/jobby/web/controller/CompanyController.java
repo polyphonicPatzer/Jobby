@@ -1,8 +1,6 @@
 package com.capstone.jobby.web.controller;
 
-import com.capstone.jobby.model.CompanySurveyResults;
-import com.capstone.jobby.model.DesiredCBSkill;
-import com.capstone.jobby.model.Skill;
+import com.capstone.jobby.model.*;
 import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.service.DesiredCBSkillService;
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import java.security.Principal;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -24,12 +22,14 @@ public class CompanyController {
     @Autowired
     private DesiredCBSkillService desiredCBSkillService;
     @Autowired
-    private CandidateService candidateService;
+    private CompanyService companyService;
     @Autowired
     private SkillService skillService;
+    @Autowired
+    private CandidateService candidateService;
 
     @RequestMapping("/company/companyProfile")
-    public String companyProfile(Model model){
+    public String companyProfile(Model model) {
         return "company/companyProfile";
     }
 
@@ -45,29 +45,21 @@ public class CompanyController {
     }
 
     @RequestMapping(value = "/company/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Model model, HttpServletRequest request) {
+    public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Model model, HttpServletRequest request, Principal principal) {
 
         Integer[] answers = companySurveyResults.getAnswers();
         Integer[] weights = companySurveyResults.getWeights();
 
-        String companyEmail = null;
-        String companyID = null;
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("EMAIL")) {
-                companyEmail = cookie.getValue();
-            }
-            if (cookie.getName().equals("ID")) {
-                companyID = cookie.getValue();
-            }
-        }
+        Company c = companyService.findByUsername(principal.getName());
+        String companyEmail = c.getEmail();
+
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {
             DesiredCBSkill temp = new DesiredCBSkill();
             Skill s = skills.get(i);
-            temp.setSkill(s);
-            temp.setCandidate(candidateService.findByUsername(companyEmail));
+            temp.setSkillID(s.getId());
+            temp.setCompanyID(companyService.findByUsername(companyEmail).getId());
             temp.setSkillRating(answers[i]);
             temp.setSkillWeight(weights[i]);
             desiredCBSkillService.save(temp);
