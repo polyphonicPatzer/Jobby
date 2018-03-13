@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @NotNull
     private String name;
@@ -17,11 +17,11 @@ public class Skill {
 
     private String description;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

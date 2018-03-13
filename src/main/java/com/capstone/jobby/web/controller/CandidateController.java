@@ -53,28 +53,20 @@ public class CandidateController {
     }
 
     @RequestMapping(value = "/candidate/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, HttpServletRequest request) {
+    public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, Principal principal) {
 
         Integer[] res = candidateSurveyResults.getResults();
 
-        String userEmail = null;
-        String userID = null;
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("EMAIL")) {
-                userEmail = cookie.getValue();
-            }
-            if (cookie.getName().equals("ID")) {
-                userID = cookie.getValue();
-            }
-        }
+        Candidate c = candidateService.findByUsername(principal.getName());
+        String candidateEmail = c.getEmail();
+
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {
             CandidateSkill temp = new CandidateSkill();
             Skill s = skills.get(i);
-            temp.setSkill(s);
-            temp.setCandidate(candidateService.findByUsername(userEmail));
+            temp.setSkillID(s.getId());
+            temp.setCandidateID(candidateService.findByUsername(candidateEmail).getId());
             temp.setSkillRating(res[i]);
             candidateSkillService.save(temp);
         }

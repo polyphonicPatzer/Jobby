@@ -7,15 +7,11 @@ import java.util.Objects;
 @Entity
 public class DesiredCBSkill implements Serializable {
 
-    @ManyToOne
-    @JoinColumn(name="candidateId")
     @Id
-    private Candidate candidate;
+    private Long companyID;
 
-    @OneToOne
-    @JoinColumn(name="skillId")
     @Id
-    private Skill skill;
+    private Long skillID;
 
     @Column
     private int skillRating;
@@ -27,25 +23,25 @@ public class DesiredCBSkill implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CandidateSkill that = (CandidateSkill) o;
-        return Objects.equals(candidate, that.candidate) &&
-                Objects.equals(skill, that.skill);
+        DesiredCBSkill that = (DesiredCBSkill) o;
+        return Objects.equals(companyID, that.companyID) &&
+                Objects.equals(skillID, that.skillID);
     }
 
-    public Candidate getCandidate() {
-        return candidate;
+    public Long getCompanyID() {
+        return companyID;
     }
 
-    public void setCandidate(Candidate candidate) {
-        this.candidate = candidate;
+    public void setCompanyID(Long companyID) {
+        this.companyID = companyID;
     }
 
-    public Skill getSkill() {
-        return skill;
+    public Long getSkillID() {
+        return skillID;
     }
 
-    public void setSkill(Skill skill) {
-        this.skill = skill;
+    public void setSkillID(Long skillID) {
+        this.skillID = skillID;
     }
 
     public int getSkillRating() {

@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c48129d3-7b43-43cf-8365-9e5a0cebd2ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateSkillDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateSkillDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/CandidateSkill.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/CandidateSkill.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Skill.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/Skill.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/app.properties" afterPath="$PROJECT_DIR$/build/resources/main/app.properties" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/data/jobby.mv.db" afterPath="$PROJECT_DIR$/data/jobby.mv.db" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredCBSkill.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredCBSkill.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app.properties" afterPath="$PROJECT_DIR$/src/main/resources/app.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -76,9 +70,22 @@
       <file leaf-file-name="CandidateSkill.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-359">
+              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+              <folding>
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#463#464#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
+                <element signature="e#569#570#0" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#727#728#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,70 +93,36 @@
       <file leaf-file-name="DesiredCBSkill.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredCBSkill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="163">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#925#926#0" expanded="true" />
-                <element signature="e#956#957#0" expanded="true" />
-                <element signature="e#984#985#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
-                <element signature="e#1059#1060#0" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
+                <element signature="e#880#881#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#997#998#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1082#1083#0" expanded="true" />
                 <element signature="e#1128#1129#0" expanded="true" />
-                <element signature="e#1179#1180#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-                <element signature="e#1260#1261#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1197#1198#0" expanded="true" />
+                <element signature="e#1248#1249#0" expanded="true" />
                 <element signature="e#1294#1295#0" expanded="true" />
-                <element signature="e#1345#1346#0" expanded="true" />
-                <element signature="e#1391#1392#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Company.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResumeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/ResumeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="86" column="76" lean-forward="false" selection-start-line="86" selection-start-column="76" selection-end-line="86" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Skill.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-              <folding>
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#443#444#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CandidateController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CandidateController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="37" column="24" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="37" selection-end-column="24" />
+            <state relative-caret-position="336">
+              <caret line="70" column="45" lean-forward="true" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,13 +130,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-290">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="228">
+              <caret line="53" column="43" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="53" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1114#1115#0" expanded="true" />
+                <element signature="e#1161#1162#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -533,8 +508,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/company/survey.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/landing.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/surveySubmitted.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/survey.html" />
@@ -555,18 +528,20 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/resumeDetails.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/ResumeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredCBSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
       </list>
     </option>
   </component>
@@ -642,6 +617,34 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jobby" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jobby" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jobby" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jobby" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
@@ -943,34 +946,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/GifService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/GifServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-122">
@@ -1057,6 +1032,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="28" column="55" lean-forward="false" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,24 +1043,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="47" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/company/surveySubmitted.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1105,16 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1129,13 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="32" column="5" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1179,16 +1124,6 @@
         <state relative-caret-position="613">
           <caret line="131" column="27" lean-forward="true" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1264,39 +1199,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding>
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/ResumeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
-          <caret line="86" column="76" lean-forward="false" selection-start-line="86" selection-start-column="76" selection-end-line="86" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="87" column="76" lean-forward="false" selection-start-line="87" selection-start-column="76" selection-end-line="87" selection-end-column="76" />
           <folding />
         </state>
       </provider>
@@ -1309,35 +1215,156 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CompanyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="45" column="75" lean-forward="true" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/GifDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="47" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredCBSkill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="163">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#883#884#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-            <element signature="e#956#957#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
             <element signature="e#1128#1129#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
             <element signature="e#1294#1295#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-359">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        <state relative-caret-position="228">
+          <caret line="53" column="43" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="53" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1161#1162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="70" column="45" lean-forward="true" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

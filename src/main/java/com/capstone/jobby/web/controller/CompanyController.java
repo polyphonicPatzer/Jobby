@@ -29,12 +29,7 @@ public class CompanyController {
     private CandidateService candidateService;
 
     @RequestMapping("/company/companyProfile")
-    public String companyProfile(Model model, Principal principal) {
-        Company company = companyService.findByUsername(principal.getName());
-        Cookie email = new Cookie("EMAIL", company.getEmail());
-        Cookie id = new Cookie("ID", Long.toString(company.getId()));
-        email.setPath("/");
-        id.setPath("/");
+    public String companyProfile(Model model) {
         return "company/companyProfile";
     }
 
@@ -50,32 +45,21 @@ public class CompanyController {
     }
 
     @RequestMapping(value = "/company/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Model model, HttpServletRequest request) {
+    public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Model model, HttpServletRequest request, Principal principal) {
 
         Integer[] answers = companySurveyResults.getAnswers();
         Integer[] weights = companySurveyResults.getWeights();
 
-        String companyEmail = null;
-        String companyID = null;
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("EMAIL")) {
-                companyEmail = cookie.getValue();
-            }
-            if (cookie.getName().equals("ID")) {
-                companyID = cookie.getValue();
-            }
-        }
-        System.out.println(companyEmail);
-        System.out.println(companyID);
+        Company c = companyService.findByUsername(principal.getName());
+        String companyEmail = c.getEmail();
 
         List<Skill> skills = skillService.findAll();
 
         for (int i = 0; i < 10; i++) {
             DesiredCBSkill temp = new DesiredCBSkill();
             Skill s = skills.get(i);
-            temp.setSkill(s);
-            temp.setCandidate(candidateService.findByUsername(companyEmail));
+            temp.setSkillID(s.getId());
+            temp.setCompanyID(companyService.findByUsername(companyEmail).getId());
             temp.setSkillRating(answers[i]);
             temp.setSkillWeight(weights[i]);
             desiredCBSkillService.save(temp);

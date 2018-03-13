@@ -7,48 +7,29 @@ import java.util.Objects;
 @Entity
 public class CandidateSkill implements Serializable {
 
-    @ManyToOne
-    @JoinColumn(name="candidateId")
     @Id
-    Candidate candidate;
+    private Long candidateID;
 
-    @ManyToOne
-    @JoinColumn(name="skillId")
     @Id
-    Skill skill;
+    private Long skillID;
 
     @Column
     private int skillRating;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CandidateSkill that = (CandidateSkill) o;
-        return Objects.equals(candidate, that.candidate) &&
-                Objects.equals(skill, that.skill);
+    public Long getCandidateID() {
+        return candidateID;
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(candidate, skill);
+    public void setCandidateID(Long candidateID) {
+        this.candidateID = candidateID;
     }
 
-    public Candidate getCandidate() {
-        return candidate;
+    public Long getSkillID() {
+        return skillID;
     }
 
-    public void setCandidate(Candidate candidate) {
-        this.candidate = candidate;
-    }
-
-    public Skill getSkill() {
-        return skill;
-    }
-
-    public void setSkill(Skill skill) {
-        this.skill = skill;
+    public void setSkillID(Long skillID) {
+        this.skillID = skillID;
     }
 
     public int getSkillRating() {
@@ -59,4 +40,18 @@ public class CandidateSkill implements Serializable {
         this.skillRating = skillRating;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CandidateSkill that = (CandidateSkill) o;
+        return Objects.equals(candidateID, that.candidateID) &&
+                Objects.equals(skillID, that.skillID);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(candidateID, skillID);
+    }
 }
