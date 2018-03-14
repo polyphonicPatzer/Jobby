@@ -14,13 +14,11 @@
     <div class="meta row">
         <div class="col s10 l11 push-l1">
             <h4 th:text="${resume.description}"></h4>
-            <div>
-                <div class="actions">
-                    <a th:href="@{|/auth/candidate/resume/${resume.id}/edit|}">Edit</a>
-                    <form th:action="@{|/auth/candidate/resume/${resume.id}/delete|}" method="post">
-                        <button type="submit">Delete</button>
-                    </form>
-                </div>
+            <div class="actions">
+                <a th:href="@{|/auth/candidate/resume/${resume.id}/edit|}">Edit</a>
+                <form th:action="@{|/auth/candidate/resume/${resume.id}/delete|}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
             </div>
         </div>
     </div>

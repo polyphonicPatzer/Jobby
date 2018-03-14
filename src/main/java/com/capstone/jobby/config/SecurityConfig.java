@@ -84,17 +84,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatcher("/auth/company/*").authorizeRequests().anyRequest().hasRole("COMPANY")
                     .and()
                     .formLogin()
-                    //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
                     .loginPage("/auth/company/companyLogin").permitAll()
-                    //THIS PERMIT ALL MAY NOT BE NECESSARY
-                    //.permitAll()
                     .successHandler(companyLoginSuccessHandler())
                     .failureHandler(companyLoginFailureHandler())
                     .and()
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/company/logoutPost")
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/")
+                    .and()
+                    .csrf();
 
         }
 
@@ -128,19 +127,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatcher("/auth/candidate/*").authorizeRequests().anyRequest().hasRole("CANDIDATE")
                     .and()
                     .formLogin()
-                    //THIS LOGIN URL MIGHT HAVE TO BE CHANGED TO THAT ONE EXAMPLE WITH A PAGE AND URL???
                     .loginPage("/auth/candidate/candidateLogin").permitAll()
-                    //THIS PERMIT ALL MAY NOT BE NECESSARY
-                    //.permitAll()
                     .successHandler(candidateLoginSuccessHandler())
                     .failureHandler(candidateLoginFailureHandler())
                     .and()
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/candidate/logoutPost")
-                    .logoutSuccessUrl("/");
-//                    .and()
-//                    .csrf();
+                    .logoutSuccessUrl("/")
+                    .and()
+                    .csrf();
 
         }
 

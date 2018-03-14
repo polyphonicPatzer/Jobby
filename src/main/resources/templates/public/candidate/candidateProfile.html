@@ -21,12 +21,24 @@
     <p style="font-size: 20px;font-weight: bold; margin:0px; text-align: left;">Candidate Information</p>
     <p style="font-size: 17px;font-weight: normal;" th:text="|${candidate.name}|">John Smith</p>
     <p style="font-size: 17px;font-weight: normal;" th:text="|${candidate.email}|">TheDoctor@yahoo.com</p>
-    <img class="imgCenter" style="height:200px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Profile Picture" />
+
+    <div th:if="${candidate.profilePic} != null">
+        <a th:href="@{|/profilePic/${candidate.profilePic.id}|}" class="actions">
+            <img class="imgCenter" style="height:400px;" th:src="@{|/auth/candidate/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
+        </a>
+    </div>
+    <div th:if="${candidate.profilePic} == null">
+        <img class="imgCenter" style="height:400px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Default Profile Picture" />
+    </div>
+
 
     <button class="button" style="float:left;">Contact</button>
     <div style="float:right;">
-        <div th:if="${resume != null}">
-            <a th:href="@{|/resume/${resume.id}|}" style='text-decoration: underline; font-size: 14px;' >View Resume</a>
+        <div th:if="${candidate.resume != null}">
+            <a th:href="@{|/resume/${candidate.resume.id}|}" style='text-decoration: underline; font-size: 14px;' >View Resume</a>
+        </div>
+        <div th:if="${candidate.resume == null}">
+            <p>No Resume Available</p>
         </div>
 
         <!-- FIND A WAY TO ONLY INCLUDE THIS LINK I THEY'VE TAKEN THE SURVEY.-->

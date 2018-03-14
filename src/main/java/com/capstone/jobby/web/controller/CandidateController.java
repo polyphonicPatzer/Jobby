@@ -34,7 +34,9 @@ public class CandidateController {
     public String candidateProfile(Model model, Principal principal){
         Candidate candidate = candidateService.findByUsername(principal.getName());
         Resume resume = candidate.getResume();
+        ProfilePic profilePic = candidate.getProfilePic();
         model.addAttribute("resume", resume);
+        model.addAttribute("profilePic", profilePic);
         return "private/candidate/candidateProfile";
     }
 
@@ -107,6 +109,7 @@ public class CandidateController {
         Candidate candidate = candidateService.findById(candidateId);
         model.addAttribute("candidate", candidate);
         model.addAttribute("resume", candidate.getResume());
+        model.addAttribute("profilePic", candidate.getProfilePic());
         return "public/candidate/candidateProfile";
     }
 

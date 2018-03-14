@@ -23,7 +23,14 @@
         <div class="container" style="width: 100%;">
             <a th:href="@{/}" class="brand-logo" style="margin-left:10px">Jobby</a>
             <div style="float: left;">
-                <img class="imgCenter" style="height:64px;margin-left:110px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Profile Picture" />
+                <div th:if="${#authentication.principal.profilePic} == null">
+                    <img class="imgCenter" style="height:64px;margin-left:110px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Profile Picture" />
+                </div>
+                <div th:if="${#authentication.principal.profilePic} != null">
+                    <a th:href="@{|/auth/candidate/profilePic/${#authentication.principal.profilePic.id}|}">
+                        <img class="imgCenter" style="height:64px;margin-left:110px;" th:src="@{|/profilePic/${#authentication.principal.profilePic.id}.img|}" alt="Profile Picture" />
+                    </a>
+                </div>
             </div>
             <ul>
                 <li><a th:href="@{/auth/candidate/candidateProfile}" class="menu">Home</a></li>
