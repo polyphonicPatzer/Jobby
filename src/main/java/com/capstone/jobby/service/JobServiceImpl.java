@@ -18,8 +18,8 @@ public class JobServiceImpl implements  JobService {
     }
 
     @Override
-    public Job findById(Long id) {
-        return jobDao.findById(id);
+    public Job findByName(String name) {
+        return jobDao.findByName(name);
     }
 
     @Override

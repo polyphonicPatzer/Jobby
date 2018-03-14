@@ -57,27 +57,21 @@ public class CompanyController {
         Company c = companyService.findByUsername(principal.getName());
         String companyEmail = c.getEmail();
 
-        int max = 1;
+        Long max = (long)1;
         List<Job> jobs = jobService.findAll();
-        for (Job jobo : jobs){
-            if (jobo.getId() > max){
+        for (Job jobo : jobs) {
+            if (jobo.getId() >= max) {
                 max = jobo.getId();
             }
         }
+
 
         Job job = new Job();
         job.setName(companySurveyResults.getName());
         job.setDescription(companySurveyResults.getDescription());
         job.setCompanyID(c.getId());
-        job.setId(max);
-        System.out.println("Current Job:");
-        System.out.println(job.getName());
-        System.out.println(job.getDescription());
-        System.out.println(job.getId());
-        System.out.println(job.getCompanyID());
-        System.out.println("At 73");
+        job.setId((max+1));
         jobService.save(job);
-        System.out.println("At 75");
 
         List<Skill> skills = skillService.findAll();
 
@@ -85,9 +79,9 @@ public class CompanyController {
             DesiredCBSkill temp = new DesiredCBSkill();
             Skill s = skills.get(i);
             temp.setSkillID(s.getId());
-            temp.setCompanyID(companyService.findByUsername(companyEmail).getId());
             temp.setSkillRating(answers[i]);
             temp.setSkillWeight(weights[i]);
+            temp.setJobID(max+1);
             desiredCBSkillService.save(temp);
         }
 
