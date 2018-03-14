@@ -1,5 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
 body {
     font-family: 'varela round', sans-serif;
 }
@@ -453,6 +465,18 @@ div.cs-select {
 
 form .row .col {
     margin-bottom: 0;
+}
+
+input[type=jobTitle]{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    font-color: #000000;
 }
 
 input[type=text] {
