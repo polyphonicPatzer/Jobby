@@ -41,7 +41,7 @@ public class ResumeController {
         // Add flash message for success
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Resume successfully uploaded!", FlashMessage.Status.SUCCESS));
 
-        // TODO: Redirect browser to new GIF's detail view
+        //Redirect browser to new resume's detail view
         return String.format("redirect:/auth/candidate/resume/%s",resume.getId());
     }
 
@@ -113,7 +113,7 @@ public class ResumeController {
         resumeService.delete(resume);
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Resume deleted!", FlashMessage.Status.SUCCESS));
 
-        // Redirect to app root
+        // Redirect to candidate home page
         return "redirect:/auth/candidate/candidateProfile";
     }
 

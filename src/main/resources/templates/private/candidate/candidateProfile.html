@@ -32,6 +32,14 @@
         <a th:href="@{/auth/candidate/survey}"><button type="submit" class="redButton button">Take Survey</button></a>
     </div>
 
+    <div th:if="${profilePic == null}">
+        <div class="grayContainerRounded" style=" float: left; text-align: left; height: 180px; width: 100%;">
+            <p style="margin:0em;">Profile Picture</p>
+            <p style="font-size: 17px;font-size: 16px; margin-top: 0em;">Personalize your profile by uploading a profile picture.</p>
+            <a th:href="@{/auth/candidate/uploadProfilePic}"><button type="submit" class="redButton button">Upload Profile Picture</button></a>
+        </div>
+    </div>
+
     <div th:if="${resume != null}">
         <div class="grayContainerRounded" style=" float: left; text-align: left; height: 360px; margin-bottom: 20px; width: 100%;">
             <p style="margin:0em;">Current Resume</p>
@@ -57,6 +65,7 @@
             <a th:href="@{/auth/candidate/uploadResume}"><button type="submit" class="redButton button">Upload Resume</button></a>
         </div>
     </div>
+
 
 </div>
 

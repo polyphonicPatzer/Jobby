@@ -33,6 +33,10 @@ public class Candidate implements UserDetails {
     @JoinColumn(name="resumeId")
     private Resume resume;
 
+    @OneToOne
+    @JoinColumn(name="profilePicId")
+    private ProfilePic profilePic;
+
     @NotNull
     @Column(length = 100)
     private String password;
@@ -72,6 +76,10 @@ public class Candidate implements UserDetails {
     public void setResume(Resume resume) {
         this.resume = resume;
     }
+
+    public ProfilePic getProfilePic() { return profilePic; }
+
+    public void setProfilePic(ProfilePic profilePic) { this.profilePic = profilePic; }
 
     public void setPassword(String password) {
         this.password = password;

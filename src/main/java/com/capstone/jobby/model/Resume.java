@@ -17,8 +17,6 @@ public class Resume {
     @JoinColumn(name="candidateId")
     private Candidate candidate;
 
-    private String hash;
-
     public Long getId() { return id; }
 
     public void setId(Long id) { this.id = id; }
@@ -34,8 +32,4 @@ public class Resume {
     public Candidate getCandidate() { return candidate; }
 
     public void setCandidate(Candidate candidate) { this.candidate = candidate; }
-
-    public String getHash() { return hash;}
-
-    public void setHash(String hash) { this.hash = hash; }
 }

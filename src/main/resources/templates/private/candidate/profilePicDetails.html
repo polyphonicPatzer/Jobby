@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/candidateLayout :: head('')"></head>
+<body>
+<div th:replace="public/candidateLayout :: nav"></div>
+<div th:replace="public/candidateLayout :: searchbar"></div>
+<div th:replace="public/candidateLayout :: flash"></div>
+<div class="gif-detail container">
+    <div class="frame row">
+        <div class="col s12 actions">
+            <img th:src="@{|/auth/candidate/profilePic/${profilePic.id}.img|}" alt="img" />
+        </div>
+    </div>
+    <div class="meta row">
+        <div class="col s10 l11 push-l1">
+            <div class="actions">
+                <a th:href="@{|/auth/candidate/profilePic/${profilePic.id}/edit|}">Edit</a>
+                <form th:action="@{|/auth/candidate/profilePic/${profilePic.id}/delete|}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="public/candidateLayout :: scripts"></div>
+</body>
+</html>

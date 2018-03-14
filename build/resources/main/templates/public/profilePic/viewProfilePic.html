@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout :: head('')"></head>
+<body>
+<div sec:authorize="isAnonymous()">
+    <div th:replace="layout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_CANDIDATE')">
+    <div th:replace="public/candidateLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_COMPANY')">
+    <div th:replace="public/companyLayout :: nav"></div>
+</div>
+<!--
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+     <div th:replace="public/adminLayout :: nav"></div>
+</div>
+-->
+
+<div class="gif-detail container">
+    <a href="javascript:window.location = document.referrer;" class="button">Back</a>
+    <div class="frame row">
+        <div class="col s12 actions">
+            <img th:src="@{|/profilePic/${profilePic.id}.img|}" alt="img" />
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
