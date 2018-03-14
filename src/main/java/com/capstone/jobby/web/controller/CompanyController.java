@@ -1,10 +1,7 @@
 package com.capstone.jobby.web.controller;
 
 import com.capstone.jobby.model.*;
-import com.capstone.jobby.service.CandidateService;
-import com.capstone.jobby.service.CompanyService;
-import com.capstone.jobby.service.DesiredCBSkillService;
-import com.capstone.jobby.service.SkillService;
+import com.capstone.jobby.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +25,8 @@ public class CompanyController {
     private SkillService skillService;
     @Autowired
     private CandidateService candidateService;
-
+    @Autowired
+    private JobService jobService;
 
     @RequestMapping("/auth/company/companyProfile")
     public String companyProfile(Model model){
@@ -41,21 +39,45 @@ public class CompanyController {
         if(!model.containsAttribute("companySurveyResults")) {
             model.addAttribute("companySurveyResults", new CompanySurveyResults());
         }
+        if(!model.containsAttribute("job")) {
+            model.addAttribute("job", new Job());
+        }
         model.addAttribute("action","/auth/company/submitSurvey");
         model.addAttribute("heading","Finish");
         model.addAttribute("submit","Finish");
         return "private/company/survey";
     }
 
-
     @RequestMapping(value = "/auth/company/submitSurvey", method = RequestMethod.POST)
-    public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Model model, HttpServletRequest request, Principal principal) {
+    public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Principal principal) {
 
         Integer[] answers = companySurveyResults.getAnswers();
         Integer[] weights = companySurveyResults.getWeights();
 
         Company c = companyService.findByUsername(principal.getName());
         String companyEmail = c.getEmail();
+
+        int max = 1;
+        List<Job> jobs = jobService.findAll();
+        for (Job jobo : jobs){
+            if (jobo.getId() > max){
+                max = jobo.getId();
+            }
+        }
+
+        Job job = new Job();
+        job.setName(companySurveyResults.getName());
+        job.setDescription(companySurveyResults.getDescription());
+        job.setCompanyID(c.getId());
+        job.setId(max);
+        System.out.println("Current Job:");
+        System.out.println(job.getName());
+        System.out.println(job.getDescription());
+        System.out.println(job.getId());
+        System.out.println(job.getCompanyID());
+        System.out.println("At 73");
+        jobService.save(job);
+        System.out.println("At 75");
 
         List<Skill> skills = skillService.findAll();
 
@@ -68,6 +90,8 @@ public class CompanyController {
             temp.setSkillWeight(weights[i]);
             desiredCBSkillService.save(temp);
         }
+
+
         return("private/company/surveySubmitted");
     }
 

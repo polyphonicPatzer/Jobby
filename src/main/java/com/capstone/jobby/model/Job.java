@@ -6,15 +6,25 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Job {
     @Id
-    @Column(name="jobId")
+    @Column(name="id")
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name="companyID")
-    private Company company;
+    @Column(name="companyID")
+    private Long companyID;
 
     @NotNull
     private String name;
+
+    @Column
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -24,15 +34,19 @@ public class Job {
         this.id = id;
     }
 
-    public Company getCompany() {
-        return company;
+    public Long getCompanyID() {
+        return companyID;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
+    public void setCompanyID(Long companyID) {
+        this.companyID = companyID;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

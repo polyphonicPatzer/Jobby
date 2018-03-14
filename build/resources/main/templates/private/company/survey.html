@@ -6,20 +6,19 @@
 <div th:replace="public/companyLayout :: flash"></div>
 
 <div class="grayContainerRounded" style="width:85%; border-radius: 0px; height: fit-content; overflow: hidden;">
-    <p style="font-size: 17px;font-weight: normal; text-align: left;"> Welcome! Please answer the following questions, and you will be one step closer to finding a match</p>
-    <form>
-        <p style="font-size: 17px;font-weight: normal; text-align: left;">Job Title</p>
-        <input type="jobTitle" id="jobName" name="jobName"/>
-        <p style="font-size: 17px;font-weight: normal; text-align: left;">Enter the job description here</p>
-        <textarea></textarea>
-    </form>
     <div class="grayContainer" style="width: 100%; height: fit-content; margin-top: 15px; margin-bottom: 15px;">
-        <p style="font-size:14px; text-align: left;">Please rate according to how you would perfer your employees to answer.</p>
-        <p style="font-size:14px; text-align: left;">On a scale of 1-5 (5 being Strongest)</p>
-        <form th:action="@{${action}}" th:object = "${companySurveyResults}" method="post">
-            <fieldset id = "d1" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+        <form th:action="@{${action}}" th:object = "${companySurveyResults}" method="post" id = 'job'>
+            <p style="font-size: 17px;font-weight: normal; text-align: left;"> Welcome! Please answer the following questions, and you will be one step closer to finding a match</p>
+            <p style="font-size: 17px;font-weight: normal; text-align: left;">Job Title</p>
+            <input th:field = "*{name}" form = "job"/>
+            <p style="font-size: 17px;font-weight: normal; text-align: left;">Enter the job description here</p>
+            <textarea  th:field = "*{description}" form = "job" ></textarea>
+
+            <p style="font-size:14px; text-align: left;">Please rate according to how you would perfer your employees to answer.</p>
+            <p style="font-size:14px; text-align: left;">On a scale of 1-5 (5 being Strongest)</p>
+            <fieldset id = "w1" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">1. I can best be described as unconventional, creative and independent</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q1W}" name = "w1" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -32,14 +31,10 @@
                 <div><input type="radio" name="q1" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q1" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q1W" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q1W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q1W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q1W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d2" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w2" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">2. At work once you know what is required, you should be left to get on with it</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q2W}" name = "w2" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -52,14 +47,10 @@
                 <div><input type="radio" name="q2" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q2" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q2W" th:field="*{q2W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q2W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q2W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q2W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d3" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w3"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">3. I can best be described as team-focused, reliable and persistent</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q3W}" name = "w3" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -72,14 +63,10 @@
                 <div><input type="radio" name="q3" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q3" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q3W" th:field="*{q3W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q3W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q3W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q3W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d4" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w4"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">4. I can best be described as competitive and decisive</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q4W}" name = "w4" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -92,14 +79,10 @@
                 <div><input type="radio" name="q4" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q4" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q4W" th:field="*{q4W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q4W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q4W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q4W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d5" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w5"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">5. I like to be clearly told what to do</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q5W}" name = "w5" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -112,14 +95,10 @@
                 <div><input type="radio" name="q5" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q5" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q5W" th:field="*{q5W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q5W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q5W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q5W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d1" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w6"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">6. At work people would best describe me as thoughtful</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q6W}" name = "w6" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -132,14 +111,10 @@
                 <div><input type="radio" name="q6" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q6" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q6W" th:field="*{q6W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q6W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q6W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q6W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d1" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w7"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">7. I like to create things</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q7W}" name = "w7" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -152,14 +127,10 @@
                 <div><input type="radio" name="q7" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q7" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q7W" th:field="*{q7W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q7W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q7W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q7W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d1" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w8"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">8. At work I like to work independently</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q8W}" name = "w8" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -172,14 +143,10 @@
                 <div><input type="radio" name="q8" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q8" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q8W" th:field="*{q8W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q8W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q8W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q8W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d1" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w9"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">9. At work I can be quite assertive</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q9W}" name = "w9" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -192,14 +159,10 @@
                 <div><input type="radio" name="q9" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q9" value="5" /> 5 (Strongly Agree)</div>
             </fieldset>
-            <fieldset id = "q9W" th:field="*{q9W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q9W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q9W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q9W" value="3" /> High Priority</div>
-            </fieldset>
-            <fieldset id = "d1" th:field="*{q1W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
+
+            <fieldset id = "w10"  method="post" style="font-size: 14px;font-weight: normal; text-align: left;">
                 <p style="float:left; font-size:14px; text-align: left;">10. I like a close-knit team in which to work</p>
-                <select id = "myList" style="font-size: 13px;margin: 1em;">
+                <select th:field="*{q10W}" name = "w10" style="font-size: 13px;margin: 1em;">
                     <option value = "1">Low Priority</option>
                     <option value = "2">Average Priority</option>
                     <option value = "3">High Priority</option>
@@ -211,11 +174,6 @@
                 <div><input type="radio" name="q10" value="3" /> 3 (Neutral)</div>
                 <div><input type="radio" name="q10" value="4" /> 4 (Agree)</div>
                 <div><input type="radio" name="q10" value="5" /> 5 (Strongly Agree)</div>
-            </fieldset>
-            <fieldset id = "q10W" th:field="*{q10W}" method="post" style="font-size: 14px;font-weight: normal; text-align: left;margin-left: 15px;">
-                <div><input type="radio" name="q10W" value="1" /> Low Priority</div>
-                <div><input type="radio" name="q10W" value="2" /> Average Priority</div>
-                <div><input type="radio" name="q10W" value="3" /> High Priority</div>
             </fieldset>
             <button th:type="${submit}" style=" margin-right: 0%; margin-top: 10px;" class="button">Finish</button>
         </form>
