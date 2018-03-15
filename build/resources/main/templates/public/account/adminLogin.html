@@ -11,9 +11,6 @@
         <div class="row">
             <div class="col s12">
                 <form th:action="@{${action}}" th:object="${admin}" method="post">
-
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
                     <div class="input-field" style="width: 70%; margin: 0 auto;">
                         <input type="text" th:field="*{username}" placeholder="Username/Email"/>
                     </div>

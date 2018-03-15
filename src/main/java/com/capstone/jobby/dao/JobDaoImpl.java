@@ -40,9 +40,9 @@ public class JobDaoImpl implements JobDao {
     }
 
     @Override
-    public Job findById(Long id) {
+    public Job findByName(String name) {
         Session session = sessionFactory.openSession();
-        Job job = session.get(Job.class,id);
+        Job job = session.get(Job.class,name);
         session.close();
         return job;
     }

@@ -8,7 +8,7 @@ import java.util.Objects;
 public class DesiredCBSkill implements Serializable {
 
     @Id
-    private Long companyID;
+    private Long jobID;
 
     @Id
     private Long skillID;
@@ -24,16 +24,16 @@ public class DesiredCBSkill implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DesiredCBSkill that = (DesiredCBSkill) o;
-        return Objects.equals(companyID, that.companyID) &&
+        return Objects.equals(jobID, that.jobID) &&
                 Objects.equals(skillID, that.skillID);
     }
 
-    public Long getCompanyID() {
-        return companyID;
+    public Long getJobID() {
+        return jobID;
     }
 
-    public void setCompanyID(Long companyID) {
-        this.companyID = companyID;
+    public void setJobID(Long companyID) {
+        this.jobID = companyID;
     }
 
     public Long getSkillID() {

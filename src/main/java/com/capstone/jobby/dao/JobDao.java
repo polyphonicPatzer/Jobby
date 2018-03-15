@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface JobDao {
     List<Job> findAll();
-    Job findById(Long id);
+    Job findByName(String name);
     void save(Job job);
     void delete(Job job);
 }
