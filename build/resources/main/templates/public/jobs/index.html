@@ -12,12 +12,9 @@
 <div sec:authorize="hasRole('ROLE_COMPANY')">
     <div th:replace="public/companyLayout :: nav"></div>
 </div>
-<!--
 <div sec:authorize="hasRole('ROLE_ADMIN')">
      <div th:replace="public/adminLayout :: nav"></div>
 </div>
--->
-<div th:replace="layout :: flash"></div>
 
 <div class="categories container">
     <div class="row">

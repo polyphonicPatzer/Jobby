@@ -1,22 +1,19 @@
 package com.capstone.jobby.config;
 
+import com.capstone.jobby.service.AdminService;
 import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 //import org.springframework.data.repository.query.spi.EvaluationContextExtension;
 //import org.springframework.data.repository.query.spi.EvaluationContextExtensionSupport;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.access.expression.SecurityExpressionRoot;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -91,9 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/company/logoutPost")
-                    .logoutSuccessUrl("/")
-                    .and()
-                    .csrf();
+                    .logoutSuccessUrl("/");
 
         }
 
@@ -134,9 +129,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/candidate/logoutPost")
-                    .logoutSuccessUrl("/")
-                    .and()
-                    .csrf();
+                    .logoutSuccessUrl("/");
 
         }
 
@@ -148,6 +141,48 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             return (request, response, exception) -> {
                 request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
                 response.sendRedirect("/auth/candidate/candidateLogin");
+            };
+        }
+    }
+
+
+    @Configuration
+    @Order(5)
+    public static class AdminSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+
+        @Autowired
+        private AdminService adminService;
+
+        @Autowired
+        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+            auth.userDetailsService(adminService).passwordEncoder(passwordEncoder());
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/auth/admin/*").authorizeRequests().anyRequest().hasRole("ADMIN")
+                    .and()
+                    .formLogin()
+                    .loginPage("/auth/admin/adminLogin").permitAll()
+                    .successHandler(adminLoginSuccessHandler())
+                    .failureHandler(adminLoginFailureHandler())
+                    .and()
+                    .logout()
+                    .permitAll()
+                    .logoutUrl("/auth/admin/logoutPost")
+                    .logoutSuccessUrl("/");
+
+        }
+
+        public AuthenticationSuccessHandler adminLoginSuccessHandler() {
+            return (request, response, authentication) -> { response.sendRedirect("/auth/admin/adminDashboard"); };
+        }
+
+        public AuthenticationFailureHandler adminLoginFailureHandler() {
+            return (request, response, exception) -> {
+                request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
+                response.sendRedirect("/auth/admin/adminLogin");
             };
         }
     }

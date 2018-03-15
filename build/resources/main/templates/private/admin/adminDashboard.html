@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="layout :: head('register')"></head>
+<head th:replace="public/adminLayout :: head('logout')"></head>
 <body>
-<div th:replace="layout :: nav"></div>
-<div th:replace="layout :: searchbar"></div>
-<div th:replace="layout :: flash"></div>
+<div th:replace="public/adminLayout :: nav"></div>
+<div th:replace="public/adminLayout :: flash"></div>
 
 <div class="grayContainerRounded" style="width:85%; border-radius: 0px; height: fit-content; overflow: hidden;">
     <p style="font-size: 17px;font-weight: normal; text-align: left;"> Modify accounts here</p>
@@ -18,7 +17,7 @@
     </div>
 </div>
 
-<div th:replace="layout :: scripts"></div>
+<div th:replace="public/adminLayout :: scripts"></div>
 
 </body>
 </html>

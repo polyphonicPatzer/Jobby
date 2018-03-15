@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/adminLayout :: head('logout')"></head>
+<body>
+<div th:replace="public/adminLayout :: nav"></div>
+<div th:replace="public/adminLayout :: flash"></div>
+
+<h1 style="margin-left: 25%">Logout?</h1>
+<div class="grayContainerLogout">
+    <div class="row">
+        <div class="col s12">
+            <form th:action="@{${action}}" method="post">
+                <button th:text="${submit}" type="submit" class="button">Logout</button>
+                <a href="javascript:window.location = document.referrer;" class="button">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="public/adminLayout :: scripts"></div>
+
+</body>
+</html>

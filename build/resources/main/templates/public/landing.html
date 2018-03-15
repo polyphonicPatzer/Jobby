@@ -12,14 +12,12 @@
 <div sec:authorize="hasRole('ROLE_COMPANY')">
     <div th:replace="public/companyLayout :: nav"></div>
 </div>
-<!--
 <div sec:authorize="hasRole('ROLE_ADMIN')">
      <div th:replace="public/adminLayout :: nav"></div>
 </div>
--->
 
 <div sec:authorize="isAnonymous()">
-    <a th:href="@{/account/adminLogin}" style='float:right;text-decoration: underline; font-size: 11.4px;    margin-right: 10px;' >administrator</a>
+    <a th:href="@{/auth/admin/adminLogin}" style='float:right;text-decoration: underline; font-size: 11.4px;    margin-right: 10px;' >administrator</a>
 </div>
 
 <img class="imgCenter" th:src="@{/images/logo.png}" alt="Jobby Logo" />

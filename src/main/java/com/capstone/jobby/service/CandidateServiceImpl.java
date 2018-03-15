@@ -45,7 +45,7 @@ public class CandidateServiceImpl implements CandidateService {
             throw new UsernameNotFoundException("Candidate not found");
         }
         System.out.println("\n\n\nINSIDE LOADUSERBYUSERNAME AND WAS SUCCESSFUL!!!\n\n\n");
-        //Return company object
+        //Return candidate object
         return candidate;
     }
 }
