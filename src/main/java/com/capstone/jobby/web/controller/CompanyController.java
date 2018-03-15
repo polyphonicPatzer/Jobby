@@ -12,6 +12,7 @@ import java.security.Principal;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -29,7 +30,16 @@ public class CompanyController {
     private JobService jobService;
 
     @RequestMapping("/auth/company/companyProfile")
-    public String companyProfile(Model model){
+    public String companyProfile(Model model, Principal principal){
+        Company company = companyService.findByUsername(principal.getName());
+        List<Job> jobs = jobService.findJobsByCompanyId(company.getId());
+        Collections.reverse(jobs);
+        if (jobs.size() > 5)
+            model.addAttribute("jobs", jobs.subList(0, 5));
+        else
+            model.addAttribute("jobs", jobs);
+        model.addAttribute("company", company);
+
         return "private/company/companyProfile";
     }
 
@@ -100,23 +110,22 @@ public class CompanyController {
     //Job Postings
     @RequestMapping(value = "/auth/company/jobPostings")
     public String companyJobPostings(Model model, Principal principal) {
+
         Company company = companyService.findByUsername(principal.getName());
-
-        //TODO: Write a query to retrieve all job postings using company.getId()
-        //List<Job> jobsList = ?????
-
-        //TODO: Add the posted jobs to the model and return the jobPostings template
-        //model.addAttribute("jobs", jobsList);
+        List<Job> jobs = jobService.findJobsByCompanyId(company.getId());
+        Collections.reverse(jobs);
+        model.addAttribute("jobs", jobs);
+        model.addAttribute("company", company);
 
         return "private/company/jobPostings";
     }
 
     //Employee Matches. This might be altered to return employees matched to a particular job
     //In that case, the mapping will be "/auth/company/employeeMatches/{jobId}"
-    @RequestMapping(value = "/auth/company/employeeMatches")
-    public String employeeMatches(Model model) {
+    @RequestMapping(value = "/auth/company/employeeMatches/{jobId}")
+    public String employeeMatches(Model model, @PathVariable Long jobId) {
 
-        //TODO: I think this method should have a @PathVariable for a jobId in the mapping and query for matched candidates
+        //TODO: Write a query to retrieve matched candidates by running this jobId through the algo
 
         return "private/company/employeeMatches";
     }
@@ -145,8 +154,10 @@ public class CompanyController {
     // Public facing company profile
     @RequestMapping(value = "/company/{companyId}")
     public String candidateProfile(Model model, @PathVariable Long companyId){
-        Candidate candidate = candidateService.findById(companyId);
-        model.addAttribute("company", candidate);
+        Company company = companyService.findById(companyId);
+        List<Job> jobs = jobService.findJobsByCompanyId(companyId);
+        model.addAttribute("company", company);
+        model.addAttribute("jobs", jobs);
         return "public/company/companyProfile";
     }
 
