@@ -4,7 +4,27 @@
 <body>
 <div th:replace="public/companyLayout :: nav"></div>
 
-This is where job postings will go...
+
+<div class="categories container">
+    <div class="row">
+        <div class="col s9">
+            <h2>Current Job Postings</h2>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div th:each="job : ${jobs}" class="col s12 l4">
+        <div class="row">
+            <div class="card" style="background-color:#76B1EC">
+                <div class="card-content">
+                    <div class="card-title">
+                        <a class="name" th:href="@{|/job/${job.id}|}" th:text="${job.name}" style="color:white; font-size: 140%; text-decoration: underline;">Job Name</a>
+                        <a class="name" th:href="@{|/auth/company/employeeMatches/${job.id}|}">View Matched Candidates</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div th:replace="public/companyLayout :: scripts"></div>
 

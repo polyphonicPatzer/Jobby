@@ -8,6 +8,7 @@ public interface JobDao {
     List<Job> findAll();
     Job findById(Long id);
     Job findByName(String name);
+    List<Job> findJobsByCompanyId(Long companyId);
     void save(Job job);
     void delete(Job job);
 }

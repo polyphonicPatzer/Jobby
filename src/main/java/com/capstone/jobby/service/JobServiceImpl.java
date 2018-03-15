@@ -26,6 +26,9 @@ public class JobServiceImpl implements  JobService {
     }
 
     @Override
+    public List<Job> findJobsByCompanyId(Long companyId) { return jobDao.findJobsByCompanyId(companyId); }
+
+    @Override
     public void save(Job job) {
         jobDao.save(job);
     }
