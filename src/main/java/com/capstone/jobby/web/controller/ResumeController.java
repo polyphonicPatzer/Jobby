@@ -107,9 +107,12 @@ public class ResumeController {
 
     // Delete an existing Resume
     @RequestMapping(value = "/auth/candidate/resume/{resumeId}/delete", method = RequestMethod.POST)
-    public String deleteResume(@PathVariable Long resumeId, RedirectAttributes redirectAttributes) {
+    public String deleteResume(@PathVariable Long resumeId, RedirectAttributes redirectAttributes, Principal principal) {
         // Delete the resume whose id is resumeId
         Resume resume = resumeService.findById(resumeId);
+        Candidate candidate = candidateService.findByUsername(principal.getName());
+        candidate.setResume(null);
+        candidateService.save(candidate);
         resumeService.delete(resume);
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Resume deleted!", FlashMessage.Status.SUCCESS));
 

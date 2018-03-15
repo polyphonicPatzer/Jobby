@@ -17,9 +17,7 @@ public class JobSearchController {
     @SuppressWarnings("unchecked")
     @RequestMapping("/jobs")
     public String listAllJobs(Model model) {
-        // TODO: Get all categories
         List<Job> jobs = jobService.findAll();
-
         model.addAttribute("jobs", jobs);
         return "public/jobs/index";
     }

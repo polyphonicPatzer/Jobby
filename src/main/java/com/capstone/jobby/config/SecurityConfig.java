@@ -46,7 +46,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             http
                     .antMatcher("/")
                     .authorizeRequests().anyRequest().permitAll();
-
         }
     }
 
@@ -58,13 +57,88 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             http
                     .antMatcher("/account/*")
                     .authorizeRequests().anyRequest().permitAll();
-
         }
     }
 
-
     @Configuration
     @Order(3)
+    public static class PublicCandidateSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/candidate/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(4)
+    public static class PublicCandidateSurveyResultsSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/candidateSurveyResults/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(5)
+    public static class PublicCompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/company/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(6)
+    public static class PublicJobSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/job*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(7)
+    public static class PublicProfilePicConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/profilePic/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(8)
+    public static class PublicResumeConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/resume/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(9)
+    public static class PublicErrorConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/error")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(10)
     public static class CompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -88,7 +162,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/company/logoutPost")
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/")
+                    .and()
+                    .csrf().disable();
 
         }
 
@@ -105,7 +181,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(4)
+    @Order(11)
     public static class CandidateSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -129,7 +205,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/candidate/logoutPost")
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/")
+                    .and()
+                    .csrf().disable();
 
         }
 
@@ -147,7 +225,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Configuration
-    @Order(5)
+    @Order(12)
     public static class AdminSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -171,7 +249,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout()
                     .permitAll()
                     .logoutUrl("/auth/admin/logoutPost")
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/")
+                    .and()
+                    .csrf().disable();
 
         }
 
