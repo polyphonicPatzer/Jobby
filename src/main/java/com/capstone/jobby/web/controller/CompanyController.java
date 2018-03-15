@@ -27,6 +27,8 @@ public class CompanyController {
     private CandidateService candidateService;
     @Autowired
     private JobService jobService;
+    @Autowired
+    private DesiredTechSkillService desiredTechSkillService;
 
     @RequestMapping("/auth/company/companyProfile")
     public String companyProfile(Model model){
@@ -51,8 +53,10 @@ public class CompanyController {
     @RequestMapping(value = "/auth/company/submitSurvey", method = RequestMethod.POST)
     public String submitSurvey(@Valid CompanySurveyResults companySurveyResults, Principal principal) {
 
-        Integer[] answers = companySurveyResults.getAnswers();
-        Integer[] weights = companySurveyResults.getWeights();
+        Integer[] techAnswers = companySurveyResults.getTechAnswers();
+        Integer[] techWeights = companySurveyResults.getTechWeights();
+        Integer[] cbAnswers = companySurveyResults.getCBAnswers();
+        Integer[] cbWeights = companySurveyResults.getCBWeights();
 
         Company c = companyService.findByUsername(principal.getName());
         String companyEmail = c.getEmail();
@@ -75,14 +79,24 @@ public class CompanyController {
 
         List<Skill> skills = skillService.findAll();
 
-        for (int i = 0; i < 10; i++) {
-            DesiredCBSkill temp = new DesiredCBSkill();
-            Skill s = skills.get(i);
-            temp.setSkillID(s.getId());
-            temp.setSkillRating(answers[i]);
-            temp.setSkillWeight(weights[i]);
-            temp.setJobID(max+1);
-            desiredCBSkillService.save(temp);
+        for (int i = 0; i < 20; i++) {
+            if (i < 10) {
+                DesiredTechSkill temp = new DesiredTechSkill();
+                Skill s = skills.get(i);
+                temp.setSkillID(s.getId());
+                temp.setSkillRating(techAnswers[i]);
+                temp.setSkillWeight(techWeights[i]);
+                temp.setJobID(max + 1);
+                desiredTechSkillService.save(temp);
+            }else{
+                DesiredCBSkill temp2 = new DesiredCBSkill();
+                Skill s = skills.get(i);
+                temp2.setSkillID(s.getId());
+                temp2.setSkillRating(cbAnswers[i-10]);
+                temp2.setSkillWeight(cbWeights[i-10]);
+                temp2.setJobID(max + 1);
+                desiredCBSkillService.save(temp2);
+            }
         }
 
 

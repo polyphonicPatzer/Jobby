@@ -3,6 +3,7 @@ package com.capstone.jobby.web.controller;
 import com.capstone.jobby.model.*;
 import com.capstone.jobby.service.CandidateSkillService;
 import com.capstone.jobby.service.CandidateService;
+import com.capstone.jobby.service.CandidateTechSkillService;
 import com.capstone.jobby.service.SkillService;
 
 import org.codehaus.groovy.runtime.powerassert.SourceText;
@@ -29,6 +30,8 @@ public class CandidateController {
     private CandidateService candidateService;
     @Autowired
     private SkillService skillService;
+    @Autowired
+    private CandidateTechSkillService candidateTechSkillService;
 
     @RequestMapping("/auth/candidate/candidateProfile")
     public String candidateProfile(Model model, Principal principal){
@@ -54,20 +57,34 @@ public class CandidateController {
 
     @RequestMapping(value = "/auth/candidate/submitSurvey", method = RequestMethod.POST)
     public String submitSurvey(@Valid CandidateSurveyResults candidateSurveyResults, Model model, Principal principal) {
-        Integer[] res = candidateSurveyResults.getTechnical();
+        Integer[] tech = candidateSurveyResults.getTechnical();
+        Integer[] CB = candidateSurveyResults.getCB();
+
+        for (int x : CB){
+            System.out.println(x);
+        }
 
         Candidate c = candidateService.findByUsername(principal.getName());
         String candidateEmail = c.getEmail();
 
         List<Skill> skills = skillService.findAll();
 
-        for (int i = 0; i < 10; i++) {
-            CandidateSkill temp = new CandidateSkill();
-            Skill s = skills.get(i);
-            temp.setSkillID(s.getId());
-            temp.setCandidateID(candidateService.findByUsername(candidateEmail).getId());
-            temp.setSkillRating(res[i]);
-            candidateSkillService.save(temp);
+        for (int i = 0; i < 20; i++) {
+            if (i < 10) {
+                CandidateTechSkill temp2 = new CandidateTechSkill();
+                Skill s = skills.get(i);
+                temp2.setSkillID(s.getId());
+                temp2.setCandidateID(candidateService.findByUsername(candidateEmail).getId());
+                temp2.setSkillRating(CB[i]);
+                candidateTechSkillService.save(temp2);
+            }else{
+                CandidateSkill temp = new CandidateSkill();
+                Skill s = skills.get(i);
+                temp.setSkillID(s.getId());
+                temp.setCandidateID(candidateService.findByUsername(candidateEmail).getId());
+                temp.setSkillRating(tech[i-10]);
+                candidateSkillService.save(temp);
+                }
         }
         return("private/candidate/surveySubmitted");
     }

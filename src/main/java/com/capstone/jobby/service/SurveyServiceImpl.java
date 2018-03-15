@@ -2,7 +2,6 @@ package com.capstone.jobby.service;
 
 import com.capstone.jobby.dao.CandidateSkillDao;
 import com.capstone.jobby.model.CandidateSkill;
-import com.capstone.jobby.model.CandidateSurveyResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

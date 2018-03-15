@@ -34,7 +34,7 @@ public class CandidateSurveyResults implements Iterable{
         return results;
     }
 
-    public Integer[] getCultural(){
+    public Integer[] getCB(){
         Integer[] results = new Integer[]{q11,q12,q13,q14,q15,q16,q17,q18,q19,q20};
         return results;
     }
