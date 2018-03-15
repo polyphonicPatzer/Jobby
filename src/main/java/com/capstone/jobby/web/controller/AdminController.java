@@ -27,7 +27,19 @@ public class AdminController {
     // Administrator Dashboard
     @RequestMapping(value = "/auth/admin/adminDashboard")
     public String adminDashboard(Model model){
-        return "account/adminDashboard";
+        return "private/admin/adminDashboard";
+    }
+
+    @RequestMapping(value = "/auth/admin/logout")
+    public String adminLogout(Model model) {
+        model.addAttribute("action","/auth/admin/logoutPost");
+        model.addAttribute("submit","Logout");
+        return "private/admin/logout";
+    }
+
+    @RequestMapping(value = "/auth/admin/logoutPost", method = RequestMethod.GET)
+    public void adminLogoutPost(Model model) {
+        return;
     }
 
 }

@@ -113,4 +113,20 @@ public class CandidateController {
         return "public/candidate/candidateProfile";
     }
 
+
+    /************************************
+     *                                  *
+     *         Search Results Stuff     *
+     *                                  *
+     ************************************/
+
+    //Search for all candidates
+    @SuppressWarnings("unchecked")
+    @RequestMapping(value = "/candidate/search")
+    public String listCanditateSearch(Model model) {
+        List<Candidate> candidates = candidateService.findAll();
+        model.addAttribute("candidates", candidates);
+        return "public/searchResults/candidateSearchResults";
+    }
+
 }

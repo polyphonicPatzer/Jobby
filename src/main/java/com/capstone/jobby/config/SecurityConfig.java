@@ -1,22 +1,19 @@
 package com.capstone.jobby.config;
 
+import com.capstone.jobby.service.AdminService;
 import com.capstone.jobby.service.CandidateService;
 import com.capstone.jobby.service.CompanyService;
 import com.capstone.jobby.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 //import org.springframework.data.repository.query.spi.EvaluationContextExtension;
 //import org.springframework.data.repository.query.spi.EvaluationContextExtensionSupport;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.access.expression.SecurityExpressionRoot;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -49,7 +46,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             http
                     .antMatcher("/")
                     .authorizeRequests().anyRequest().permitAll();
-
         }
     }
 
@@ -61,13 +57,77 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             http
                     .antMatcher("/account/*")
                     .authorizeRequests().anyRequest().permitAll();
-
         }
     }
 
-
     @Configuration
     @Order(3)
+    public static class PublicCandidateSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/candidate/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(4)
+    public static class PublicCompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/company/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(5)
+    public static class PublicJobSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/job/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(6)
+    public static class PublicProfilePicConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/profilePic/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(7)
+    public static class PublicResumeConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/resume/*")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(8)
+    public static class PublicErrorConfigurationAdapter extends WebSecurityConfigurerAdapter {
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/error")
+                    .authorizeRequests().anyRequest().permitAll();
+        }
+    }
+
+    @Configuration
+    @Order(9)
     public static class CompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -93,7 +153,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutUrl("/auth/company/logoutPost")
                     .logoutSuccessUrl("/")
                     .and()
-                    .csrf();
+                    .csrf().disable();
 
         }
 
@@ -110,7 +170,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(4)
+    @Order(10)
     public static class CandidateSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -136,7 +196,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logoutUrl("/auth/candidate/logoutPost")
                     .logoutSuccessUrl("/")
                     .and()
-                    .csrf();
+                    .csrf().disable();
 
         }
 
@@ -148,6 +208,50 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             return (request, response, exception) -> {
                 request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
                 response.sendRedirect("/auth/candidate/candidateLogin");
+            };
+        }
+    }
+
+
+    @Configuration
+    @Order(11)
+    public static class AdminSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
+
+        @Autowired
+        private AdminService adminService;
+
+        @Autowired
+        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+            auth.userDetailsService(adminService).passwordEncoder(passwordEncoder());
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .antMatcher("/auth/admin/*").authorizeRequests().anyRequest().hasRole("ADMIN")
+                    .and()
+                    .formLogin()
+                    .loginPage("/auth/admin/adminLogin").permitAll()
+                    .successHandler(adminLoginSuccessHandler())
+                    .failureHandler(adminLoginFailureHandler())
+                    .and()
+                    .logout()
+                    .permitAll()
+                    .logoutUrl("/auth/admin/logoutPost")
+                    .logoutSuccessUrl("/")
+                    .and()
+                    .csrf().disable();
+
+        }
+
+        public AuthenticationSuccessHandler adminLoginSuccessHandler() {
+            return (request, response, authentication) -> { response.sendRedirect("/auth/admin/adminDashboard"); };
+        }
+
+        public AuthenticationFailureHandler adminLoginFailureHandler() {
+            return (request, response, exception) -> {
+                request.getSession().setAttribute("flash", new FlashMessage("Incorrect username and/or password. Please try again.", FlashMessage.Status.FAILURE));
+                response.sendRedirect("/auth/admin/adminLogin");
             };
         }
     }

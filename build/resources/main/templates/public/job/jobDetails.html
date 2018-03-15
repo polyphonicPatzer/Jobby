@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout :: head('candidate profile')"></head>
+<body>
+<div sec:authorize="isAnonymous()">
+    <div th:replace="layout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_CANDIDATE')">
+    <div th:replace="public/candidateLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_COMPANY')">
+    <div th:replace="public/companyLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    <div th:replace="public/adminLayout :: nav"></div>
+</div>
+
+Job stuff goes here
+
+<div th:replace="layout :: scripts"></div>
+
+</body>
+</html>

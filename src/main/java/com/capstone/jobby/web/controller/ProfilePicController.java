@@ -106,9 +106,12 @@ public class ProfilePicController {
 
     // Delete an existing profile pic
     @RequestMapping(value = "/auth/candidate/profilePic/{profilePicId}/delete", method = RequestMethod.POST)
-    public String deleteProfilePic(@PathVariable Long profilePicId, RedirectAttributes redirectAttributes) {
+    public String deleteProfilePic(@PathVariable Long profilePicId, RedirectAttributes redirectAttributes, Principal principal) {
         // Delete the profile pic whose id is profilePicId
         ProfilePic profilePic = profilePicService.findById(profilePicId);
+        Candidate candidate = candidateService.findByUsername(principal.getName());
+        candidate.setProfilePic(null);
+        candidateService.save(candidate);
         profilePicService.delete(profilePic);
         redirectAttributes.addFlashAttribute("flash",new FlashMessage("Profile picture deleted!", FlashMessage.Status.SUCCESS));
 

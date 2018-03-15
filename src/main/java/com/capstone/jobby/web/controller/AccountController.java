@@ -1,5 +1,6 @@
 package com.capstone.jobby.web.controller;
 
+import com.capstone.jobby.model.Admin;
 import com.capstone.jobby.model.Candidate;
 import com.capstone.jobby.model.Company;
 import com.capstone.jobby.model.Role;
@@ -44,7 +45,7 @@ public class AccountController {
 
     // Create Account
     @RequestMapping(value = "/account/accountRegistration")
-    public String aRegister(Model model){
+    public String aRegister(Model model) {
         return "public/account/accountRegistration";
     }
 
@@ -52,12 +53,12 @@ public class AccountController {
     @RequestMapping(value = "/account/candidateRegistration")
     public String formNewCandidate(Model model) {
         // Add model attributes needed for new Candidate upload form
-        if(!model.containsAttribute("candidate")) {
-            model.addAttribute("candidate",new Candidate());
+        if (!model.containsAttribute("candidate")) {
+            model.addAttribute("candidate", new Candidate());
         }
-        model.addAttribute("action","/account/addCandidate");
-        model.addAttribute("heading","Sign Up");
-        model.addAttribute("submit","Sign Up");
+        model.addAttribute("action", "/account/addCandidate");
+        model.addAttribute("heading", "Sign Up");
+        model.addAttribute("submit", "Sign Up");
 
         return "public/account/candidateRegistrationForm";
     }
@@ -66,7 +67,7 @@ public class AccountController {
     @RequestMapping(value = "/account/addCandidate", method = RequestMethod.POST)
     public String addCandidate(@Valid Candidate candidate, BindingResult result, RedirectAttributes redirectAttributes, HttpServletResponse response) {
         // Upload new Candidate if data is valid
-        if(result.hasErrors()) {
+        if (result.hasErrors()) {
             // Include validation errors upon redirect
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.candidate", result);
 
@@ -103,7 +104,7 @@ public class AccountController {
         response.addCookie(id);
 
         // Add flash message for success
-        redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Candidate's home view. Replace this with homepage when created.
         return String.format("redirect:/auth/candidate/candidateLogin");
@@ -113,12 +114,12 @@ public class AccountController {
     @RequestMapping(value = "/account/companyRegistration")
     public String formNewCompany(Model model) {
         // Add model attributes needed for new Company upload form
-        if(!model.containsAttribute("company")) {
-            model.addAttribute("company",new Company());
+        if (!model.containsAttribute("company")) {
+            model.addAttribute("company", new Company());
         }
-        model.addAttribute("action","/account/addCompany");
-        model.addAttribute("heading","Sign Up");
-        model.addAttribute("submit","Sign Up");
+        model.addAttribute("action", "/account/addCompany");
+        model.addAttribute("heading", "Sign Up");
+        model.addAttribute("submit", "Sign Up");
 
         return "public/account/companyRegistrationForm";
     }
@@ -127,7 +128,7 @@ public class AccountController {
     @RequestMapping(value = "/account/addCompany", method = RequestMethod.POST)
     public String addCompany(@Valid Company company, BindingResult result, RedirectAttributes redirectAttributes) {
         // Upload new Company if data is valid
-        if(result.hasErrors()) {
+        if (result.hasErrors()) {
             // Include validation errors upon redirect
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.company", result);
 
@@ -154,7 +155,7 @@ public class AccountController {
         companyService.save(company);
 
         // Add flash message for success
-        redirectAttributes.addFlashAttribute("flash",new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
+        redirectAttributes.addFlashAttribute("flash", new FlashMessage("Account successfully created!", FlashMessage.Status.SUCCESS));
 
         // Redirect browser to new Company's home view. Replace this with homepage when created.
         return String.format("redirect:/auth/company/companyLogin"); //MAKE THIS THE GET URI AND HAVE THAT RETURN THE POST URI
@@ -162,7 +163,7 @@ public class AccountController {
 
     // Select account type for logging in
     @RequestMapping(value = "/account/selectType")
-    public String selectType(Model model){
+    public String selectType(Model model) {
         return "public/account/selectType";
     }
 
@@ -174,8 +175,8 @@ public class AccountController {
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
-            model.addAttribute("action", "/auth/candidate/candidateLogin"); //MAKE THIS CALL THE POSTER
-            model.addAttribute("submit","Login");
+            model.addAttribute("action", "/auth/candidate/candidateLogin");
+            model.addAttribute("submit", "Login");
 
             request.getSession().removeAttribute("flash");
         } catch (Exception e) {
@@ -192,19 +193,31 @@ public class AccountController {
         try {
             Object flash = request.getSession().getAttribute("flash");
             model.addAttribute("flash", flash);
-            model.addAttribute("action", "/auth/company/companyLogin"); //MAKE THIS CALL THE POSTER
-            model.addAttribute("submit","Login");
+            model.addAttribute("action", "/auth/company/companyLogin");
+            model.addAttribute("submit", "Login");
 
             request.getSession().removeAttribute("flash");
-        }  catch (Exception e) {
+        } catch (Exception e) {
             //Flash session attribute must not exist. Do nothing and proceed.
         }
         return "public/account/companyLogin";
     }
 
-    // Administrator Login
-    @RequestMapping(value = "/auth/admin/adminLogin")
-    public String adminLogoin(Model model){
-        return "/public/account/adminLogin";
+    // Login Admin Account
+    @RequestMapping(value = "/auth/admin/adminLogin", method = RequestMethod.GET)
+    public String adminLoginForm(Model model, HttpServletRequest request) {
+        model.addAttribute("admin", new Admin());
+        try {
+            Object flash = request.getSession().getAttribute("flash");
+            model.addAttribute("flash", flash);
+            model.addAttribute("action", "/auth/admin/adminLogin");
+            model.addAttribute("submit", "Login");
+
+            request.getSession().removeAttribute("flash");
+        } catch (Exception e) {
+            //Flash session attribute must not exist. Do nothing and proceed.
+        }
+
+        return "public/account/adminLogin";
     }
 }

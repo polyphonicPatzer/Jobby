@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="layout :: head('Candidate Profile')"></head>
+<head th:replace="layout :: head('candidate profile')"></head>
 <body>
 <div sec:authorize="isAnonymous()">
     <div th:replace="layout :: nav"></div>
@@ -11,11 +11,9 @@
 <div sec:authorize="hasRole('ROLE_COMPANY')">
     <div th:replace="public/companyLayout :: nav"></div>
 </div>
-<!--
 <div sec:authorize="hasRole('ROLE_ADMIN')">
      <div th:replace="public/adminLayout :: nav"></div>
 </div>
--->
 
 This is where a company's public profile will be displayed
 
