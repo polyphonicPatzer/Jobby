@@ -150,4 +150,19 @@ public class CompanyController {
         return "public/company/companyProfile";
     }
 
+    /************************************
+     *                                  *
+     *         Search Results Stuff     *
+     *                                  *
+     ************************************/
+
+    //Search for all companies
+    @SuppressWarnings("unchecked")
+    @RequestMapping("/company/search")
+    public String listCompaniesSearch(Model model) {
+        List<Company> companies = companyService.findAll();
+        model.addAttribute("companies", companies);
+        return "public/searchResults/companySearchResults";
+    }
+
 }

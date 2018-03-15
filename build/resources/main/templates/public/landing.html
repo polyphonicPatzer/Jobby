@@ -23,24 +23,11 @@
 <img class="imgCenter" th:src="@{/images/logo.png}" alt="Jobby Logo" />
 
 <div style="width: fit-content; align-items: center; margin: 0 auto;">
-    <p style="margin-bottom: 0;">Candidate Search</p>
-    <div style=" width: 500px;" th:fragment="searchbar" class="search-bar" >
-        <div class="row s12">
-            <div class="col s12">
-                <form th:action="@{/candidates}" method="get">
-                    <div class="input-field" style="">
-                        <input name="q" type="search" placeholder="Job Search" autocomplete="off"/>
-                        <i class="material-icons">search</i>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <p style="margin-bottom: 0;">Job Search</p>
     <div style=" width: 500px;" th:fragment="searchbar" class="search-bar">
         <div class="row s12">
             <div class="col s12">
-                <form th:action="@{/jobs}" method="get">
+                <form th:action="@{/job/search}" method="get">
                     <div class="input-field" style="">
                         <input name="q" type="search" placeholder="Job Search" autocomplete="off"/>
                         <i class="material-icons">search</i>
@@ -49,6 +36,33 @@
             </div>
         </div>
     </div>
+    <p style="margin-bottom: 0;">Candidate Search</p>
+    <div style=" width: 500px;" th:fragment="searchbar" class="search-bar" >
+        <div class="row s12">
+            <div class="col s12">
+                <form th:action="@{/candidate/search}" method="get">
+                    <div class="input-field" style="">
+                        <input name="q" type="search" placeholder="Candidate Search" autocomplete="off"/>
+                        <i class="material-icons">search</i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <p style="margin-bottom: 0;">Company Search</p>
+    <div style=" width: 500px;" th:fragment="searchbar" class="search-bar">
+        <div class="row s12">
+            <div class="col s12">
+                <form th:action="@{/company/search}" method="get">
+                    <div class="input-field" style="">
+                        <input name="q" type="search" placeholder="Job Search" autocomplete="off"/>
+                        <i class="material-icons">search</i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

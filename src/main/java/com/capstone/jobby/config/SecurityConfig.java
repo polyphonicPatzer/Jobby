@@ -73,17 +73,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Configuration
     @Order(4)
-    public static class PublicCandidateSurveyResultsSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
-        @Override
-        public void configure(HttpSecurity http) throws Exception {
-            http
-                    .antMatcher("/candidateSurveyResults/*")
-                    .authorizeRequests().anyRequest().permitAll();
-        }
-    }
-
-    @Configuration
-    @Order(5)
     public static class PublicCompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
@@ -94,18 +83,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(6)
+    @Order(5)
     public static class PublicJobSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/job*")
+                    .antMatcher("/job/*")
                     .authorizeRequests().anyRequest().permitAll();
         }
     }
 
     @Configuration
-    @Order(7)
+    @Order(6)
     public static class PublicProfilePicConfigurationAdapter extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
@@ -116,7 +105,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(8)
+    @Order(7)
     public static class PublicResumeConfigurationAdapter extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
@@ -127,7 +116,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(9)
+    @Order(8)
     public static class PublicErrorConfigurationAdapter extends WebSecurityConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
@@ -138,7 +127,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(10)
+    @Order(9)
     public static class CompanySecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -181,7 +170,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Configuration
-    @Order(11)
+    @Order(10)
     public static class CandidateSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
@@ -225,7 +214,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Configuration
-    @Order(12)
+    @Order(11)
     public static class AdminSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
         @Autowired
