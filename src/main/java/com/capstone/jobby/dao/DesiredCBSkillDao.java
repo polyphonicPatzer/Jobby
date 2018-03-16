@@ -6,6 +6,7 @@ import java.util.List;
 public interface DesiredCBSkillDao {
     List<DesiredCBSkill> findAll();
     DesiredCBSkill findById(Long id);
+    List<DesiredCBSkill> findAllById(Long id);
     void save(DesiredCBSkill candidateSkill);
     void delete(DesiredCBSkill candidateSkill);
 }

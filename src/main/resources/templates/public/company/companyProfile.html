@@ -15,24 +15,26 @@
      <div th:replace="public/adminLayout :: nav"></div>
 </div>
 
-This is where a company's public profile will be displayed. For a poor example I'm displaying just the list of jobs they've posted.
-
-<div class="categories container">
+<div class="container">
     <div class="row">
-        <div class="col s9">
-            <h2>Jobs Posted:</h2>
-        </div>
+            <p class="name" style="font-size: 28px;font-weight: bold;float:left;color: black;" th:text="${company.name}">Company Name</p>
+            <p style="font-size: 28px;font-weight: bold;float:right;color: black;"  th:text="${company.city}+', '+${company.state}">Company Location</p>
     </div>
+    <p style="font-size: 20px;" th:text="'Company Email: ' + ${company.email}">Jobs Available</p>
+
+    <p style="font-size: 20px;" th:text="${#lists.size(jobs)}+ ' Jobs Available'">Jobs Available</p>
     <div class="divider"></div>
     <div class="row">
-        <div th:each="job : ${jobs}" class="col s12 l4">
-            <div class="card" style="background-color:#76B1EC">
-                <div class="card-content">
-                    <div class="card-title">
-                        <a class="name" th:href="@{|/job/${job.id}|}" th:text="${job.name}">Job Name</a>
+        <div th:each="job : ${jobs}" class="col s12">
+            <a th:href="@{|/job/${job.id}|}">
+                <div class="card" style="background-color:#D3D3D3;border: 4px solid black;">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <div class="name" style="color: black;" th:text="${job.name}">Job Name</div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </div>

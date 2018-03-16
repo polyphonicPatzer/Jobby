@@ -7,31 +7,36 @@ import java.util.Objects;
 @Entity
 public class Match implements Serializable {
     @Id
-    @ManyToOne
-    @JoinColumn(name="candidateId")
-    private Candidate candidate;
+    private Long candidateID;
 
     @Id
-    @ManyToOne
-    @JoinColumn(name="jobId")
-    private Job job;
+    private Long jobID;
 
-    public Candidate getCandidate() {
-        return candidate;
+    @Column
+    private double percent;
+
+    public Long getCandidateID() {
+        return candidateID;
     }
 
-    public void setCandidate(Candidate candidate) {
-        this.candidate = candidate;
+    public void setCandidateID(Long candidateID) {
+        this.candidateID = candidateID;
     }
 
-    public Match() {}
-
-    public Job getJob() {
-        return job;
+    public Long getJobID() {
+        return jobID;
     }
 
-    public void setJob(Job job) {
-        this.job = job;
+    public void setJobID(Long jobID) {
+        this.jobID = jobID;
+    }
+
+    public double getPercent() {
+        return percent;
+    }
+
+    public void setPercent(double percent) {
+        this.percent = percent;
     }
 
     @Override
@@ -39,13 +44,13 @@ public class Match implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Match match = (Match) o;
-        return Objects.equals(candidate, match.candidate) &&
-                Objects.equals(job, match.job);
+        return Objects.equals(candidateID, match.candidateID) &&
+                Objects.equals(jobID, match.jobID);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(candidate, job);
+        return Objects.hash(candidateID, jobID);
     }
 }
