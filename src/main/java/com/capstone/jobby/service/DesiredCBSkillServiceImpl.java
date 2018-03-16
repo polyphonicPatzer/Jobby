@@ -19,6 +19,9 @@ public class DesiredCBSkillServiceImpl implements DesiredCBSkillService {
     }
 
     @Override
+    public List<DesiredCBSkill> findAllByID(Long id) {return desiredCBSkillDao.findAllById(id);}
+
+    @Override
     public DesiredCBSkill findById(Long id) {
         return desiredCBSkillDao.findById(id);
     }

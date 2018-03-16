@@ -1,14 +1,17 @@
 package com.capstone.jobby.dao;
 
-import com.capstone.jobby.model.DesiredCBSkill;
 import com.capstone.jobby.model.DesiredTechSkill;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
@@ -16,6 +19,8 @@ public class DesiredTechSkillDaoImpl implements DesiredTechSkillDao{
 
     @Autowired
     private SessionFactory sessionFactory;
+    @PersistenceContext
+    EntityManager em;
 
     @Override
     @SuppressWarnings("unchecked")
@@ -39,6 +44,21 @@ public class DesiredTechSkillDaoImpl implements DesiredTechSkillDao{
 
         session.close();
         return desiredTechSkills;
+    }
+
+    @Override
+    @Transactional
+    public List<DesiredTechSkill> findAllByID(Long id) {
+
+        CriteriaQuery<DesiredTechSkill> c = em.getCriteriaBuilder().createQuery(DesiredTechSkill.class);
+        Root<DesiredTechSkill> from = c.from(DesiredTechSkill.class);
+
+        c.select(from);
+        c.where(em.getCriteriaBuilder().equal(from.get("jobID"),Long.toString(id)));
+
+        c.orderBy(em.getCriteriaBuilder().asc(from.get("skillID")));
+        return em.createQuery(c).getResultList();
+
     }
 
     @Override

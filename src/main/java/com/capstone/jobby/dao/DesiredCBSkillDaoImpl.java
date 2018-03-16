@@ -5,9 +5,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
@@ -15,6 +20,9 @@ public class DesiredCBSkillDaoImpl implements DesiredCBSkillDao{
     
     @Autowired
     private SessionFactory sessionFactory;
+
+    @PersistenceContext
+    EntityManager em;
 
     @Override
     @SuppressWarnings("unchecked")
@@ -38,6 +46,21 @@ public class DesiredCBSkillDaoImpl implements DesiredCBSkillDao{
 
         session.close();
         return desiredCBSkills;
+    }
+
+    @Override
+    @Transactional
+    public List<DesiredCBSkill> findAllById(Long id) {
+
+        CriteriaQuery<DesiredCBSkill> c = em.getCriteriaBuilder().createQuery(DesiredCBSkill.class);
+        Root<DesiredCBSkill> from = c.from(DesiredCBSkill.class);
+
+        c.select(from);
+        c.where(em.getCriteriaBuilder().equal(from.get("jobID"),Long.toString(id))); // <- this will add the restriction.
+
+        c.orderBy(em.getCriteriaBuilder().asc(from.get("skillID")));
+        return em.createQuery(c).getResultList();
+
     }
 
     @Override

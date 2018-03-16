@@ -1,25 +1,19 @@
 package com.capstone.jobby.web.controller;
 
+import com.capstone.jobby.algorithm.WeightedChoiceAlgorithm;
 import com.capstone.jobby.model.*;
-import com.capstone.jobby.service.CandidateSkillService;
-import com.capstone.jobby.service.CandidateService;
-import com.capstone.jobby.service.CandidateTechSkillService;
-import com.capstone.jobby.service.SkillService;
+import com.capstone.jobby.service.*;
+import com.capstone.jobby.algorithm.*;
 
-import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.swing.*;
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -32,6 +26,16 @@ public class CandidateController {
     private SkillService skillService;
     @Autowired
     private CandidateTechSkillService candidateTechSkillService;
+    @Autowired
+    private WeightedChoiceAlgorithm weightedChoiceAlgorithm;
+    @Autowired
+    private JobService jobService;
+    @Autowired
+    private DesiredTechSkillService desiredTechSkillService;
+    @Autowired
+    private DesiredCBSkillService desiredCBSkillService;
+    @Autowired
+    private MatchService matchService;
 
     @RequestMapping("/auth/candidate/candidateProfile")
     public String candidateProfile(Model model, Principal principal){
@@ -86,7 +90,46 @@ public class CandidateController {
                 candidateSkillService.save(temp);
                 }
         }
+
+        findMatches(candidateSurveyResults, c.getId());
+
         return("private/candidate/surveySubmitted");
+    }
+
+    public void findMatches(CandidateSurveyResults candidateSurveyResults, Long candidateID){
+        List<Job> jobs = jobService.findAll();
+        Candidate c = candidateService.findById(candidateID);
+        ArrayList<Pair> candidate = new ArrayList<Pair>();
+        Integer[] candidateTech = candidateSurveyResults.getTechnical();
+        Integer[] candidateCB = candidateSurveyResults.getCB();
+        for (int z = 0; z < candidateTech.length; z++){
+            Pair p = new Pair(z,candidateTech[z]);
+            candidate.add(p);
+        }
+        for (int z = 0; z < candidateCB.length; z++){
+            Pair p = new Pair(z,candidateCB[z]);
+            candidate.add(p);
+        }
+
+        for (Job job : jobs) {
+            List<DesiredCBSkill> DCBS = desiredCBSkillService.findAllByID(job.getId());
+            List<DesiredTechSkill> DTS = desiredTechSkillService.findAllByID(job.getId());
+            ArrayList<Trio> company = new ArrayList();
+            for (DesiredTechSkill t : DTS) {
+                Trio temp = new Trio(Math.toIntExact(t.getSkillID()), t.getSkillRating(), t.getSkillWeight());
+                company.add(temp);
+            }
+            for (DesiredCBSkill s : DCBS) {
+                Trio temp = new Trio(Math.toIntExact(s.getSkillID()), s.getSkillRating(), s.getSkillWeight());
+                company.add(temp);
+            }
+            double score = weightedChoiceAlgorithm.weightedChoiceAlgorithm(company, candidate);
+            Match match = new Match();
+            match.setCandidateID(c.getId());
+            match.setJobID(job.getId());
+            match.setPercent(score);
+            matchService.save(match);
+        }
     }
 
     @RequestMapping(value = "/auth/candidate/logout")
