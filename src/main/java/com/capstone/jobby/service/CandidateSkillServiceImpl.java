@@ -23,6 +23,9 @@ public class CandidateSkillServiceImpl implements CandidateSkillService {
     }
 
     @Override
+    public List<CandidateSkill> findSkillsByCandidateId(Long candidateId) { return candidateSkillDao.findSkillsByCandidateId(candidateId); }
+
+    @Override
     public void save(CandidateSkill candidateSkill) {
         candidateSkillDao.save(candidateSkill);
     }

@@ -7,22 +7,44 @@
       <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/CandidateSurveyResults.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/model/CandidateSurveyResults.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/SurveyServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/SurveyServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateSkillDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateSkillDao.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateSkillDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/CandidateSkillDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ProfilePicDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ProfilePicDao.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ProfilePicDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ProfilePicDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ResumeDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ResumeDao.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ResumeDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/dao/ResumeDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/CandidateSkillService.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/CandidateSkillService.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/CandidateSkillServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/CandidateSkillServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ProfilePicService.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ProfilePicService.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ProfilePicServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ProfilePicServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ResumeService.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ResumeService.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ResumeServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/service/ResumeServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/AdminController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/AdminController.class" />
       <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CandidateController.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" afterPath="$PROJECT_DIR$/build/classes/main/com/capstone/jobby/web/controller/CompanyController.class" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/app.properties" afterPath="$PROJECT_DIR$/build/resources/main/app.properties" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/private/admin/adminDashboard.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/private/admin/adminDashboard.html" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/private/candidate/candidateProfile.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/private/candidate/candidateProfile.html" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/public/adminLayout.html" afterPath="$PROJECT_DIR$/build/resources/main/templates/public/adminLayout.html" />
       <change beforePath="$PROJECT_DIR$/data/jobby.mv.db" afterPath="$PROJECT_DIR$/data/jobby.mv.db" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSurveyResults.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSurveyResults.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CompanySurveyResults.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CompanySurveyResults.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDaoImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillService.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/SurveyServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/SurveyServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicService.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeService.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AdminController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/app.properties" afterPath="$PROJECT_DIR$/src/main/resources/app.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/private/candidate/survey.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/private/candidate/survey.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/private/company/survey.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/private/company/survey.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/private/admin/adminDashboard.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/private/admin/adminDashboard.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/private/candidate/candidateProfile.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/private/candidate/candidateProfile.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/public/adminLayout.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/public/adminLayout.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -77,105 +99,20 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CompanyController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-              <folding>
-                <element signature="e#5291#5292#0" expanded="true" />
-                <element signature="e#5313#5314#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesiredTechSkillService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredTechSkillService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesiredTechSkillServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredTechSkillServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesiredCBSkillService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DesiredCBSkillServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      =======
-
-=======
-      <find>login</find>
-      <find>.gif</find>
-      &gt;&gt;&gt;&gt;&gt;&gt;&gt; 04d87bd4c8227fd24c606db6255be6ebbf19bd90
-      <find>action</find>
-      <find>company_registration</find>
-      <find>registrationForm</find>
-      <find>Create an account to get started posting jobs and finding matched candidates.</find>
-      <find>addcandidate</find>
-      <find>account_login</find>
-      <find>.save</find>
-      <find>dao</find>
-      <find>gray</find>
-      <find>select account</find>
-      <find>redbutton</find>
-      <find>category/form</find>
-      <find>img</find>
-      <find>logo.png</find>
-      <find>register</find>
-      <find>&lt;button</find>
-      &gt;&gt;&gt;&gt;&gt;&gt;&gt; f34336ebc1185a1a0529d0a024f8f4e6a087a975
       <find>&lt;button th</find>
       <find>left: -9999px</find>
       <find>nav</find>
@@ -190,17 +127,14 @@
       <find>/edit</find>
       <find>sec</find>
       <find>logou</find>
-      =======
       <find>public</find>
       <find>my profile</find>
       <find>employee account</find>
-      <find>select account</find>
       <find>employee accou</find>
       <find>choose</find>
       <find>choose a subs</find>
       <find>candidate login</find>
       <find>candidateLogin</find>
-      <find>img</find>
       <find>with in</find>
       <find>&lt;select</find>
       <find>select</find>
@@ -208,9 +142,7 @@
       <find>cs</find>
       <find>cs-placeholder</find>
       <find>cs-options</find>
-      =======
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; f34336ebc1185a1a0529d0a024f8f4e6a087a975
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 04d87bd4c8227fd24c606db6255be6ebbf19bd90
+      <find>skillser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -352,7 +284,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4563110740000" />
+        <entry key="$PROJECT_DIR$" value="4560600314000" />
         <entry key="$PROJECT_DIR$/build.gradle" value="238288579" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="3883967377" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="1097086798" />
@@ -514,35 +446,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Match.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredCBSkillDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/candidateLayout.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/account/candidateProfile.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/account/accountRegistration.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/account/selectType.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/company/surveySubmitted.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/surveySubmitted.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/app.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/app.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/vendor/codrops/js/selectFx.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/vendor/materialize/css/materialize.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/company/survey.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/candidate/survey.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredCBSkill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/JobService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/JobServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Job.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateTechSkill.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateTechSkillDao.java" />
@@ -553,9 +459,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/private/candidate/survey.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CompanySurveyResults.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/private/company/survey.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/DesiredTechSkill.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredTechSkillDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/DesiredTechSkillDaoImpl.java" />
@@ -565,6 +468,35 @@
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/app.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/findAllQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/findByIdQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/candidate/candidateProfile.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/adminDashboard.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/public/adminLayout.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/findByEmailQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/deleteByIdQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/deleteByEmailQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/activateAccountQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/private/admin/deactivateAccountQuery.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AdminController.java" />
       </list>
     </option>
   </component>
@@ -574,11 +506,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="12" />
-    <option name="y" value="27" />
-    <option name="width" value="1440" />
-    <option name="height" value="873" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3" />
+    <option name="y" value="24" />
+    <option name="width" value="1615" />
+    <option name="height" value="927" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -598,8 +530,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -632,6 +562,24 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jobby" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jobby" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jobby" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
@@ -693,6 +641,16 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="private" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="private" type="462c0819:PsiDirectoryNode" />
               <item name="candidate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -705,12 +663,23 @@
               <item name="private" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jobby-hibernate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jobby" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -874,6 +843,12 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SbtLocalSettings">
+    <option name="lastUpdateTimestamp" value="1521175148512" />
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -908,7 +883,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
+    <frame x="3" y="24" width="1615" height="927" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -917,13 +892,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.356" sideWeight="0.51542515" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968637" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3584656" sideWeight="0.48457485" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2760234" sideWeight="0.48457485" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29685265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17450683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29597524" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17399381" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -980,270 +955,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/public/landing.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="53" column="43" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="53" selection-end-column="43" />
-          <folding>
-            <element signature="e#5291#5292#0" expanded="true" />
-            <element signature="e#5313#5314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Skill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#359#360#0" expanded="false" />
-            <element signature="e#384#385#0" expanded="false" />
-            <element signature="e#418#419#0" expanded="false" />
-            <element signature="e#446#447#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="65" column="48" lean-forward="false" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
-          <folding>
-            <element signature="e#4581#4582#0" expanded="false" />
-            <element signature="e#4603#4604#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/company/survey.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/company/logout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/company/companyProfile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="87" column="45" lean-forward="false" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/account/selectType.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/candidate/survey.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="643" column="16" lean-forward="false" selection-start-line="643" selection-start-column="16" selection-end-line="643" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/public/companyLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/codrops/js/selectFx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="150" column="8" lean-forward="false" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/vendor/materialize/css/materialize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28950">
-          <caret line="1930" column="11" lean-forward="false" selection-start-line="1930" selection-start-column="11" selection-end-line="1930" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/company/survey.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/company/surveySubmitted.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2401">
-          <caret line="201" column="23" lean-forward="false" selection-start-line="201" selection-start-column="23" selection-end-line="201" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Candidate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1521036915000" expanded="true" signature="941:942" ph="@{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/JobServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/JobService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/app.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#367#368#0" expanded="false" />
-            <element signature="e#401#402#0" expanded="false" />
-            <element signature="e#455#456#0" expanded="false" />
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#528#529#0" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#587#588#0" expanded="false" />
-            <element signature="e#615#616#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#802#803#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#869#870#0" expanded="false" />
-            <element signature="e#901#902#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateTechSkill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#370#371#0" expanded="false" />
-            <element signature="e#422#423#0" expanded="false" />
-            <element signature="e#468#469#0" expanded="false" />
-            <element signature="e#500#501#0" expanded="false" />
-            <element signature="e#530#531#0" expanded="false" />
-            <element signature="e#574#575#0" expanded="false" />
-            <element signature="e#612#613#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#778#779#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateTechSkillDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="47" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateTechSkillDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#553#583#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1251,17 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="47" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,9 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="33" column="1" lean-forward="false" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1279,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,15 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="313" column="23" lean-forward="false" selection-start-line="313" selection-start-column="23" selection-end-line="313" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/candidate/survey.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="173" column="23" lean-forward="false" selection-start-line="94" selection-start-column="12" selection-end-line="173" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1303,21 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="324" column="54" lean-forward="false" selection-start-line="324" selection-start-column="54" selection-end-line="324" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#fieldset#22;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#fieldset#32;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
-          <folding>
-            <element signature="e#4581#4582#0" expanded="false" />
-            <element signature="e#4603#4604#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1345,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="47" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1353,9 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1363,9 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1373,30 +1042,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#595#625#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="165">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredCBSkillServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="180">
           <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredTechSkillServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/app.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="77" selection-end-line="32" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="140" lean-forward="false" selection-start-line="25" selection-start-column="140" selection-end-line="25" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/company/jobPostings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1405,29 +1117,269 @@
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/DesiredTechSkillServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/JobDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="401">
+          <caret line="70" column="37" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="70" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/model/CandidateSkill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/CandidateSkillDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="66" column="58" lean-forward="false" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/CandidateSkillService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ReferenceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/SurveyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="201" column="9" lean-forward="false" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CandidateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="121" column="4" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="125" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/MatchDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ProfilePicDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/dao/ResumeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ResumeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/service/ProfilePicServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/findByIdQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/candidate/survey.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="92" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/candidate/candidateProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/public/adminLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="62" column="14" lean-forward="true" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#2;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#4;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#4;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#4;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#form#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#5;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/capstone/jobby/web/controller/CompanyController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/deleteByIdQuery.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-          <folding>
-            <element signature="e#5291#5292#0" expanded="true" />
-            <element signature="e#5313#5314#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/deleteByEmailQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/activateAccountQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/deactivateAccountQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/findByEmailQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/candidate/resumeForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="88" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/findAllQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/private/admin/adminDashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -7,11 +7,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 public class ProfilePicServiceImpl implements ProfilePicService {
     @Autowired
     private ProfilePicDao profilePicDao;
+
+    @Override
+    public List<ProfilePic> findAll() { return profilePicDao.findAll(); }
 
     @Override
     public ProfilePic findById(Long id) { return profilePicDao.findById(id); }
