@@ -6,10 +6,38 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.List;
+
 @Repository
 public class ResumeDaoImpl implements ResumeDao {
     @Autowired
     private SessionFactory sessionFactory;
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Resume> findAll() {
+        Session session = sessionFactory.openSession();
+
+        // DEPRECATED as of Hibernate 5.2.0
+        // List<Resume> resumes = session.createCriteria(Resume.class).list();
+
+        // Create CriteriaBuilder
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+
+        // Create CriteriaQuery
+        CriteriaQuery<Resume> criteria = builder.createQuery(Resume.class);
+
+        // Specify criteria root
+        criteria.from(Resume.class);
+
+        // Execute query
+        List<Resume> resumes = session.createQuery(criteria).getResultList();
+
+        session.close();
+        return resumes;
+    }
 
     @Override
     public Resume findById(Long id) {

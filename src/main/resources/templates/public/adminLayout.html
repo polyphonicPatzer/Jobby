@@ -38,6 +38,171 @@
     </nav>
 </div>
 
+<div th:fragment="panel">
+    <div style="margin-left:30px; margin-right: 30px; width: 30%; float: left;" >
+
+
+        <p style="font-size:24px; color: #444;">Candidate</p>
+        <div class="divider" style="background-color: #444;height: 1.5px;"></div>
+        <div style="margin-left:15%;">
+            <a th:href="@{/auth/admin/adminDashboard/query/findAllCandidates}"><button type="submit" class="button">Find All Candidates</button></a>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Find By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/findCandidateById}" method="get">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Candidate Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Find By Email</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/findCandidateByEmail}" method="get">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Candidate Email..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Activate Account By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/activateCandidateById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Candidate Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Deactivate Account By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/deactivateCandidateById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Candidate Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Delete By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/deleteCandidateById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Candidate Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+
+
+
+        <p style="font-size:24px; color: #444;">Company</p>
+        <div class="divider" style="background-color: #444;height: 1.5px;"></div>
+        <div style="margin-left:15%;">
+            <a th:href="@{/auth/admin/adminDashboard/query/findAllCompanies}"><button type="submit" class="button">Find All Companies</button></a>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Find By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/findCompanyById}" method="get">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Company Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Find By Email</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/findCompanyByEmail}" method="get">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Company Email..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Activate Account By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/activateCompanyById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Company Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Deactivate Account By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/deactivateCompanyById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Company Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Delete By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/deleteCompanyById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Company Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+
+        <p style="font-size:24px; color: #444;">Job</p>
+        <div class="divider" style="background-color: #444;height: 1.5px;"></div>
+        <div style="margin-left:15%;">
+            <a th:href="@{/auth/admin/adminDashboard/query/findAllJobs}"><button type="submit" class="button">Find All Jobs</button></a>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Find By Job Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/findJobById}" method="get">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Job Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <p style="margin-left: 15%;">Delete By Id</p>
+        <div class="search-bar container">
+            <form th:action="@{/auth/admin/adminDashboard/query/deleteJobById}" method="post">
+                <div class="input-field">
+                    <input name="q" type="search" placeholder="Job Id..." required="required" autocomplete="off"/>
+                    <i class="material-icons">search</i>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
 <div th:fragment="flash" th:if="${flash != null}" class="container">
     <i class="right material-icons" data-close="">close</i>
     <div th:classappend="${#strings.toLowerCase(flash.status)}" th:text="${flash.message}" class="flash"></div>

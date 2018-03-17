@@ -41,9 +41,6 @@ public class Company implements UserDetails {
     @Column
     private String state;
 
-    @Column(name="companyActivationStatus")
-    private Boolean Activation_Status;
-
     @NotNull
     @Column(length = 100)
     private String password;
@@ -82,14 +79,6 @@ public class Company implements UserDetails {
     public String getState() { return state; }
 
     public void setState(String state) { this.state = state; }
-
-    public Boolean getActivation_Status() {
-        return Activation_Status;
-    }
-
-    public void setActivation_Status(Boolean activation_Status) {
-        Activation_Status = activation_Status;
-    }
 
     public void setPassword (String Password) {
         this.password = Password;

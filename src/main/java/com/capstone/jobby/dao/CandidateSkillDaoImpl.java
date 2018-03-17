@@ -3,6 +3,7 @@ package com.capstone.jobby.dao;
 import com.capstone.jobby.model.CandidateSkill;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +12,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+<<<<<<< HEAD
+=======
+import javax.persistence.criteria.ParameterExpression;
+>>>>>>> 0d233dca8994cdf2bea3abb1032ebd7907dbdab4
 import javax.persistence.criteria.Root;
 import java.util.List;
 
@@ -67,6 +72,19 @@ public class CandidateSkillDaoImpl implements CandidateSkillDao {
         CandidateSkill candidateSkill = session.get(CandidateSkill.class,id);
         session.close();
         return candidateSkill;
+    }
+
+    @Override
+    public List<CandidateSkill> findSkillsByCandidateId(Long candidateId) {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<CandidateSkill> criteria = builder.createQuery(CandidateSkill.class);
+        Root<CandidateSkill> root = criteria.from(CandidateSkill.class);
+        ParameterExpression<Long> candidateIdParam = builder.parameter(Long.class);
+        criteria.where(builder.equal(root.get("candidateID"), candidateIdParam));
+        Query<CandidateSkill> query = session.createQuery(criteria);
+        query.setParameter(candidateIdParam, candidateId);
+        return query.getResultList();
     }
 
     @Override

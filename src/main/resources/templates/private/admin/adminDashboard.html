@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="public/adminLayout :: head('logout')"></head>
+<head th:replace="public/adminLayout :: head('dashboard')"></head>
 <body>
 <div th:replace="public/adminLayout :: nav"></div>
 <div th:replace="public/adminLayout :: flash"></div>
+<div th:replace="public/adminLayout :: panel"></div>
 
-<div class="grayContainerRounded" style="width:85%; border-radius: 0px; height: fit-content; overflow: hidden;">
-    <p style="font-size: 17px;font-weight: normal; text-align: left;"> Modify accounts here</p>
-    <div class="grayContainer" style="width: 100%; height: fit-content; margin-top: 15px; margin-bottom: 15px;">
-        <p style="font-size:14px; float: left;">Username</p> <button class="button">Activate</button><button class="button">Deactivate</button>
 
-    </div>
-    <div class="grayContainer" style="width: 100%; height: fit-content; margin-top: 15px; margin-bottom: 15px;">
-        <p style="font-size:14px; float: left;">Username</p> <button class="button">Activate</button><button class="button">Deactivate</button>
-
-    </div>
-</div>
 
 <div th:replace="public/adminLayout :: scripts"></div>
 

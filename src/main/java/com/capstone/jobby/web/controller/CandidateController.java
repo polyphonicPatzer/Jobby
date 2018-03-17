@@ -42,6 +42,11 @@ public class CandidateController {
         Candidate candidate = candidateService.findByUsername(principal.getName());
         Resume resume = candidate.getResume();
         ProfilePic profilePic = candidate.getProfilePic();
+        List<CandidateSkill> candidateSkills = candidateSkillService.findSkillsByCandidateId(candidate.getId());
+        if (candidateSkills.size() != 0)
+            model.addAttribute("surveyCompleted",true);
+        else
+            model.addAttribute("surveyCompleted",false);
         model.addAttribute("resume", resume);
         model.addAttribute("profilePic", profilePic);
         return "private/candidate/candidateProfile";

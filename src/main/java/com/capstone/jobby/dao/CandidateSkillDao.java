@@ -9,6 +9,7 @@ public interface CandidateSkillDao {
     List<CandidateSkill> findAll();
     List<CandidateSkill> findAllByID(Long Id);
     CandidateSkill findById(Long id);
+    List<CandidateSkill> findSkillsByCandidateId(Long candidateId);
     void save(CandidateSkill candidateSkill);
     void delete(CandidateSkill candidateSkill);
 }

@@ -664,6 +664,17 @@ label.button {
 }
 
 
+.grayContainerRoundedAdmin {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 30%; float: left;
+    border-radius: 25px;
+    background: #D3D3D3;
+    padding: 20px;
+    height: 1500px;
+}
+
+
 
 .grayContainer {
     border-radius: 5px;
