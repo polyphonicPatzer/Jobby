@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="public/adminLayout :: head('logout')"></head>
+<head th:replace="public/adminLayout :: head('dashboard')"></head>
 <body>
 <div th:replace="public/adminLayout :: nav"></div>
 <div th:replace="public/adminLayout :: flash"></div>
+<div th:replace="public/adminLayout :: panel"></div>
 
 
+<div style="margin-left:50%;">
+
+    <div th:if="${candidates != null}">
+
+        <div th:each="candidate : ${candidates}">
+
+            <a th:href="@{|/candidate/${candidate.id}|}"><button type="submit" class="button">View Candidate Profile</button></a>
+            <p th:text="|Candidate Id: ${candidate.id}|"></p>
+            <p th:text="|Candidate Email: ${candidate.email}|"></p>
+            <p th:text="|Candidate Name: ${candidate.name}|"></p>
+            <p th:text="|Candidate Role Id: ${candidate.role.id}|"></p>
+            <p th:text="|Candidate Role Name: ${candidate.role.name}|"></p>
+            <p th:text="|Candidate Password: ${candidate.password}|"></p>
+
+            <div th:if="${candidate.enabled == true}">
+                <p>Candidate Activation Status: Enabled</p>
+            </div>
+            <div th:if="${candidate.enabled != true}">
+                <p>Candidate Activation Status: Disabled</p>
+            </div>
+
+            <div th:if="${candidate.profilePic == null}">
+                <p>Candidate Profile Picture: N/A</p>
+            </div>
+            <div th:if="${candidate.profilePic != null}">
+                <p>Candidate Profile Picture:</p>
+                <a th:href="@{|/profilePic/${candidate.profilePic.id}|}" class="actions">
+                    <img class="imgCenter" style="height:300px;" th:src="@{|/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
+                </a>
+            </div>
+
+            <div th:if="${candidate.resume == null}">
+                <p>Candidate Resume: N/A</p>
+            </div>
+            <div th:if="${candidate.resume != null}">
+                <p>Candidate Resume:</p>
+                <a th:href="@{|/resume/${candidate.resume.id}|}" class="actions">
+                    <img class="imgCenter" style="height:300px;" th:src="@{|/resume/${candidate.resume.id}.img|}" alt="Resume" />
+                </a>
+            </div>
+
+            <div class="divider" style="background-color: #444;height: 1.5px;"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div th:if="${companies != null}">
+
+        <div th:each="company : ${companies}">
+
+            <a th:href="@{|/company/${company.id}|}"><button type="submit" class="button">View Company Profile</button></a>
+            <p th:text="|Company Id: ${company.id}|"></p>
+            <p th:text="|Company Email: ${company.email}|"></p>
+            <p th:text="|Company Name: ${company.name}|"></p>
+            <p th:text="|Company City: ${company.city}|"></p>
+            <p th:text="|Company State: ${company.state}|"></p>
+            <p th:text="|Company Role Id: ${company.role.id}|"></p>
+            <p th:text="|Company Role Name: ${company.role.name}|"></p>
+            <p th:text="|Company Password: ${company.password}|"></p>
+
+            <div th:if="${company.enabled == true}">
+                <p>Company Activation Status: Enabled</p>
+            </div>
+            <div th:if="${company.enabled != true}">
+                <p>Company Activation Status: Disabled</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div th:if="${jobs != null}">
+
+        <div th:each="job : ${jobs}">
+
+            <a th:href="@{|/job/${job.id}|}"><button type="submit" class="button">View Job Posting</button></a>
+            <p th:text="|Job Id: ${job.id}|"></p>
+            <p th:text="|Job's Company Id: ${job.companyID}|"></p>
+            <p th:text="|Job Name: ${job.name}|"></p>
+            <p th:text="|Job Description: ${job.description}|"></p>
+            <div class="divider" style="background-color: #444;height: 1.5px;"></div>
+        </div>
+    </div>
+</div>
 
 
 <div th:replace="public/adminLayout :: scripts"></div>
