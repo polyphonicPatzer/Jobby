@@ -9,4 +9,5 @@ public interface MatchService {
     Match findById(Long id);
     void save(Match match);
     void delete(Match match);
+    void deleteByJobId(Long jobId);
 }
