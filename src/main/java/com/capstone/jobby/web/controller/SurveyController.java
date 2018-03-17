@@ -1,5 +1,10 @@
 package com.capstone.jobby.web.controller;
 
+
+import com.capstone.jobby.model.Skill;
+import com.capstone.jobby.model.Candidate;
+import com.capstone.jobby.service.CandidateService;
+import com.capstone.jobby.service.SkillService;
 import com.capstone.jobby.model.CandidateSkill;
 import com.capstone.jobby.service.CandidateSkillService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +19,10 @@ import java.util.List;
 public class SurveyController {
     @Autowired
     private CandidateSkillService candidateSkillService;
+    @Autowired
+    private SkillService skillService;
+    @Autowired
+    private CandidateService candidateService;
 
     // Public facing candidate Survey Results
     @RequestMapping(value = "/candidateSurveyResults/{candidateId}")
@@ -21,7 +30,14 @@ public class SurveyController {
 
         //TODO: Write a query to get the candidates skills from their survey and pass as attributes to the mode. Maybe a th:each loop to display them?
 
-        //List<CandidateSkill> candidateSkills = candidateSkillService.findAllById(candidateId);
+        Candidate candidate = candidateService.findById(candidateId);
+        model.addAttribute(candidate);
+
+        List<Skill> skills = skillService.findAll();
+        model.addAttribute("skills", skills);
+
+        List<CandidateSkill> candidateSkills = candidateSkillService.findSkillsByCandidateId(candidateId);
+        model.addAttribute("candidateSkills", candidateSkills);
         return "public/candidateSurvey/viewSurveyResults";
     }
 }
