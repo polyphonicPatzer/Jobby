@@ -52,6 +52,9 @@ public class WeightedChoiceAlgorithm {
 	
 	public static int getCandidateScore(ArrayList<Trio> company, ArrayList<Pair> candidate) {
 		int candidateScore = 0;
+		if (company.size() == 0 || candidate.size() == 0){
+			return -1;
+		}
 		for(int i = 0; i<company.size(); i++){
 			int companyAnswer = company.get(i).getQuestionAnswer();
 			int candidateAnswer = candidate.get(i).getAnswer();
@@ -69,6 +72,7 @@ public class WeightedChoiceAlgorithm {
 	public static Double weightedChoiceAlgorithm(ArrayList<Trio> companyIdealMatchArray, ArrayList<Pair> candidateScoreArray) {
 		double finalCompanyScore = getCompanyBenchMarkScore(companyIdealMatchArray);
 		double finalCandidateScore = getCandidateScore(companyIdealMatchArray, candidateScoreArray);
+		if (finalCandidateScore == -1){ return (double)0; }
 		double calculateScore = 100 * (1 - (finalCandidateScore/finalCompanyScore));
 		return calculateScore;
 	}

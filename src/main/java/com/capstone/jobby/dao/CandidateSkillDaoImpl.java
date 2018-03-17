@@ -5,15 +5,22 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
 public class CandidateSkillDaoImpl implements CandidateSkillDao {
     @Autowired
     private SessionFactory sessionFactory;
+
+    @PersistenceContext
+    EntityManager em;
 
     @Override
     @SuppressWarnings("unchecked")
@@ -39,11 +46,19 @@ public class CandidateSkillDaoImpl implements CandidateSkillDao {
         return candidateSkills;
     }
 
-    //@Override
-    //public List<CandidateSkill> findAllByID(long id) {
-    //   Session session = sessionFactory.openSession();
-    //    List<CandidateSkill> candidateSkill = session.
-    //}
+    @Override
+    @Transactional
+    public List<CandidateSkill> findAllByID(Long id) {
+        CriteriaQuery<CandidateSkill> c = em.getCriteriaBuilder().createQuery(CandidateSkill.class);
+        Root<CandidateSkill> from = c.from(CandidateSkill.class);
+
+        c.select(from);
+        c.where(em.getCriteriaBuilder().equal(from.get("candidateID"),Long.toString(id))); // <- this will add the restriction.
+
+        c.orderBy(em.getCriteriaBuilder().asc(from.get("skillID")));
+        return em.createQuery(c).getResultList();
+
+    }
 
 
     @Override
