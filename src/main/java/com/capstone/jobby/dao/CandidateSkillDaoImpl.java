@@ -12,10 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-<<<<<<< HEAD
-=======
 import javax.persistence.criteria.ParameterExpression;
->>>>>>> 0d233dca8994cdf2bea3abb1032ebd7907dbdab4
 import javax.persistence.criteria.Root;
 import java.util.List;
 

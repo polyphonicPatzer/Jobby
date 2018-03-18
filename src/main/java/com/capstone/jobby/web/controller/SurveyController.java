@@ -1,9 +1,11 @@
 package com.capstone.jobby.web.controller;
 
 
+import com.capstone.jobby.model.CandidateTechSkill;
 import com.capstone.jobby.model.Skill;
 import com.capstone.jobby.model.Candidate;
 import com.capstone.jobby.service.CandidateService;
+import com.capstone.jobby.service.CandidateTechSkillService;
 import com.capstone.jobby.service.SkillService;
 import com.capstone.jobby.model.CandidateSkill;
 import com.capstone.jobby.service.CandidateSkillService;
@@ -19,6 +21,8 @@ import java.util.List;
 public class SurveyController {
     @Autowired
     private CandidateSkillService candidateSkillService;
+    @Autowired
+    private CandidateTechSkillService candidateTechSkillService;
     @Autowired
     private SkillService skillService;
     @Autowired
@@ -38,6 +42,10 @@ public class SurveyController {
 
         List<CandidateSkill> candidateSkills = candidateSkillService.findSkillsByCandidateId(candidateId);
         model.addAttribute("candidateSkills", candidateSkills);
+
+        List<CandidateTechSkill> candidateTechSkills = candidateTechSkillService.findAllByID(candidateId);
+        model.addAttribute("candidateTechSkills", candidateTechSkills);
+
         return "public/candidateSurvey/viewSurveyResults";
     }
 }

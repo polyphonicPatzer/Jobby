@@ -52,6 +52,35 @@ public class MatchDaoImpl implements MatchDao {
     }
 
     @Override
+    public List<Match> findByCandidateId(Long candidateId) {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Match> criteria = builder.createQuery(Match.class);
+        Root<Match> root = criteria.from(Match.class);
+        ParameterExpression<Long> candidateIdParam = builder.parameter(Long.class);
+        criteria.where(builder.equal(root.get("candidateID"), candidateIdParam));
+        Query<Match> query = session.createQuery(criteria);
+        query.setParameter(candidateIdParam, candidateId);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Match> findByCandidateIdOrdered(Long candidateId) {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Match> criteria = builder.createQuery(Match.class);
+        Root<Match> root = criteria.from(Match.class);
+        ParameterExpression<Long> candidateIdParam = builder.parameter(Long.class);
+        criteria.where(builder.equal(root.get("candidateID"), candidateIdParam));
+        criteria.orderBy(builder.desc(root.get("percent")));
+        Query<Match> query = session.createQuery(criteria);
+        query.setParameter(candidateIdParam, candidateId);
+        return query.getResultList();
+    }
+
+
+
+    @Override
     public void save(Match match) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();

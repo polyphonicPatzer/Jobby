@@ -23,6 +23,12 @@ public class MatchServiceImpl implements MatchService {
     }
 
     @Override
+    public List<Match> findByCandidateId(Long candidateId) { return matchDao.findByCandidateId(candidateId); }
+
+    @Override
+    public List<Match> findByCandidateIdOrdered(Long candidateId) { return matchDao.findByCandidateIdOrdered(candidateId); }
+
+    @Override
     public void save(Match match) {
         matchDao.save(match);
     }

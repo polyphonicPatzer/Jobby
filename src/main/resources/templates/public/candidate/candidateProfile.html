@@ -32,13 +32,11 @@
         <div th:if="${candidate.resume != null}">
             <a th:href="@{|/resume/${candidate.resume.id}|}" style='text-decoration: underline; font-size: 14px;' >View Resume</a>
         </div>
-        <div th:if="${candidate.resume == null}">
-            <p>No Resume Available</p>
-        </div>
 
-        <!-- FIND A WAY TO ONLY INCLUDE THIS LINK I THEY'VE TAKEN THE SURVEY.-->
        <p style="margin:0px;"></p>
-        <a th:href="@{|/candidateSurveyResults/${candidate.id}|}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
+        <div th:if="${survey == true}">
+            <a th:href="@{|/candidateSurveyResults/${candidate.id}|}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
+        </div>
     </div>
 
 </div>
