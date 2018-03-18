@@ -1,9 +1,11 @@
 package com.capstone.jobby.web.controller;
 
 
+import com.capstone.jobby.model.CandidateTechSkill;
 import com.capstone.jobby.model.Skill;
 import com.capstone.jobby.model.Candidate;
 import com.capstone.jobby.service.CandidateService;
+import com.capstone.jobby.service.CandidateTechSkillService;
 import com.capstone.jobby.service.SkillService;
 import com.capstone.jobby.model.CandidateSkill;
 import com.capstone.jobby.service.CandidateSkillService;
@@ -20,6 +22,8 @@ public class SurveyController {
     @Autowired
     private CandidateSkillService candidateSkillService;
     @Autowired
+    private CandidateTechSkillService candidateTechSkillService;
+    @Autowired
     private SkillService skillService;
     @Autowired
     private CandidateService candidateService;
@@ -27,8 +31,6 @@ public class SurveyController {
     // Public facing candidate Survey Results
     @RequestMapping(value = "/candidateSurveyResults/{candidateId}")
     public String candidateSurvey(Model model, @PathVariable Long candidateId){
-
-        //TODO: Write a query to get the candidates skills from their survey and pass as attributes to the mode. Maybe a th:each loop to display them?
 
         Candidate candidate = candidateService.findById(candidateId);
         model.addAttribute(candidate);
@@ -38,6 +40,10 @@ public class SurveyController {
 
         List<CandidateSkill> candidateSkills = candidateSkillService.findSkillsByCandidateId(candidateId);
         model.addAttribute("candidateSkills", candidateSkills);
+
+        List<CandidateTechSkill> candidateTechSkills = candidateTechSkillService.findAllByID(candidateId);
+        model.addAttribute("candidateTechSkills", candidateTechSkills);
+
         return "public/candidateSurvey/viewSurveyResults";
     }
 }

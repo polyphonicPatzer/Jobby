@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import com.capstone.jobby.algorithm.WeightedChoiceAlgorithm;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CompanyController {
@@ -45,11 +46,66 @@ public class CompanyController {
     public String companyProfile(Model model, Principal principal){
         Company company = companyService.findByUsername(principal.getName());
         List<Job> jobs = jobService.findJobsByCompanyId(company.getId());
+
+        //If company has posted jobs, handle matches
+        if (jobs.size() > 0) {
+            List<Match> allMatches = new ArrayList<>();
+
+            for (Job job : jobs) {
+                List<Match> matches = matchService.findByJobIdOrdered(job.getId());
+                allMatches.addAll(matches);
+            }
+
+            if (allMatches.size() < 1) {
+                model.addAttribute("matchesInfoList", null);
+            } else {
+
+                //Sort
+                Collections.sort(allMatches);
+                List<Match> bestMatches = new ArrayList<>();
+
+                //Get top 5
+                if (allMatches.size() > 5) {
+                    bestMatches = allMatches.subList(0, 5);
+                } else {
+                    bestMatches = allMatches;
+                }
+
+                //Create a list for the info of the matches
+                List<CompanyMatchInfo> matchesInfoList = new ArrayList<>();
+
+                for (Match match : bestMatches) {
+                    CompanyMatchInfo matchInfo = new CompanyMatchInfo();
+                    Job job = jobService.findById(match.getJobID());
+                    Candidate  candidate = candidateService.findById(match.getCandidateID());
+
+                    //Update relevant info
+                    matchInfo.setJobId(job.getId());
+                    matchInfo.setJobName(job.getName());
+                    matchInfo.setCandidateId(candidate.getId());
+                    matchInfo.setCandidateName(candidate.getName());
+                    matchInfo.setMatchPercentage((int)Math.round(match.getPercent()));
+
+                    matchesInfoList.add(matchInfo);
+                }
+
+                model.addAttribute("matchesInfoList", matchesInfoList);
+            }
+
+        } else {
+            //Otherwise there are no matches because there are no jobs
+            model.addAttribute("matchesInfoList", null);
+        }
+
+
         Collections.reverse(jobs);
-        if (jobs.size() > 5)
+        if (jobs.size() == 0)
+            model.addAttribute("jobs", null);
+        else if (jobs.size() > 5)
             model.addAttribute("jobs", jobs.subList(0, 5));
         else
             model.addAttribute("jobs", jobs);
+
         model.addAttribute("company", company);
 
         return "private/company/companyProfile";
@@ -197,9 +253,57 @@ public class CompanyController {
     //Employee Matches. This might be altered to return employees matched to a particular job
     //In that case, the mapping will be "/auth/company/employeeMatches/{jobId}"
     @RequestMapping(value = "/auth/company/employeeMatches/{jobId}")
-    public String employeeMatches(Model model, @PathVariable Long jobId) {
+    public String employeeMatches(Model model, @PathVariable Long jobId, Principal principal) {
+        Company company = companyService.findByUsername(principal.getName());
+        Job job = jobService.findById(jobId);
 
-        //TODO: Write a query to retrieve matched candidates by running this jobId through the algo
+        //If the job isn't null, handle matches
+        if (job != null) {
+
+            List<Match> allMatches = matchService.findByJobIdOrdered(job.getId());
+
+            if (allMatches.size() < 1) {
+                model.addAttribute("matchesInfoList", null);
+            } else {
+
+                //Sort
+                Collections.sort(allMatches);
+                List<Match> bestMatches = new ArrayList<>();
+
+                //Get top 5
+                if (allMatches.size() > 15) {
+                    bestMatches = allMatches.subList(0, 15);
+                } else {
+                    bestMatches = allMatches;
+                }
+
+                //Create a list for the info of the matches
+                List<CompanyMatchInfo> matchesInfoList = new ArrayList<>();
+
+                for (Match match : bestMatches) {
+                    CompanyMatchInfo matchInfo = new CompanyMatchInfo();
+                    Candidate  candidate = candidateService.findById(match.getCandidateID());
+
+                    //Update relevant info
+                    matchInfo.setJobId(job.getId());
+                    matchInfo.setJobName(job.getName());
+                    matchInfo.setCandidateId(candidate.getId());
+                    matchInfo.setCandidateName(candidate.getName());
+                    matchInfo.setMatchPercentage((int)Math.round(match.getPercent()));
+
+                    matchesInfoList.add(matchInfo);
+                }
+
+                model.addAttribute("matchesInfoList", matchesInfoList);
+                model.addAttribute("job", job);
+            }
+
+        } else {
+            //Otherwise there are no matches because there is no job with id equals jobId
+            model.addAttribute("matchesInfoList", null);
+            model.addAttribute("job", null);
+
+        }
 
         return "private/company/employeeMatches";
     }
@@ -244,9 +348,23 @@ public class CompanyController {
     //Search for all companies
     @SuppressWarnings("unchecked")
     @RequestMapping("/company/search")
-    public String listCompaniesSearch(Model model) {
-        List<Company> companies = companyService.findAll();
-        model.addAttribute("companies", companies);
+    public String listCompaniesSearch(Model model, @RequestParam String q) {
+        List<Company> allCompanies = companyService.findAll();
+        if (q.equals("")) {
+            model.addAttribute("companies", allCompanies);
+        } else {
+            List<Company> companies = new ArrayList<>();
+            for (Company company : allCompanies) {
+                for (String word : q.split(" ")) {
+                    if (company.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0 || company.getCity().toLowerCase().indexOf(word.toLowerCase()) >= 0 || company.getState().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
+                        if (!companies.contains(company)) {
+                            companies.add(company);
+                        }
+                    }
+                }
+            }
+            model.addAttribute("companies", companies);
+        }
         return "public/searchResults/companySearchResults";
     }
 

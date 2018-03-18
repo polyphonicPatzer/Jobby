@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class Match implements Serializable {
+public class Match implements Serializable, Comparable<Match> {
     @Id
     private Long candidateID;
 
@@ -52,5 +52,14 @@ public class Match implements Serializable {
     public int hashCode() {
 
         return Objects.hash(candidateID, jobID);
+    }
+
+    @Override
+    public int compareTo(Match thatMatch) {
+        if (this == thatMatch) return 0;
+
+        if (this.percent < thatMatch.getPercent()) return 1;
+        else if (this.percent > thatMatch.getPercent()) return -1;
+        else return 0;
     }
 }

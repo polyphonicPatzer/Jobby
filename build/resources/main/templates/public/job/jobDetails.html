@@ -19,10 +19,16 @@
     <div class="row">
         <p class="name" style="margin:0px; font-size: 28px;font-weight: bold;float:left;color: black;" th:text="${job.name}">Job Name</p>
     </div>
-    <p class="name" style="text-align:left;font-size: 20px;" th:text="'at ' + ${company.name}">Company Name</p>
-    <p style="text-align:left;font-size: 20px;"  th:text="'in ' + ${company.city}+', '+${company.state}">Company Location</p>
+    <div style="text-align:left;font-size: 20px;">
+        <a class="name" style="text-align:left;font-size: 20px; text: underline;" th:href="@{|/company/${job.companyID}|}" th:text="'at ' + ${company.name}"/>
+    </div>
+    <p style="text-align:left;font-size: 20px;" th:text="'in ' + ${company.city}+', '+${company.state}">Company Location</p>
     <div class="divider"></div>
     <div class="name" style="text-align:left;color: black;" th:text="${job.description}">Job Description</div>
+
+
+
+
 </div>
 
 

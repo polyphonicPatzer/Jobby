@@ -18,9 +18,7 @@
     <p style="font-size: 17px;font-weight: normal;" th:text="|${candidate.email}|">TheDoctor@yahoo.com</p>
 
     <div th:if="${candidate.profilePic} != null">
-        <a th:href="@{|/profilePic/${candidate.profilePic.id}|}" class="actions">
-            <img class="imgCenter" style="height:400px;" th:src="@{|/auth/candidate/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
-        </a>
+        <img class="imgCenter" style="height:400px;" th:src="@{|/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
     </div>
     <div th:if="${candidate.profilePic} == null">
         <img class="imgCenter" style="height:400px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Default Profile Picture" />
@@ -29,16 +27,18 @@
 
     <button class="button" style="float:left;">Contact</button>
     <div style="float:right;">
+
+        <div sec:authorize="hasRole('ROLE_COMPANY')">
+            <div th:if="${survey == true}">
+                <a th:href="@{|/candidateSurveyResults/${candidate.id}|}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
+            </div>
+        </div>
+
+        <p style="margin:0px;"></p>
         <div th:if="${candidate.resume != null}">
             <a th:href="@{|/resume/${candidate.resume.id}|}" style='text-decoration: underline; font-size: 14px;' >View Resume</a>
         </div>
-        <div th:if="${candidate.resume == null}">
-            <p>No Resume Available</p>
-        </div>
 
-        <!-- FIND A WAY TO ONLY INCLUDE THIS LINK I THEY'VE TAKEN THE SURVEY.-->
-       <p style="margin:0px;"></p>
-        <a th:href="@{|/candidateSurveyResults/${candidate.id}|}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
     </div>
 
 </div>

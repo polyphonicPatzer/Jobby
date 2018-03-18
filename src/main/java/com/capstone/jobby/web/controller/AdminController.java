@@ -26,6 +26,8 @@ public class AdminController {
     private CompanyService companyService;
     @Autowired
     private JobService jobService;
+    @Autowired
+    private MatchService matchService;
 //    @Autowired
 //    private CandidateSkillService candidateSkillService;
 //    @Autowired
@@ -34,8 +36,7 @@ public class AdminController {
 //    private DesiredCBSkillService desiredCBSkillService;
 //    @Autowired
 //    private DesiredTechSkillService desiredTechSkillService;
-//    @Autowired
-//    private MatchService matchService;
+
 //    @Autowired
 //    private ProfilePicService profilePicService;
 //    @Autowired
@@ -91,34 +92,70 @@ public class AdminController {
         return "private/admin/findByEmailQuery";
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/auth/admin/adminDashboard/query/activateCandidateById", method = RequestMethod.POST)
     public String activateCandidateById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Candidate candidate = candidateService.findById(Long.parseLong(q));
-        if (!candidate.isEnabled()) {
-            candidate.setEnabled(true);
-            candidateService.save(candidate);
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account activated!", FlashMessage.Status.SUCCESS));
-        } else {
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already activated...", FlashMessage.Status.FAILURE));
+        if (candidate != null) {
+            if (!candidate.isEnabled()) {
+                candidate.setEnabled(true);
+                candidateService.save(candidate);
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account activated!", FlashMessage.Status.SUCCESS));
+            }
         }
-        return "redirect:/auth/admin/adminDashboard";
+        return String.format("redirect:/auth/admin/adminDashboard/query/findCandidateById?q=%s",q);
+
+
+//        Candidate candidate = candidateService.findById(Long.parseLong(q));
+//        if (candidate != null) {
+//            if (!candidate.isEnabled()) {
+//                candidate.setEnabled(true);
+//                candidateService.save(candidate);
+//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account activated!", FlashMessage.Status.SUCCESS));
+//            } else {
+//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already activated...", FlashMessage.Status.FAILURE));
+//            }
+//        }
+//        else {
+//            redirectAttributes.addFlashAttribute("flash", new FlashMessage("No such candidate...", FlashMessage.Status.FAILURE));
+//        }
+//        return String.format("redirect:/auth/admin/adminDashboard");
     }
 
+
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/auth/admin/adminDashboard/query/deactivateCandidateById", method = RequestMethod.POST)
     public String deactivateCandidateById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Candidate candidate = candidateService.findById(Long.parseLong(q));
-        if (candidate.isEnabled()) {
-            candidate.setEnabled(false);
-            candidateService.save(candidate);
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account deactivated!", FlashMessage.Status.SUCCESS));
-        } else {
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already deactivated...", FlashMessage.Status.FAILURE));
+        if (candidate != null) {
+            if (candidate.isEnabled()) {
+                candidate.setEnabled(false);
+                candidateService.save(candidate);
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already deactivated...", FlashMessage.Status.FAILURE));
+            }
         }
-        return "redirect:/auth/admin/adminDashboard";
+        return String.format("redirect:/auth/admin/adminDashboard/query/findCandidateById?q=%s",q);
+
+
+
+//        Candidate candidate = candidateService.findById(Long.parseLong(q));
+//        if (candidate != null) {
+//            if (candidate.isEnabled()) {
+//                candidate.setEnabled(false);
+//                candidateService.save(candidate);
+//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account deactivated!", FlashMessage.Status.SUCCESS));
+//            } else {
+//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already deactivated...", FlashMessage.Status.FAILURE));
+//            }
+//        } else {
+//            redirectAttributes.addFlashAttribute("flash", new FlashMessage("No such candidate...", FlashMessage.Status.FAILURE));
+//        }
+//        return String.format("redirect:/auth/admin/adminDashboard");
     }
 
 
-        @RequestMapping(value = "/auth/admin/adminDashboard/query/deleteCandidateById", method = RequestMethod.POST)
+    @SuppressWarnings("unchecked")
+    @RequestMapping(value = "/auth/admin/adminDashboard/query/deleteCandidateById", method = RequestMethod.POST)
     public String deleteCandidateById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Candidate candidate = candidateService.findById(Long.parseLong(q));
         if (candidate != null) {
@@ -127,7 +164,7 @@ public class AdminController {
         } else {
             redirectAttributes.addFlashAttribute("flash",new FlashMessage("No such candidate...", FlashMessage.Status.FAILURE));
         }
-        return "redirect:/auth/admin/adminDashboard";
+        return String.format("redirect:/auth/admin/adminDashboard");
     }
 
 
@@ -179,32 +216,47 @@ public class AdminController {
         return "private/admin/findByEmailQuery";
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/auth/admin/adminDashboard/query/activateCompanyById", method = RequestMethod.POST)
     public String activateCompanyById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Company company = companyService.findById(Long.parseLong(q));
-        if (!company.isEnabled()) {
-            company.setEnabled(true);
-            companyService.save(company);
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account activated!", FlashMessage.Status.SUCCESS));
-        } else {
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account already activated...", FlashMessage.Status.FAILURE));
+        if (company != null) {
+            if (!company.isEnabled()) {
+                company.setEnabled(true);
+                companyService.save(company);
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account activated!", FlashMessage.Status.SUCCESS));
+            }
         }
-        return "redirect:/auth/admin/adminDashboard";
+        return String.format("redirect:/auth/admin/adminDashboard/query/findCompanyById?q=%s",q);
+
+
+//        } else {
+//            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account already activated...", FlashMessage.Status.FAILURE));
+//        }
+//        return "redirect:/auth/admin/adminDashboard";
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/auth/admin/adminDashboard/query/deactivateCompanyById", method = RequestMethod.POST)
     public String deactivateCompanyById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Company company = companyService.findById(Long.parseLong(q));
-        if (company.isEnabled()) {
-            company.setEnabled(false);
-            companyService.save(company);
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account deactivated!", FlashMessage.Status.SUCCESS));
-        } else {
-            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account already deactivated...", FlashMessage.Status.FAILURE));
+        if (company != null) {
+            if (company.isEnabled()) {
+                company.setEnabled(false);
+                companyService.save(company);
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account deactivated!", FlashMessage.Status.SUCCESS));
+            }
         }
-        return "redirect:/auth/admin/adminDashboard";
+        return String.format("redirect:/auth/admin/adminDashboard/query/findCompanyById?q=%s",q);
+
+
+//        } else {
+//            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account already deactivated...", FlashMessage.Status.FAILURE));
+//        }
+//        return "redirect:/auth/admin/adminDashboard";
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/auth/admin/adminDashboard/query/deleteCompanyById", method = RequestMethod.POST)
     public String deleteCompanyById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Company company = companyService.findById(Long.parseLong(q));
@@ -241,12 +293,15 @@ public class AdminController {
         return "private/admin/findByIdQuery";
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/auth/admin/adminDashboard/query/deleteJobById", method = RequestMethod.POST)
     public String deleteJobById(@RequestParam String q, RedirectAttributes redirectAttributes) {
         Job job = jobService.findById(Long.parseLong(q));
         if (job != null) {
+            Company company = companyService.findById(job.getCompanyID());
+            matchService.deleteByJobId(job.getId());
             jobService.delete(job);
-            redirectAttributes.addFlashAttribute("flash",new FlashMessage("Job deleted!", FlashMessage.Status.SUCCESS));
+            redirectAttributes.addFlashAttribute("flash",new FlashMessage("Job and associated matches deleted!", FlashMessage.Status.SUCCESS));
         } else {
             redirectAttributes.addFlashAttribute("flash",new FlashMessage("No such job...", FlashMessage.Status.FAILURE));
         }

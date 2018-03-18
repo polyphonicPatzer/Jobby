@@ -1,5 +1,6 @@
 package com.capstone.jobby.web.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.capstone.jobby.model.Company;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class JobSearchController {
@@ -39,9 +41,23 @@ public class JobSearchController {
     //Search for all jobs
     @SuppressWarnings("unchecked")
     @RequestMapping("/job/search")
-    public String listJobsSearch(Model model) {
-        List<Job> jobs = jobService.findAll();
-        model.addAttribute("jobs", jobs);
+    public String listJobsSearch(Model model, @RequestParam String q) {
+        List<Job> allJobs = jobService.findAll();
+        if (q.equals("")) {
+            model.addAttribute("jobs", allJobs);
+        } else {
+            List<Job> jobs = new ArrayList<>();
+            for (Job job : allJobs) {
+                for (String word : q.split(" ")) {
+                    if (job.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0 || job.getDescription().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
+                        if (!jobs.contains(job)) {
+                            jobs.add(job);
+                        }
+                    }
+                }
+            }
+            model.addAttribute("jobs", jobs);
+        }
         return "public/searchResults/jobSearchResults";
     }
 }

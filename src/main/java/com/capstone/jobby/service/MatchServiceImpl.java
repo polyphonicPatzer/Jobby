@@ -23,6 +23,15 @@ public class MatchServiceImpl implements MatchService {
     }
 
     @Override
+    public List<Match> findByCandidateId(Long candidateId) { return matchDao.findByCandidateId(candidateId); }
+
+    @Override
+    public List<Match> findByCandidateIdOrdered(Long candidateId) { return matchDao.findByCandidateIdOrdered(candidateId); }
+
+    @Override
+    public List<Match> findByJobIdOrdered(Long jobId) { return matchDao.findByJobIdOrdered(jobId); }
+
+    @Override
     public void save(Match match) {
         matchDao.save(match);
     }
@@ -31,4 +40,7 @@ public class MatchServiceImpl implements MatchService {
     public void delete(Match match) {
         matchDao.delete(match);
     }
+
+    @Override
+    public void deleteByJobId(Long jobId) { matchDao.deleteByJobId(jobId); }
 }
