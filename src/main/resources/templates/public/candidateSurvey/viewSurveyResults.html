@@ -29,8 +29,8 @@
             <div class="card" style="background-color:#D3D3D3;border: 4px solid black;">
                 <div class="card-content">
                     <div class="card-title">
-                        <div th:each="techskill : ${techSkills}">
-                            <div th:if="${techskill.id == candidateTechSkill.skillID}" style="margin-left: 10px;color: black;text-align:left;" th:text="${techSkill.name} + ', ' + ${techSkill.description}">techSkill</div>
+                        <div th:each="skill : ${skills}">
+                            <div th:if="${skill.id == candidateTechSkill.skillID}" style="margin-left: 10px;color: black;text-align:left;" th:text="${skill.name} + ', ' + ${skill.description}">techSkill</div>
                         </div>
                         <div class="name" style="margin-left: 10px;color: black;text-align:left;" th:text="'Candidate Rating: ' + ${candidateTechSkill.skillRating}">Candidate Rating</div>
                     </div>
