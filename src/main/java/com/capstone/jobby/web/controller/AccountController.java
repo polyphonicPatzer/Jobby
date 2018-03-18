@@ -65,7 +65,7 @@ public class AccountController {
 
     // Add a new Candidate
     @RequestMapping(value = "/account/addCandidate", method = RequestMethod.POST)
-    public String addCandidate(@Valid Candidate candidate, BindingResult result, RedirectAttributes redirectAttributes, HttpServletResponse response) {
+    public String addCandidate(@Valid Candidate candidate, @RequestParam String pwVerify, BindingResult result, RedirectAttributes redirectAttributes, HttpServletResponse response) {
         // Upload new Candidate if data is valid
         if (result.hasErrors()) {
             // Include validation errors upon redirect
@@ -75,6 +75,19 @@ public class AccountController {
             redirectAttributes.addFlashAttribute("candidate", candidate);
 
             // Redirect back to the form
+            return "redirect:/account/candidateRegistration";
+        }
+
+        //Check if password was same for confirmation
+        if (!pwVerify.equals(candidate.getPassword())) {
+
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Incorrect password confirmation...", FlashMessage.Status.FAILURE));
+
+            // Include validation errors upon redirect
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.candidate", result);
+
+            // Add  category if invalid was received
+            redirectAttributes.addFlashAttribute("candidate", candidate);
             return "redirect:/account/candidateRegistration";
         }
 
@@ -126,7 +139,7 @@ public class AccountController {
 
     // Add a new Company
     @RequestMapping(value = "/account/addCompany", method = RequestMethod.POST)
-    public String addCompany(@Valid Company company, BindingResult result, RedirectAttributes redirectAttributes) {
+    public String addCompany(@Valid Company company, @RequestParam String pwVerify, BindingResult result, RedirectAttributes redirectAttributes) {
         // Upload new Company if data is valid
         if (result.hasErrors()) {
             // Include validation errors upon redirect
@@ -138,6 +151,21 @@ public class AccountController {
             // Redirect back to the form
             return "redirect:/account/companyRegistration";
         }
+
+        //Check if password was same for confirmation
+        if (!pwVerify.equals(company.getPassword())) {
+
+            redirectAttributes.addFlashAttribute("flash", new FlashMessage("Incorrect password confirmation...", FlashMessage.Status.FAILURE));
+
+            // Include validation errors upon redirect
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.company", result);
+
+            // Add  category if invalid was received
+            redirectAttributes.addFlashAttribute("company", company);
+            return "redirect:/account/companyRegistration";
+        }
+
+
 
         //Assign Company role
         Role role = new Role();
