@@ -1,5 +1,7 @@
 package com.capstone.jobby.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -16,6 +18,7 @@ public class Job {
     private String name;
 
     @Column
+    @Length(max = 20000)
     private String description;
 
     public String getDescription() {

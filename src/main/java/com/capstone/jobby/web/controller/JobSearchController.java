@@ -43,18 +43,21 @@ public class JobSearchController {
     @RequestMapping("/job/search")
     public String listJobsSearch(Model model, @RequestParam String q) {
         List<Job> allJobs = jobService.findAll();
-        List<Job> jobs = new ArrayList<>();
-        for (Job job : allJobs) {
-            for (String word : q.split(" ")) {
-                if (job.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0 || job.getDescription().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
-//                    || word.toLowerCase().indexOf(job.getName().toLowerCase()) >= 0 || word.toLowerCase().indexOf(job.getDescription().toLowerCase()) >= 0) {
-                    if (!jobs.contains(job)) {
-                        jobs.add(job);
+        if (q.equals("")) {
+            model.addAttribute("jobs", allJobs);
+        } else {
+            List<Job> jobs = new ArrayList<>();
+            for (Job job : allJobs) {
+                for (String word : q.split(" ")) {
+                    if (job.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0 || job.getDescription().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
+                        if (!jobs.contains(job)) {
+                            jobs.add(job);
+                        }
                     }
                 }
             }
+            model.addAttribute("jobs", jobs);
         }
-        model.addAttribute("jobs", jobs);
         return "public/searchResults/jobSearchResults";
     }
 }

@@ -78,6 +78,20 @@ public class MatchDaoImpl implements MatchDao {
         return query.getResultList();
     }
 
+    @Override
+    public List<Match> findByJobIdOrdered(Long jobId) {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Match> criteria = builder.createQuery(Match.class);
+        Root<Match> root = criteria.from(Match.class);
+        ParameterExpression<Long> jobIdParam = builder.parameter(Long.class);
+        criteria.where(builder.equal(root.get("jobID"), jobIdParam));
+        criteria.orderBy(builder.desc(root.get("percent")));
+        Query<Match> query = session.createQuery(criteria);
+        query.setParameter(jobIdParam, jobId);
+        return query.getResultList();
+    }
+
 
 
     @Override

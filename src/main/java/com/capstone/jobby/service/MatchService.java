@@ -9,6 +9,7 @@ public interface MatchService {
     Match findById(Long id);
     List<Match> findByCandidateId(Long candidateId);
     List<Match> findByCandidateIdOrdered(Long candidateId);
+    List<Match> findByJobIdOrdered(Long jobId);
     void save(Match match);
     void delete(Match match);
     void deleteByJobId(Long jobId);

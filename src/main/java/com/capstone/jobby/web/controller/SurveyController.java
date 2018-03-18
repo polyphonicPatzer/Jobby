@@ -32,8 +32,6 @@ public class SurveyController {
     @RequestMapping(value = "/candidateSurveyResults/{candidateId}")
     public String candidateSurvey(Model model, @PathVariable Long candidateId){
 
-        //TODO: Write a query to get the candidates skills from their survey and pass as attributes to the mode. Maybe a th:each loop to display them?
-
         Candidate candidate = candidateService.findById(candidateId);
         model.addAttribute(candidate);
 

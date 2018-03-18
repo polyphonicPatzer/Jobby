@@ -48,32 +48,46 @@ public class CandidateController {
         Resume resume = candidate.getResume();
         ProfilePic profilePic = candidate.getProfilePic();
         List<CandidateSkill> candidateSkills = candidateSkillService.findSkillsByCandidateId(candidate.getId());
-        List<CandidateMatchInfo> matchesInfoList = new ArrayList<CandidateMatchInfo>();
-        List<Match> matches = matchService.findByCandidateIdOrdered(candidate.getId());
 
-        //Check for existing matches and add them, or prompt to take survey, to model
-        if (matches.size() < 1) {
-            model.addAttribute("matchesInfoList", null);
-        } else {
-            for (Match match : matches) {
-                CandidateMatchInfo matchInfo = new CandidateMatchInfo();
-                Job job = jobService.findById(match.getJobID());
-                Company company = companyService.findById(job.getCompanyID());
-                matchInfo.setMatchPercentage((int)Math.round(match.getPercent()));
-                matchInfo.setJobId(match.getJobID());
-                matchInfo.setJobName(job.getName());
-                matchInfo.setCompanyId(company.getId());
-                matchInfo.setCompanyName(company.getName());
-                matchInfo.setCompanyCity(company.getCity());
-                matchInfo.setCompanyState(company.getState());
-                matchesInfoList.add(matchInfo);
-            }
-            if (matchesInfoList.size() > 5) {
-                model.addAttribute("matchesInfoList", matchesInfoList.subList(0, 5));
+        //If the candidate has taken the survey, handle the matches
+        if (candidateSkills.size() > 0) {
+
+            List<CandidateMatchInfo> matchesInfoList = new ArrayList<CandidateMatchInfo>();
+            List<Match> matches = matchService.findByCandidateIdOrdered(candidate.getId());
+            List<Match> bestMatches = new ArrayList<>();
+
+            //Check for existing matches and add them. If no jobs have been posted then this will
+            // make it appear as if the candidate hasn't taken the survey. Pretty much impossible
+            // but should still be fixed.
+
+            if (matches.size() < 1) {
+                model.addAttribute("matchesInfoList", null);
             } else {
-                model.addAttribute("matchesInfoList", matchesInfoList);
+
+                for (Match match : matches) {
+                    CandidateMatchInfo matchInfo = new CandidateMatchInfo();
+                    Job job = jobService.findById(match.getJobID());
+                    Company company = companyService.findById(job.getCompanyID());
+                    matchInfo.setMatchPercentage((int)Math.round(match.getPercent()));
+                    matchInfo.setJobId(match.getJobID());
+                    matchInfo.setJobName(job.getName());
+                    matchInfo.setCompanyId(company.getId());
+                    matchInfo.setCompanyName(company.getName());
+                    matchInfo.setCompanyCity(company.getCity());
+                    matchInfo.setCompanyState(company.getState());
+                    matchesInfoList.add(matchInfo);
+                }
+                if (matchesInfoList.size() > 5) {
+                    model.addAttribute("matchesInfoList", matchesInfoList.subList(0, 5));
+                } else {
+                    model.addAttribute("matchesInfoList", matchesInfoList);
+                }
             }
+        } else {
+            //Otherwise the candidate hasn't taken the survey
+            model.addAttribute("matchesInfoList", null);
         }
+
 
 
         //Check for survey and add notifier to model
@@ -251,18 +265,21 @@ public class CandidateController {
     @RequestMapping(value = "/candidate/search")
     public String listCanditateSearch(Model model, @RequestParam String q) {
         List<Candidate> allCandidates = candidateService.findAll();
-        List<Candidate> candidates = new ArrayList<>();
-        for (Candidate candidate : allCandidates) {
-            for (String word : q.split(" ")) {
-                if (candidate.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
-//                        || q.indexOf(candidate.getName()) >= 0) {
-                    if (!candidates.contains(candidate)) {
-                        candidates.add(candidate);
+        if (q.equals("")) {
+            model.addAttribute("candidates", allCandidates);
+        } else {
+            List<Candidate> candidates = new ArrayList<>();
+            for (Candidate candidate : allCandidates) {
+                for (String word : q.split(" ")) {
+                    if (candidate.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
+                        if (!candidates.contains(candidate)) {
+                            candidates.add(candidate);
+                        }
                     }
                 }
             }
+            model.addAttribute("candidates", candidates);
         }
-        model.addAttribute("candidates", candidates);
         return "public/searchResults/candidateSearchResults";
     }
 
