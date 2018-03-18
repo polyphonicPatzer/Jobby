@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import com.capstone.jobby.algorithm.WeightedChoiceAlgorithm;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CompanyController {
@@ -232,8 +233,20 @@ public class CompanyController {
     //Search for all companies
     @SuppressWarnings("unchecked")
     @RequestMapping("/company/search")
-    public String listCompaniesSearch(Model model) {
-        List<Company> companies = companyService.findAll();
+    public String listCompaniesSearch(Model model, @RequestParam String q) {
+
+        List<Company> allCompanies = companyService.findAll();
+        List<Company> companies = new ArrayList<>();
+        for (Company company : allCompanies) {
+            for (String word : q.split(" ")) {
+                if (company.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0 || company.getCity().toLowerCase().indexOf(word.toLowerCase()) >= 0 || company.getState().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
+//                        || q.indexOf(company.getName()) >= 0 || q.indexOf(company.getCity()) >= 0 || q.indexOf(company.getState()) >= 0) {
+                    if (!companies.contains(company)) {
+                        companies.add(company);
+                    }
+                }
+            }
+        }
         model.addAttribute("companies", companies);
         return "public/searchResults/companySearchResults";
     }

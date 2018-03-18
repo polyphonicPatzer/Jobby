@@ -19,7 +19,7 @@
 
     <div th:if="${candidate.profilePic} != null">
         <a th:href="@{|/profilePic/${candidate.profilePic.id}|}" class="actions">
-            <img class="imgCenter" style="height:400px;" th:src="@{|/auth/candidate/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
+            <img class="imgCenter" style="height:400px;" th:src="@{|/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
         </a>
     </div>
     <div th:if="${candidate.profilePic} == null">

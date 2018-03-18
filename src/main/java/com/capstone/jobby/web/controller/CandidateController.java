@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.*;
@@ -247,8 +249,19 @@ public class CandidateController {
     //Search for all candidates
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "/candidate/search")
-    public String listCanditateSearch(Model model) {
-        List<Candidate> candidates = candidateService.findAll();
+    public String listCanditateSearch(Model model, @RequestParam String q) {
+        List<Candidate> allCandidates = candidateService.findAll();
+        List<Candidate> candidates = new ArrayList<>();
+        for (Candidate candidate : allCandidates) {
+            for (String word : q.split(" ")) {
+                if (candidate.getName().toLowerCase().indexOf(word.toLowerCase()) >= 0) {
+//                        || q.indexOf(candidate.getName()) >= 0) {
+                    if (!candidates.contains(candidate)) {
+                        candidates.add(candidate);
+                    }
+                }
+            }
+        }
         model.addAttribute("candidates", candidates);
         return "public/searchResults/candidateSearchResults";
     }
