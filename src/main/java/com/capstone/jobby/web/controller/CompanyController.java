@@ -241,9 +241,57 @@ public class CompanyController {
     //Employee Matches. This might be altered to return employees matched to a particular job
     //In that case, the mapping will be "/auth/company/employeeMatches/{jobId}"
     @RequestMapping(value = "/auth/company/employeeMatches/{jobId}")
-    public String employeeMatches(Model model, @PathVariable Long jobId) {
+    public String employeeMatches(Model model, @PathVariable Long jobId, Principal principal) {
+        Company company = companyService.findByUsername(principal.getName());
+        Job job = jobService.findById(jobId);
 
-        //TODO: Write a query to retrieve matched candidates by running this jobId through the algo
+        //If the job isn't null, handle matches
+        if (job != null) {
+
+            List<Match> allMatches = matchService.findByJobIdOrdered(job.getId());
+
+            if (allMatches.size() < 1) {
+                model.addAttribute("matchesInfoList", null);
+            } else {
+
+                //Sort
+                Collections.sort(allMatches);
+                List<Match> bestMatches = new ArrayList<>();
+
+                //Get top 5
+                if (allMatches.size() > 15) {
+                    bestMatches = allMatches.subList(0, 15);
+                } else {
+                    bestMatches = allMatches;
+                }
+
+                //Create a list for the info of the matches
+                List<CompanyMatchInfo> matchesInfoList = new ArrayList<>();
+
+                for (Match match : bestMatches) {
+                    CompanyMatchInfo matchInfo = new CompanyMatchInfo();
+                    Candidate  candidate = candidateService.findById(match.getCandidateID());
+
+                    //Update relevant info
+                    matchInfo.setJobId(job.getId());
+                    matchInfo.setJobName(job.getName());
+                    matchInfo.setCandidateId(candidate.getId());
+                    matchInfo.setCandidateName(candidate.getName());
+                    matchInfo.setMatchPercentage((int)Math.round(match.getPercent()));
+
+                    matchesInfoList.add(matchInfo);
+                }
+
+                model.addAttribute("matchesInfoList", matchesInfoList);
+                model.addAttribute("job", job);
+            }
+
+        } else {
+            //Otherwise there are no matches because there is no job with id equals jobId
+            model.addAttribute("matchesInfoList", null);
+            model.addAttribute("job", null);
+
+        }
 
         return "private/company/employeeMatches";
     }

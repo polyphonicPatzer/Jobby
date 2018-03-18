@@ -64,11 +64,17 @@ public class CandidateController {
                 model.addAttribute("matchesInfoList", null);
             } else {
 
-                for (Match match : matches) {
+                if (matches.size() > 5) {
+                    bestMatches = matches.subList(0, 5);
+                } else {
+                    bestMatches = matches;
+                }
+
+                for (Match match : bestMatches) {
                     CandidateMatchInfo matchInfo = new CandidateMatchInfo();
                     Job job = jobService.findById(match.getJobID());
                     Company company = companyService.findById(job.getCompanyID());
-                    matchInfo.setMatchPercentage((int)Math.round(match.getPercent()));
+                    matchInfo.setMatchPercentage((int) Math.round(match.getPercent()));
                     matchInfo.setJobId(match.getJobID());
                     matchInfo.setJobName(job.getName());
                     matchInfo.setCompanyId(company.getId());
@@ -77,11 +83,8 @@ public class CandidateController {
                     matchInfo.setCompanyState(company.getState());
                     matchesInfoList.add(matchInfo);
                 }
-                if (matchesInfoList.size() > 5) {
-                    model.addAttribute("matchesInfoList", matchesInfoList.subList(0, 5));
-                } else {
-                    model.addAttribute("matchesInfoList", matchesInfoList);
-                }
+
+                model.addAttribute("matchesInfoList", matchesInfoList);
             }
         } else {
             //Otherwise the candidate hasn't taken the survey

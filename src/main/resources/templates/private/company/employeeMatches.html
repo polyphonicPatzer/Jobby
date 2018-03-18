@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="public/companyLayout :: head('employee matches')"></head>
+<head th:replace="public/companyLayout :: head('matches')"></head>
 <body>
 <div th:replace="public/companyLayout :: nav"></div>
 
-This is where employee matches will go...
+<div class="container">
+    <div class="row">
+        <div class="col s9">
+            <div th:if="${job != null}">
+                <h2 th:text="|Matches for: ${job.name}|" style=""></h2>
+            </div>
+            <div th:if="${job == null}">
+                <h2 th:text="|Invalid Job ID|" style=""></h2>
+            </div>
+        </div>
+    </div>
+    <div class="divider"></div>
+
+
+    <div th:if="${matchesInfoList != null}">
+
+        <div class="row">
+            <div th:each="matchInfo : ${matchesInfoList}" class="col s12">
+                <div class="row">
+                    <div class="card" style="background-color:#D3D3D3;border: 4px solid black;">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="card-title" style="font-size: 1.6rem; text-decoration: underline; color: #0000;">
+                                    <a class="name" th:href="@{|/candidate/${matchInfo.candidateId}|}" th:text="|${matchInfo.candidateName}: ${matchInfo.matchPercentage}%|">Candidate Name</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card-title" style="font-size: 1.3rem; text-decoration: underline; color: #00000">
+                                    <a class="name" th:href="@{|/job/${matchInfo.jobId}|}" th:text="|${matchInfo.jobName}|">Job Name</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <div th:replace="public/companyLayout :: scripts"></div>
 
