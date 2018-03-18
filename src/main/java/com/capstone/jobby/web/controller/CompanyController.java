@@ -1,5 +1,7 @@
 package com.capstone.jobby.web.controller;
 
+import com.capstone.jobby.algorithm.Pair;
+import com.capstone.jobby.algorithm.Trio;
 import com.capstone.jobby.model.*;
 import com.capstone.jobby.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +14,10 @@ import java.security.Principal;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import com.capstone.jobby.algorithm.WeightedChoiceAlgorithm;
 
 @Controller
 public class CompanyController {
@@ -30,6 +34,12 @@ public class CompanyController {
     private JobService jobService;
     @Autowired
     private DesiredTechSkillService desiredTechSkillService;
+    @Autowired
+    private CandidateTechSkillService candidateTechSkillService;
+    @Autowired
+    private CandidateSkillService candidateSkillService;
+    @Autowired
+    private MatchService matchService;
 
     @RequestMapping("/auth/company/companyProfile")
     public String companyProfile(Model model, Principal principal){
@@ -109,8 +119,46 @@ public class CompanyController {
             }
         }
 
+        findMatches(companySurveyResults, job.getId());
 
         return("private/company/surveySubmitted");
+    }
+
+    public void findMatches(CompanySurveyResults companySurveyResults, Long jobID){
+        List<Candidate> candidates = candidateService.findAll();
+        ArrayList<Trio> job = new ArrayList<Trio>();
+        Integer[] jobTechA = companySurveyResults.getTechAnswers();
+        Integer[] jobTechW = companySurveyResults.getTechWeights();
+        Integer[] jobCBA = companySurveyResults.getCBAnswers();
+        Integer[] jobCBAW = companySurveyResults.getCBWeights();
+        for (int z = 0; z < jobTechA.length; z++){
+            Trio p = new Trio(z,jobTechA[z],jobTechW[z]);
+            job.add(p);
+        }
+        for (int z = 0; z < jobCBA.length; z++){
+            Trio p = new Trio(z,jobCBA[z], jobCBAW[z]);
+            job.add(p);
+        }
+
+        for (Candidate candidate : candidates) {
+            List<CandidateTechSkill> CTS = candidateTechSkillService.findAllByID(candidate.getId());
+            List<CandidateSkill> CCBS = candidateSkillService.findAllByID(candidate.getId());
+            ArrayList<Pair> cand = new ArrayList();
+            for (CandidateTechSkill t : CTS) {
+                Pair temp = new Pair(Math.toIntExact(t.getSkillID()), t.getSkillRating());
+                cand.add(temp);
+            }
+            for (CandidateSkill s : CCBS) {
+                Pair temp = new Pair(Math.toIntExact(s.getSkillID()), s.getSkillRating());
+                cand.add(temp);
+            }
+            double score = WeightedChoiceAlgorithm.weightedChoiceAlgorithm(job, cand);
+            Match match = new Match();
+            match.setCandidateID(candidate.getId());
+            match.setJobID(jobID);
+            match.setPercent(score);
+            matchService.save(match);
+        }
     }
 
 

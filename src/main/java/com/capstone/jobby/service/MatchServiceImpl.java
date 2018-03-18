@@ -31,4 +31,7 @@ public class MatchServiceImpl implements MatchService {
     public void delete(Match match) {
         matchDao.delete(match);
     }
+
+    @Override
+    public void deleteByJobId(Long jobId) { matchDao.deleteByJobId(jobId); }
 }

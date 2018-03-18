@@ -188,7 +188,7 @@ public class AccountController {
 
     // Login Company Account
     @RequestMapping(value = "/auth/company/companyLogin", method = RequestMethod.GET)
-    public String loginCompanyForm(Model model, HttpServletRequest request) {
+    public String loginCompanyForm(Model model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         model.addAttribute("company", new Company());
         try {
             Object flash = request.getSession().getAttribute("flash");

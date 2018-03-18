@@ -3,11 +3,14 @@ package com.capstone.jobby.dao;
 import com.capstone.jobby.model.Match;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.ParameterExpression;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
@@ -64,5 +67,21 @@ public class MatchDaoImpl implements MatchDao {
         session.delete(match);
         session.getTransaction().commit();
         session.close();
+    }
+
+    @Override
+    public void deleteByJobId(Long jobId) {
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Match> criteria = builder.createQuery(Match.class);
+        Root<Match> root = criteria.from(Match.class);
+        ParameterExpression<Long> jobIdParam = builder.parameter(Long.class);
+        criteria.where(builder.equal(root.get("jobID"), jobIdParam));
+        Query<Match> query = session.createQuery(criteria);
+        query.setParameter(jobIdParam, jobId);
+        List<Match> matches = query.getResultList();
+        for (Match match : matches) {
+            delete(match);
+        }
     }
 }
