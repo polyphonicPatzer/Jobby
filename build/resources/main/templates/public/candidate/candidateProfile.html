@@ -27,8 +27,14 @@
         <img class="imgCenter" style="height:400px;" th:src="@{/images/profile_picture_example.jpeg}" alt="Default Profile Picture" />
     </div>
 
+    <div sec:authorize="hasRole('ROLE_CANDIDATE')">
+        <a th:href="@{|/auth/candidate/candidateContactForm/${candidate.id}|}"><button class="button" type="submit" style="float:left;">Contact</button></a>
+    </div>
+    <div sec:authorize="hasRole('ROLE_COMPANY')">
+        <a th:href="@{|/auth/company/candidateContactForm/${candidate.id}|}"><button class="button" type="submit" style="float:left;">Contact</button></a>
+    </div>
 
-    <button class="button" style="float:left;">Contact</button>
+
     <div style="float:right;">
 
         <div sec:authorize="hasRole('ROLE_COMPANY')">

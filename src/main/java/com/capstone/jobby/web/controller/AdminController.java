@@ -15,6 +15,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,22 +105,6 @@ public class AdminController {
             }
         }
         return String.format("redirect:/auth/admin/adminDashboard/query/findCandidateById?q=%s",q);
-
-
-//        Candidate candidate = candidateService.findById(Long.parseLong(q));
-//        if (candidate != null) {
-//            if (!candidate.isEnabled()) {
-//                candidate.setEnabled(true);
-//                candidateService.save(candidate);
-//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account activated!", FlashMessage.Status.SUCCESS));
-//            } else {
-//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already activated...", FlashMessage.Status.FAILURE));
-//            }
-//        }
-//        else {
-//            redirectAttributes.addFlashAttribute("flash", new FlashMessage("No such candidate...", FlashMessage.Status.FAILURE));
-//        }
-//        return String.format("redirect:/auth/admin/adminDashboard");
     }
 
 
@@ -135,22 +120,6 @@ public class AdminController {
             }
         }
         return String.format("redirect:/auth/admin/adminDashboard/query/findCandidateById?q=%s",q);
-
-
-
-//        Candidate candidate = candidateService.findById(Long.parseLong(q));
-//        if (candidate != null) {
-//            if (candidate.isEnabled()) {
-//                candidate.setEnabled(false);
-//                candidateService.save(candidate);
-//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account deactivated!", FlashMessage.Status.SUCCESS));
-//            } else {
-//                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already deactivated...", FlashMessage.Status.FAILURE));
-//            }
-//        } else {
-//            redirectAttributes.addFlashAttribute("flash", new FlashMessage("No such candidate...", FlashMessage.Status.FAILURE));
-//        }
-//        return String.format("redirect:/auth/admin/adminDashboard");
     }
 
 
@@ -307,122 +276,6 @@ public class AdminController {
         }
         return "redirect:/auth/admin/adminDashboard";
     }
-
-
-
-
-//    /******************************************
-//     *                                        *
-//     *         CandidateSkill Queries         *
-//     *                                        *
-//     ******************************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllCandidateSkills")
-//    public String findAllCandidateSkills(Model model) {
-//        List<CandidateSkill> candidateSkills = candidateSkillService.findAll();
-//        model.addAttribute("candidateSkills", candidateSkills);
-//        return "private/admin/findAllQuery";
-//    }
-//
-//
-//
-//
-//    /**********************************************
-//     *                                            *
-//     *         CandidateTechSkill Queries         *
-//     *                                            *
-//     **********************************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllCandidateTechSkills")
-//    public String findAllCandidateTechSkills(Model model) {
-//        List<CandidateTechSkill> candidateTechSkills = candidateTechSkillService.findAll();
-//        model.addAttribute("candidateTechSkills", candidateTechSkills);
-//        return "private/admin/findAllQuery";
-//    }
-//
-//
-//
-//
-//    /******************************************
-//     *                                        *
-//     *         DesiredCBSkill Queries         *
-//     *                                        *
-//     ******************************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllDesiredCBSkills")
-//    public String findAllDesiredCBSkills(Model model) {
-//        List<DesiredCBSkill> desiredCBSkills = desiredCBSkillService.findAll();
-//        model.addAttribute("desiredCBSkills", desiredCBSkills);
-//        return "private/admin/findAllQuery";
-//    }
-//
-//
-//
-//
-//    /********************************************
-//     *                                          *
-//     *         DesiredTechSkill Queries         *
-//     *                                          *
-//     ********************************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllDesiredTechSkills")
-//    public String findAllDesiredTechSkills(Model model) {
-//        List<DesiredTechSkill> desiredTechSkills = desiredTechSkillService.findAll();
-//        model.addAttribute("desiredTechSkills", desiredTechSkills);
-//        return "private/admin/findAllQuery";
-//    }
-//
-//
-//
-//
-//    /*********************************
-//     *                               *
-//     *         Match Queries         *
-//     *                               *
-//     *********************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllMatches")
-//    public String findAllMatches(Model model) {
-//        List<Match> matches = matchService.findAll();
-//        model.addAttribute("matches", matches);
-//        return "private/admin/findAllQuery";
-//    }
-//
-//
-//
-//
-//    /**************************************
-//     *                                    *
-//     *         ProfilePic Queries         *
-//     *                                    *
-//     **************************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllProfilePics")
-//    public String findAllProfilePics(Model model) {
-//        List<ProfilePic> profilePics = profilePicService.findAll();
-//        model.addAttribute("profilePics", profilePics);
-//        return "private/admin/findAllQuery";
-//    }
-//
-//
-//
-//
-//    /**********************************
-//     *                                *
-//     *         Resume Queries         *
-//     *                                *
-//     **********************************/
-//
-//    @RequestMapping(value = "/auth/admin/adminDashboard/query/findAllResumes")
-//    public String findAllResumes(Model model) {
-//        List<Resume> resumes = resumeService.findAll();
-//        model.addAttribute("resumes", resumes);
-//        return "private/admin/findAllQuery";
-//    }
-
-
-
-
 
 
 }

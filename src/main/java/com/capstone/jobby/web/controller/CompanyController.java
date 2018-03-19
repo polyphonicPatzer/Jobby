@@ -228,6 +228,16 @@ public class CompanyController {
         }
     }
 
+    @RequestMapping(value = "/auth/company/candidateContactForm/{candidateId}")
+    public String candidateContactForm(Model model, @PathVariable Long candidateId, Principal principal) {
+        Candidate candidate = candidateService.findById(candidateId);
+        model.addAttribute("candidate", candidate);
+        model.addAttribute("firstName", candidate.getName().split(" ")[0]);
+        return "private/company/candidateContactForm";
+    }
+
+
+
 
 
 

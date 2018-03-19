@@ -249,6 +249,16 @@ public class CandidateController {
         return "private/candidate/applicationSubmitted";
     }
 
+
+    @RequestMapping(value = "/auth/candidate/candidateContactForm/{candidateId}")
+    public String candidateContactForm(Model model, @PathVariable Long candidateId, Principal principal) {
+        Candidate candidateToContact = candidateService.findById(candidateId);
+        model.addAttribute("candidateToContact", candidateToContact);
+        model.addAttribute("firstName", candidateToContact.getName().split(" ")[0]);
+        return "private/candidate/candidateContactForm";
+    }
+
+
     /************************************
      *                                  *
      *         Public Facing Stuff      *
