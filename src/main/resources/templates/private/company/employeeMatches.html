@@ -2,8 +2,15 @@
 <html lang="en">
 <head th:replace="public/companyLayout :: head('matches')"></head>
 <body>
-<div th:replace="public/companyLayout :: nav"></div>
-
+<div sec:authorize="hasRole('ROLE_CANDIDATE')">
+    <div th:replace="public/candidateLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_COMPANY')">
+    <div th:replace="public/companyLayout :: nav"></div>
+</div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    <div th:replace="public/adminLayout :: nav"></div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col s9">

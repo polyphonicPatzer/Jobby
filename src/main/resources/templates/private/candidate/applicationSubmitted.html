@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="public/candidateLayout :: head('apply')"></head>
+<body>
+<div th:replace="public/candidateLayout :: nav"></div>
+<div th:replace="public/candidateLayout :: flash"></div>
+
+
+<div class="container">
+    <div class="row">
+        <p class="name" style="font-size: 36px;font-weight: bold;float:left;color: black;" th:text="${heading}">Application Submitted!</p>
+    </div>
+    <p style="font-size: 20px;" th:text="|${company.name} has been received your application for the ${job.name} position.|">Application Received</p>
+
+    <p style="font-size: 20px;" th:text="|Continue applying while you wait for a response!|">Keep Applying</p>
+    <a href="javascript:window.location = document.referrer;" class="button">Back To Job Description</a>
+
+</div>
+
+
+</body>
+</html>

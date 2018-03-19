@@ -236,6 +236,19 @@ public class CandidateController {
         return;
     }
 
+
+    @RequestMapping(value = "/auth/candidate/apply/{jobId}")
+    public String applicationSubmitted(Model model, @PathVariable Long jobId, Principal principal) {
+        Candidate candidate = candidateService.findByUsername(principal.getName());
+        Job job = jobService.findById(jobId);
+        Company company = companyService.findById(job.getCompanyID());
+        model.addAttribute("candidateName", candidate.getName().split(" ")[0]);
+        model.addAttribute("job", job);
+        model.addAttribute("company", company);
+        model.addAttribute("heading", "Application Submitted!");
+        return "private/candidate/applicationSubmitted";
+    }
+
     /************************************
      *                                  *
      *         Public Facing Stuff      *

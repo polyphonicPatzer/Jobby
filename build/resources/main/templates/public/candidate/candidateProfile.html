@@ -11,6 +11,9 @@
 <div sec:authorize="hasRole('ROLE_COMPANY')">
     <div th:replace="public/companyLayout :: nav"></div>
 </div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    <div th:replace="public/adminLayout :: nav"></div>
+</div>
 
 <div class="grayContainerRounded" style="width:85%; margin-top: 10px; height: fit-content; overflow: hidden;">
     <p style="font-size: 20px;font-weight: bold; margin:0px; text-align: left;">Candidate Information</p>
@@ -29,6 +32,11 @@
     <div style="float:right;">
 
         <div sec:authorize="hasRole('ROLE_COMPANY')">
+            <div th:if="${survey == true}">
+                <a th:href="@{|/candidateSurveyResults/${candidate.id}|}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
+            </div>
+        </div>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
             <div th:if="${survey == true}">
                 <a th:href="@{|/candidateSurveyResults/${candidate.id}|}" style='text-decoration: underline; font-size: 14px;' >View Survey Results</a>
             </div>

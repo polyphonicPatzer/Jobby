@@ -23,6 +23,12 @@
         <a class="name" style="text-align:left;font-size: 20px; text: underline;" th:href="@{|/company/${job.companyID}|}" th:text="'at ' + ${company.name}"/>
     </div>
     <p style="text-align:left;font-size: 20px;" th:text="'in ' + ${company.city}+', '+${company.state}">Company Location</p>
+    <div sec:authorize="hasRole('ROLE_CANDIDATE')">
+        <div style="text-align:left;">
+            <a th:href="@{|/auth/candidate/apply/${job.id}|}"><button type="submit" class="button">Apply</button></a>
+            <p></p>
+        </div>
+    </div>
     <div class="divider"></div>
     <div class="name" style="text-align:left;color: black;" th:text="${job.description}">Job Description</div>
 
