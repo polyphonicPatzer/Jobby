@@ -55,7 +55,7 @@ public class WeightedChoiceAlgorithm {
 		if (company.size() == 0 || candidate.size() == 0){
 			return -1;
 		}
-		for(int i = 0; i<company.size(); i++){
+		for(int i = 0; i<20; i++){
 			int companyAnswer = company.get(i).getQuestionAnswer();
 			int candidateAnswer = candidate.get(i).getAnswer();
 			int differenceBetweenScores = Math.abs(companyAnswer - candidateAnswer);
