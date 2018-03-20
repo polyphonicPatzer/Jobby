@@ -102,6 +102,8 @@ public class AdminController {
                 candidate.setEnabled(true);
                 candidateService.save(candidate);
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account activated!", FlashMessage.Status.SUCCESS));
+            } else {
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already activated...", FlashMessage.Status.FAILURE));
             }
         }
         return String.format("redirect:/auth/admin/adminDashboard/query/findCandidateById?q=%s",q);
@@ -116,6 +118,8 @@ public class AdminController {
             if (candidate.isEnabled()) {
                 candidate.setEnabled(false);
                 candidateService.save(candidate);
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account deactivated!", FlashMessage.Status.SUCCESS));
+            } else {
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("Candidate account already deactivated...", FlashMessage.Status.FAILURE));
             }
         }
@@ -194,6 +198,8 @@ public class AdminController {
                 company.setEnabled(true);
                 companyService.save(company);
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account activated!", FlashMessage.Status.SUCCESS));
+            } else {
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account already activated...", FlashMessage.Status.FAILURE));
             }
         }
         return String.format("redirect:/auth/admin/adminDashboard/query/findCompanyById?q=%s",q);
@@ -214,6 +220,8 @@ public class AdminController {
                 company.setEnabled(false);
                 companyService.save(company);
                 redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account deactivated!", FlashMessage.Status.SUCCESS));
+            } else {
+                redirectAttributes.addFlashAttribute("flash", new FlashMessage("Company account already deactivated...", FlashMessage.Status.FAILURE));
             }
         }
         return String.format("redirect:/auth/admin/adminDashboard/query/findCompanyById?q=%s",q);

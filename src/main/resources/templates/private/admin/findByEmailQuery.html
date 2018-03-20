@@ -32,9 +32,7 @@
         </div>
         <div th:if="${candidate.profilePic != null}">
             <p>Candidate Profile Picture:</p>
-            <a th:href="@{|/profilePic/${candidate.profilePic.id}|}" class="actions">
-                <img class="imgCenter" style="height:300px;" th:src="@{|/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
-            </a>
+            <img class="imgCenter" style="height:300px;" th:src="@{|/profilePic/${candidate.profilePic.id}.img|}" alt="Profile Picture" />
         </div>
 
         <div th:if="${candidate.resume == null}">
