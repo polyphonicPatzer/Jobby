@@ -3,7 +3,7 @@ This application was built using the Spring framework with Hibernate for databas
 
 	- Craig Bruenger: craigmbruenger@gmail.com
 	- Carissa Ward: carissanward@gmail.com
-	- Josh Hawk: joshhawk00Wgmail.com
+	- Josh Hawkins: joshhawk00@gmail.com
 	- Jonathan Huerta: huertajonathan132@gmail.com
 	- Jake Dremann:
 	- Qingyuan Guo:
